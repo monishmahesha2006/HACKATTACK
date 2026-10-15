@@ -1,0 +1,22 @@
+{
+  "id": "msn_b654538b",
+  "goal": "Find three internship opportunities suitable for a third-year computer science or AIML student, compare eligibility criteria and deadlines, rank them, save verified findings with links to a spreadsheet, and prepare personalized draft emails for each.",
+  "constraints": [
+    "third_year_eligible",
+    "min_cgpa_8.0",
+    "unexpired_deadlines"
+  ],
+  "status": "CREATED",
+  "mode": "LOCAL_DEMO",
+  "created_at": "2026-10-15T09:27:30.209152+00:00",
+  "updated_at": "2026-10-15T09:27:30.209152+00:00",
+  "counts": {
+    "steps": 6,
+    "done": 0,
+    "failed": 0,
+    "retries": 0,
+    "gaps_open": 0,
+    "approvals_pending": 0
+  },
+  "phase": "PLAN"
+}

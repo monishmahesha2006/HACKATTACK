@@ -1,0 +1,53 @@
+{
+  "mission_id": "msn_b654538b",
+  "provenance": "PREDICTED",
+  "predicted_diff": {
+    "creates": [
+      {
+        "resource": "spreadsheet_rows",
+        "count": 3
+      },
+      {
+        "resource": "email_drafts",
+        "count": 3
+      }
+    ],
+    "updates": [],
+    "deletes": [],
+    "sends": 1
+  },
+  "irreversible_ops": [
+    "stp_msn_b654538b_06"
+  ],
+  "premortem": [
+    {
+      "failure_mode": "Spreadsheet API Connection Outage (503)",
+      "probability": 0.28,
+      "mitigation": "Automatic switch to local filesystem CSV fallback; preserve progress with zero duplicates",
+      "fallback": "save_csv_fallback"
+    },
+    {
+      "failure_mode": "Expired / Ghost Internship Listing in Web Fixture",
+      "probability": 0.18,
+      "mitigation": "Reality Gap Detection flags INVALID_DEADLINE; quarantine listing and select next candidate",
+      "fallback": null
+    },
+    {
+      "failure_mode": "Irreversible Dispatch Attempt Without Approval",
+      "probability": 0.05,
+      "mitigation": "Strict server-side capability interlock requires human single-use call-hash token",
+      "fallback": null
+    }
+  ],
+  "uncertainty_notes": [
+    "Web postings may contain near-duplicate roles or updated deadlines",
+    "Strict draft generation ensures zero hallucinated candidate project claims"
+  ],
+  "approval_required": true,
+  "cached_reads": 4,
+  "real_state_unchanged_proof": {
+    "before_hash": "3bb332220f238a39abf84f85bd8068666d707a2f4997c16f6c3dd39d7542700e",
+    "after_hash": "3bb332220f238a39abf84f85bd8068666d707a2f4997c16f6c3dd39d7542700e"
+  },
+  "model_version": "1.0.0"
+}

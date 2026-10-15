@@ -1,0 +1,191 @@
+[
+  {
+    "id": "dft_0001",
+    "recipient": "recruiting@techcorp-29.example",
+    "subject": "Application for Software & AI Engineering Intern 29 - Monish Gowda M",
+    "body": "Dear TechCorp-29 Hiring Team,\n\nI am writing to express my enthusiastic interest in the Software & AI Engineering Intern 29 position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to TechCorp-29.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0002",
+    "recipient": "recruiting@quantumedgesystems.example",
+    "subject": "Application for Autonomous Systems & Full-Stack AI Intern - Monish Gowda M",
+    "body": "Dear Quantum Edge Systems Hiring Team,\n\nI am writing to express my enthusiastic interest in the Autonomous Systems & Full-Stack AI Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Quantum Edge Systems.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0003",
+    "recipient": "recruiting@vertexailabs.example",
+    "subject": "Application for Applied Machine Learning Intern - Monish Gowda M",
+    "body": "Dear Vertex AI Labs Hiring Team,\n\nI am writing to express my enthusiastic interest in the Applied Machine Learning Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Vertex AI Labs.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0004",
+    "recipient": "test@example.com",
+    "subject": "Hi",
+    "body": "Hello",
+    "metadata": {},
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0005",
+    "recipient": "recruiting@techcorp-29.example",
+    "subject": "Application for Software & AI Engineering Intern 29 - Monish Gowda M",
+    "body": "Dear TechCorp-29 Hiring Team,\n\nI am writing to express my enthusiastic interest in the Software & AI Engineering Intern 29 position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to TechCorp-29.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0006",
+    "recipient": "recruiting@quantumedgesystems.example",
+    "subject": "Application for Autonomous Systems & Full-Stack AI Intern - Monish Gowda M",
+    "body": "Dear Quantum Edge Systems Hiring Team,\n\nI am writing to express my enthusiastic interest in the Autonomous Systems & Full-Stack AI Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Quantum Edge Systems.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0007",
+    "recipient": "recruiting@vertexailabs.example",
+    "subject": "Application for Applied Machine Learning Intern - Monish Gowda M",
+    "body": "Dear Vertex AI Labs Hiring Team,\n\nI am writing to express my enthusiastic interest in the Applied Machine Learning Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Vertex AI Labs.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0008",
+    "recipient": "recruiting@techcorp-29.example",
+    "subject": "Application for Software & AI Engineering Intern 29 - Monish Gowda M",
+    "body": "Dear TechCorp-29 Hiring Team,\n\nI am writing to express my enthusiastic interest in the Software & AI Engineering Intern 29 position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to TechCorp-29.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0009",
+    "recipient": "recruiting@quantumedgesystems.example",
+    "subject": "Application for Autonomous Systems & Full-Stack AI Intern - Monish Gowda M",
+    "body": "Dear Quantum Edge Systems Hiring Team,\n\nI am writing to express my enthusiastic interest in the Autonomous Systems & Full-Stack AI Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Quantum Edge Systems.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0010",
+    "recipient": "recruiting@vertexailabs.example",
+    "subject": "Application for Applied Machine Learning Intern - Monish Gowda M",
+    "body": "Dear Vertex AI Labs Hiring Team,\n\nI am writing to express my enthusiastic interest in the Applied Machine Learning Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Vertex AI Labs.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0011",
+    "recipient": "recruiting@techcorp-29.example",
+    "subject": "Application for Software & AI Engineering Intern 29 - Monish Gowda M",
+    "body": "Dear TechCorp-29 Hiring Team,\n\nI am writing to express my enthusiastic interest in the Software & AI Engineering Intern 29 position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to TechCorp-29.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0012",
+    "recipient": "recruiting@quantumedgesystems.example",
+    "subject": "Application for Autonomous Systems & Full-Stack AI Intern - Monish Gowda M",
+    "body": "Dear Quantum Edge Systems Hiring Team,\n\nI am writing to express my enthusiastic interest in the Autonomous Systems & Full-Stack AI Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Quantum Edge Systems.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0013",
+    "recipient": "recruiting@vertexailabs.example",
+    "subject": "Application for Applied Machine Learning Intern - Monish Gowda M",
+    "body": "Dear Vertex AI Labs Hiring Team,\n\nI am writing to express my enthusiastic interest in the Applied Machine Learning Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Vertex AI Labs.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0014",
+    "recipient": "recruiting@techcorp-29.example",
+    "subject": "Application for Software & AI Engineering Intern 29 - Monish Gowda M",
+    "body": "Dear TechCorp-29 Hiring Team,\n\nI am writing to express my enthusiastic interest in the Software & AI Engineering Intern 29 position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to TechCorp-29.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0015",
+    "recipient": "recruiting@quantumedgesystems.example",
+    "subject": "Application for Autonomous Systems & Full-Stack AI Intern - Monish Gowda M",
+    "body": "Dear Quantum Edge Systems Hiring Team,\n\nI am writing to express my enthusiastic interest in the Autonomous Systems & Full-Stack AI Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Quantum Edge Systems.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  },
+  {
+    "id": "dft_0016",
+    "recipient": "recruiting@vertexailabs.example",
+    "subject": "Application for Applied Machine Learning Intern - Monish Gowda M",
+    "body": "Dear Vertex AI Labs Hiring Team,\n\nI am writing to express my enthusiastic interest in the Applied Machine Learning Intern position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to Vertex AI Labs.\n\nSincerely,\nMonish Gowda M",
+    "metadata": {
+      "opportunity_id": null,
+      "grounded_project": "proj_01"
+    },
+    "created_at": "2026-10-15T12:00:00Z",
+    "source": "LOCAL_DEMO"
+  }
+]

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.grid-bench{background-image:radial-gradient(rgba(116,118,136,0.12) 1px,transparent 1px);background-size:16px 16px;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#f9f9ff","secondary-container":"#8ef2ff","surface-bright":"#f9f9ff","surface-container-high":"#e2e8fc","on-tertiary":"#ffffff","inverse-surface":"#2a3040","primary":"#003fe1","tertiary-fixed":"#7ef9c9","primary-fixed-dim":"#b9c3ff","on-primary-fixed-variant":"#0034bf","on-secondary":"#ffffff","surface":"#f9f9ff","surface-container-low":"#f1f3ff","primary-fixed":"#dde1ff","surface-variant":"#dce2f6","outline":"#747688","on-secondary-fixed":"#001f23","error":"#ba1a1a","tertiary":"#006247","surface-container-lowest":"#ffffff","primary-container":"#2f5bff","secondary-fixed-dim":"#71d5e2","outline-variant":"#c4c5d9","surface-container-highest":"#dce2f6","tertiary-container":"#007d5c","on-error-container":"#93000a","surface-container":"#e9edff","on-secondary-container":"#006f79","secondary":"#006972","on-surface":"#151b2a","on-surface-variant":"#434656","on-primary-fixed":"#001356","secondary-fixed":"#8ef2ff","on-secondary-fixed-variant":"#004f56","on-error":"#ffffff","on-tertiary-fixed":"#002115","tertiary-fixed-dim":"#60dcae","on-primary":"#ffffff","surface-dim":"#d3daee","on-tertiary-fixed-variant":"#00513a","error-container":"#ffdad6","on-tertiary-container":"#beffe0","inverse-on-surface":"#edf0ff","on-background":"#151b2a","on-primary-container":"#efefff","surface-tint":"#1349f0","inverse-primary":"#b9c3ff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-sm":"0.5rem","space-md":"0.75rem","gutter-sm":"0.5rem","gutter-lg":"1rem","gutter":"0.75rem","margin-sm":"0.75rem","space-xl":"1.5rem","space-xs":"0.25rem","space-lg":"1rem","margin-lg":"1.5rem","margin":"1rem"},fontFamily:{"headline-md":["Bricolage Grotesque"],"label-md":["Space Mono"],"label-sm":["Space Mono"],"headline-sm":["Bricolage Grotesque"],"headline-xl":["Bricolage Grotesque"],"headline-xl-mobile":["Bricolage Grotesque"],"label-xs":["Space Mono"],"body-md":["Hanken Grotesk"],"label-lg":["Space Mono"],"headline-lg":["Bricolage Grotesque"],"body-lg":["Hanken Grotesk"],"body-sm":["Hanken Grotesk"]},fontSize:{"headline-md":["16px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["11px",{lineHeight:"14px",letterSpacing:"0.1em",fontWeight:"700"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.12em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"600"}],"headline-xl":["28px",{lineHeight:"34px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-xl-mobile":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-xs":["9px",{lineHeight:"12px",letterSpacing:"0.15em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],"label-lg":["12px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-lg":["20px",{lineHeight:"26px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"22px",letterSpacing:"-0.005em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative grid-bench selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant/50 z-50 flex flex-col justify-between shadow-[1px_0_4px_rgba(21,27,42,0.03)]"><div class="flex flex-col"><div class="h-16 px-margin flex items-center justify-between border-b border-outline-variant/40"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary flex items-center justify-center text-on-primary font-label-md text-label-md font-bold shadow-[0_1px_4px_rgba(0,63,225,0.25)]">RX</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-none tracking-tight">REWIND X</span><span class="font-label-xs text-label-xs uppercase tracking-widest text-primary font-bold leading-tight mt-0.5">FLIGHT INSTRUMENT</span></div></div><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span><span class="font-label-xs text-label-xs text-tertiary font-bold tracking-wider">AIR-01</span></div></div><div class="px-margin py-space-sm bg-surface-container-low/50 border-b border-outline-variant/30 flex items-center justify-between"><span class="font-label-xs text-label-xs uppercase tracking-widest text-outline font-bold">Telemetry Rack</span><span class="font-label-xs text-label-xs text-outline">09 NODES</span></div><nav class="flex flex-col gap-0.5 p-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="mission-control" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Mission Control</span><span class="font-label-xs text-label-xs text-outline font-normal">01</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="rehearsal-simulation" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Rehearsal</span><span class="font-label-xs text-label-xs text-outline font-normal">02</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="verification-shield" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Verification</span><span class="font-label-xs text-label-xs text-outline font-normal">03</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="rewind-timeline" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Rewind Engine</span><span class="font-label-xs text-label-xs text-outline font-normal">04</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="system-audit" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Audit Ledger</span><span class="font-label-xs text-label-xs text-outline font-normal">05</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="gap-monitor" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Reality Gap</span><span class="font-label-xs text-label-xs text-outline font-normal">06</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded transition-colors duration-100 bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="intelligence-lab" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Intelligence Lab</span><span class="font-label-xs text-label-xs text-outline font-normal">07</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="mcp-control-center" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">MCP Control</span><span class="font-label-xs text-label-xs text-primary font-bold">HUB</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="component-tokens" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Instrument Tokens</span><span class="font-label-xs text-label-xs text-outline font-normal">SYS</span></a></nav></div><div class="p-space-sm border-t border-outline-variant/40 bg-surface-container-low/60"><div class="bg-surface-container-lowest rounded p-space-sm border border-outline-variant/40 flex flex-col gap-1 shadow-sm"><div class="flex items-center justify-between"><span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">MCP DAEMON</span><span class="font-label-xs text-label-xs text-tertiary-container flex items-center gap-1 font-bold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>SYNCED</span></div><div class="flex items-center justify-between"><span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">CORE ENGINE</span><span class="font-label-xs text-label-xs text-on-surface font-bold tracking-tight">v3.4.2-rel</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest border-b border-outline-variant/50 z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_3px_rgba(21,27,42,0.03)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40"><span class="font-label-xs text-label-xs font-bold text-primary tracking-widest">[RACK-SYS-A]</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-tertiary-container/10 border border-tertiary-container/30"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-xs text-label-xs font-bold text-tertiary tracking-widest">OPERATIONAL</span></div><div class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high/60 border border-outline-variant/40"><span class="font-label-xs text-label-xs text-outline uppercase">MCP BUS:</span><span class="font-label-xs text-label-xs font-bold text-on-surface">14 CONNECTED</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30"><span class="material-symbols-outlined text-[14px] text-tertiary">timer</span><span class="font-label-xs text-label-xs text-outline uppercase">ROUNDTRIP</span><span class="font-label-xs text-label-xs font-bold text-on-surface">0.12ms</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30"><span class="material-symbols-outlined text-[14px] text-primary">verified</span><span class="font-label-xs text-label-xs text-outline uppercase">INTEGRITY</span><span class="font-label-xs text-label-xs font-bold text-tertiary">100%</span></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/40"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-xs text-label-xs font-bold text-on-surface leading-tight">OP-CONSOLE-09</span><span class="font-label-xs text-label-xs text-primary leading-none">ACTIVE ROOT</span></div><div class="w-7 h-7 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-label-xs text-label-xs font-bold">RX</div></div></div></header><main class="w-full pt-16 px-margin-lg pb-space-xl min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HEADER CONTEXT BAR & OPERATIONAL SUB-PANEL -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md relative">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-md text-label-md text-primary font-bold tracking-wider">07 // INTELLIGENCE LAB</span>
+<span class="text-outline-variant font-label-xs text-label-xs">/</span>
+<span class="font-label-xs text-label-xs uppercase tracking-widest text-on-surface-variant font-bold">EVALUATION RUN #204b</span>
+<span class="px-2 py-0.5 bg-primary/10 text-primary font-label-xs text-label-xs font-bold rounded">BENCHMARK: ACCURACY &amp; COMPLIANCE</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">
+          Model Candidate Quorum &amp; Verification Matrix
+        </h1>
+</div>
+<!-- Action Triggers -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded transition-colors duration-100" type="button">
+<span class="material-symbols-outlined text-[16px]">database</span>
+<span>SELECT DATASET [K]</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded transition-colors duration-100" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>EXPORT [JSON/LATEX]</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded transition-colors duration-100 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+<span>RUN NEW EVALUATION [⌘E]</span>
+</button>
+</div>
+</div>
+<!-- Metadata telemetry sub-row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-sm pt-space-sm bg-surface-container-low/40 p-space-sm rounded">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Active Champion</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">CLAUDE-3.5-SONNET-V2</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Candidates in Quorum</span>
+<span class="font-label-xs text-label-xs text-on-surface font-medium truncate mt-0.5">MISTRAL-L2, LLAMA-3.1-70B</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Evaluation Dataset</span>
+<span class="font-label-xs text-label-xs text-on-surface font-bold truncate mt-0.5">rx-actions-v3.parquet (48.2k)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Merkle Attestation</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">0x7c9a..33e1</span>
+<span class="material-symbols-outlined text-[12px] text-tertiary">verified_user</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">Global Gate Status</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md text-tertiary font-bold">GATES: 4/4 COMPLIANT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: TOP METRIC TILES WITH PASS/FAIL GATE BADGES -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-md">
+<!-- Tile 1: ROC-AUC -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-tertiary/10 to-transparent pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold">DISCRIMINATION // ROC-AUC</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> GATE: PASS
+          </span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">0.964</span>
+<span class="font-label-xs text-label-xs text-outline">Target &gt;= 0.940</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-label-xs text-label-xs text-tertiary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>+0.018 vs baseline
+        </span>
+<span class="font-label-xs text-label-xs text-outline font-mono">SE: ±0.002</span>
+</div>
+</div>
+<!-- Tile 2: ECE Calibration -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-tertiary/10 to-transparent pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold">CALIBRATION // ECE</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> GATE: PASS
+          </span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">0.028</span>
+<span class="font-label-xs text-label-xs text-outline">Threshold &lt;= 0.040</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-label-xs text-label-xs text-tertiary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">verified</span>Well-calibrated bands
+        </span>
+<span class="font-label-xs text-label-xs text-outline font-mono">MCE: 0.061</span>
+</div>
+</div>
+<!-- Tile 3: NDCG@3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-tertiary/10 to-transparent pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold">RANKING // NDCG@3</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> GATE: PASS
+          </span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">0.912</span>
+<span class="font-label-xs text-label-xs text-outline">Target &gt;= 0.890</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-label-xs text-label-xs text-tertiary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>Top-3 action retrieval
+        </span>
+<span class="font-label-xs text-label-xs text-outline font-mono">k=3 hits: 96.4%</span>
+</div>
+</div>
+<!-- Tile 4: F1 Decision Boundary -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-tertiary/10 to-transparent pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold">BOUNDARY // F1 SCORE</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> GATE: PASS
+          </span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">0.894</span>
+<span class="font-label-xs text-label-xs text-outline">@ τ=0.62 (&gt;= 0.880)</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">P: 0.918 | R: 0.871</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">BALANCED</span>
+</div>
+</div>
+</div>
+<!-- SECTION 3: TWO-COLUMN ANALYTICAL CHARTS & HEATMAP GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md mb-space-md">
+<!-- LEFT COLUMN: A: ROC Curve & B: Calibration Diagram -->
+<div class="flex flex-col gap-space-md">
+<!-- PANEL A: ROC Curve -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded bg-primary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">ROC Curve — Receiver Operating Characteristic</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">N = 48,200 EVENTS</span>
+</div>
+<!-- SVG Plot: ROC Curve -->
+<div class="w-full bg-surface-container-low/30 rounded p-space-sm relative">
+<svg class="w-full h-auto overflow-visible select-none text-outline-variant" preserveaspectratio="xMidYMid meet" viewbox="0 0 540 260">
+<!-- Grid lines X & Y -->
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="20" y2="20"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="70" y2="70"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="120" y2="120"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="170" y2="170"></line>
+<line stroke="#747688" stroke-width="1.2" x1="50" x2="520" y1="220" y2="220"></line>
+<line stroke="#747688" stroke-width="1.2" x1="50" x2="50" y1="20" y2="220"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="167" x2="167" y1="20" y2="220"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="285" x2="285" y1="20" y2="220"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="402" x2="402" y1="20" y2="220"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="520" x2="520" y1="20" y2="220"></line>
+<!-- Axis Labels Y -->
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="24">1.0</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="74">0.75</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="124">0.50</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="174">0.25</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="224">0.0</text>
+<!-- Axis Labels X -->
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="50" y="238">0.0</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="167" y="238">0.25</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="285" y="238">0.50</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="402" y="238">0.75</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="520" y="238">1.0</text>
+<!-- Chance Reference Line (0,0 to 1,1) -->
+<line opacity="0.6" stroke="#747688" stroke-dasharray="4 4" stroke-width="1.2" x1="50" x2="520" y1="220" y2="20"></line>
+<text class="font-label-xs text-[9px] fill-outline transform -rotate-22" opacity="0.8" x="320" y="110">Chance (AUC = 0.500)</text>
+<!-- Candidate #3 Curve (AUC = 0.902) -->
+<path d="M 50 220 Q 90 140 180 80 T 520 20" fill="none" opacity="0.55" stroke="#747688" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<!-- Candidate #2 Curve (AUC = 0.938) -->
+<path d="M 50 220 Q 80 90 170 54 T 520 20" fill="none" opacity="0.8" stroke="#006972" stroke-dasharray="4 2" stroke-width="1.75"></path>
+<!-- Champion Model #1 Curve (AUC = 0.964) -->
+<path d="M 50 220 C 65 110, 75 42, 120 38 C 180 34, 300 24, 520 20" fill="none" stroke="#003fe1" stroke-width="2.75"></path>
+<!-- Operating Point marker @ tau=0.62 (FPR ~ 0.042, TPR ~ 0.892) -->
+<!-- 50 + 0.042 * 470 = 69.7; 220 - 0.892 * 200 = 41.6 -->
+<circle cx="70" cy="42" fill="#003fe1" r="5"></circle>
+<circle cx="70" cy="42" fill="none" r="9" stroke="#003fe1" stroke-dasharray="2 2" stroke-width="1.5"></circle>
+<!-- Operating Point Callout -->
+<rect fill="#ffffff" height="38" rx="4" stroke="#c4c5d9" stroke-width="1" width="168" x="85" y="32"></rect>
+<text class="font-label-xs text-[9px] fill-on-surface font-bold" x="92" y="47">OPERATING POINT [τ=0.62]</text>
+<text class="font-label-xs text-[9px] fill-primary font-mono" x="92" y="61">FPR: 0.042 | TPR: 0.892</text>
+</svg>
+</div>
+<!-- Monospace ROC Legend -->
+<div class="grid grid-cols-3 gap-2 mt-space-sm pt-space-xs">
+<div class="flex items-center gap-1.5 p-1 bg-primary/5 rounded">
+<span class="w-3 h-1 bg-primary rounded-sm"></span>
+<span class="font-label-xs text-label-xs text-primary font-bold">#1 SONNET (0.964)</span>
+</div>
+<div class="flex items-center gap-1.5 p-1 bg-surface-container rounded">
+<span class="w-3 h-0.5 bg-secondary border-b border-dashed border-secondary"></span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">#2 MISTRAL (0.938)</span>
+</div>
+<div class="flex items-center gap-1.5 p-1 bg-surface-container rounded">
+<span class="w-3 h-0.5 bg-outline border-b border-dotted border-outline"></span>
+<span class="font-label-xs text-label-xs text-outline font-medium">#3 LLAMA (0.902)</span>
+</div>
+</div>
+</div>
+<!-- PANEL B: Calibration Curve (Reliability Diagram) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded bg-tertiary"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Reliability Diagram &amp; Confidence Calibration</span>
+</div>
+<span class="font-label-xs text-label-xs font-mono text-tertiary font-bold">ECE = 0.028</span>
+</div>
+<div class="w-full bg-surface-container-low/30 rounded p-space-sm relative">
+<svg class="w-full h-auto overflow-visible select-none text-outline-variant" preserveaspectratio="xMidYMid meet" viewbox="0 0 540 240">
+<!-- Grid lines -->
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="20" y2="20"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="62" y2="62"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="105" y2="105"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="50" x2="520" y1="148" y2="148"></line>
+<line stroke="#747688" stroke-width="1.2" x1="50" x2="520" y1="190" y2="190"></line>
+<line stroke="#747688" stroke-width="1.2" x1="50" x2="50" y1="20" y2="190"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="167" x2="167" y1="20" y2="190"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="285" x2="285" y1="20" y2="190"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="402" x2="402" y1="20" y2="190"></line>
+<line stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.75" x1="520" x2="520" y1="20" y2="190"></line>
+<!-- Y Axis values -->
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="24">100%</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="108">50%</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="end" x="42" y="193">0%</text>
+<!-- X Axis values -->
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="50" y="204">0%</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="167" y="204">25%</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="285" y="204">50%</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="402" y="204">75%</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="520" y="204">100%</text>
+<!-- Perfect Calibration Diagonal -->
+<line opacity="0.6" stroke="#747688" stroke-dasharray="4 4" stroke-width="1.2" x1="50" x2="520" y1="190" y2="20"></line>
+<!-- Calibration Curve Points & Line (tight adherence) -->
+<polyline fill="none" points="50,190 97,175 144,158 191,142 238,124 285,103 332,84 379,66 426,50 473,34 520,21" stroke="#003fe1" stroke-width="2.5"></polyline>
+<!-- Calibration Nodes -->
+<circle cx="97" cy="175" fill="#003fe1" r="3.5"></circle>
+<circle cx="144" cy="158" fill="#003fe1" r="3.5"></circle>
+<circle cx="191" cy="142" fill="#003fe1" r="3.5"></circle>
+<circle cx="238" cy="124" fill="#003fe1" r="3.5"></circle>
+<circle cx="285" cy="103" fill="#003fe1" r="3.5"></circle>
+<circle cx="332" cy="84" fill="#003fe1" r="3.5"></circle>
+<circle cx="379" cy="66" fill="#003fe1" r="3.5"></circle>
+<circle cx="426" cy="50" fill="#003fe1" r="3.5"></circle>
+<circle cx="473" cy="34" fill="#003fe1" r="3.5"></circle>
+<circle cx="520" cy="21" fill="#003fe1" r="3.5"></circle>
+<!-- Histogram / Sample Count Bins along bottom (y=210 to 235) -->
+<rect fill="#c4c5d9" height="18" opacity="0.7" rx="1" width="40" x="52" y="218"></rect>
+<rect fill="#c4c5d9" height="12" opacity="0.7" rx="1" width="40" x="99" y="224"></rect>
+<rect fill="#c4c5d9" height="8" opacity="0.7" rx="1" width="40" x="146" y="228"></rect>
+<rect fill="#c4c5d9" height="6" opacity="0.7" rx="1" width="40" x="193" y="230"></rect>
+<rect fill="#c4c5d9" height="9" opacity="0.7" rx="1" width="40" x="240" y="227"></rect>
+<rect fill="#c4c5d9" height="13" opacity="0.7" rx="1" width="40" x="287" y="223"></rect>
+<rect fill="#c4c5d9" height="19" opacity="0.7" rx="1" width="40" x="334" y="217"></rect>
+<rect fill="#003fe1" height="26" opacity="0.6" rx="1" width="40" x="381" y="210"></rect>
+<rect fill="#003fe1" height="31" opacity="0.8" rx="1" width="40" x="428" y="205"></rect>
+<rect fill="#003fe1" height="36" opacity="1" rx="1" width="40" x="475" y="200"></rect>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs mt-space-sm pt-space-xs">
+<span>Observed Empirical Frequency vs Mean Predicted Probability</span>
+<span class="font-mono text-outline">Binned N=10 (Uniform Width)</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: C: Confusion Matrix Heatmap & D: Probability Histogram -->
+<div class="flex flex-col gap-space-md">
+<!-- PANEL C: Confusion Matrix Heatmap -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded bg-primary-container"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Confusion Matrix Heatmap (@ τ = 0.62)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-mono">POP: 48,200</span>
+</div>
+<!-- 2x2 Matrix with Margin Diagnostics -->
+<div class="grid grid-cols-12 gap-2">
+<!-- Column Header Labels -->
+<div class="col-span-3"></div>
+<div class="col-span-4 text-center py-1 bg-surface-container-low rounded font-label-xs text-label-xs text-on-surface font-bold">
+            PRED: POSITIVE (Admissible)
+          </div>
+<div class="col-span-4 text-center py-1 bg-surface-container-low rounded font-label-xs text-label-xs text-on-surface font-bold">
+            PRED: NEGATIVE (Reject/Safe)
+          </div>
+<div class="col-span-1 text-center py-1 bg-surface-container-high rounded font-label-xs text-label-xs text-outline font-bold">
+            SUM
+          </div>
+<!-- Row 1: ACTUAL POSITIVE -->
+<div class="col-span-3 flex items-center justify-end pr-2 text-right">
+<span class="font-label-xs text-label-xs font-bold text-on-surface">ACTUAL: POS</span>
+</div>
+<!-- Cell TP -->
+<div class="col-span-4 p-space-md bg-secondary-fixed/30 rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs font-bold text-secondary">TRUE POSITIVE (TP)</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-secondary/10 text-secondary font-bold">85.5%</span>
+</div>
+<div class="my-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface font-mono">41,208</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary-container text-on-secondary-container">Autonomous Action Verified</span>
+</div>
+<!-- Cell FN -->
+<div class="col-span-4 p-space-md bg-amber-50 rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs font-bold text-amber-700">FALSE NEGATIVE (FN)</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-bold">2.6%</span>
+</div>
+<div class="my-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface font-mono">1,240</span>
+</div>
+<span class="font-label-xs text-label-xs text-amber-700">Admissible but Escalated</span>
+</div>
+<!-- Row 1 Sum -->
+<div class="col-span-1 bg-surface-container-low rounded p-1 flex items-center justify-center font-mono text-label-xs text-outline font-bold">
+            42,448
+          </div>
+<!-- Row 2: ACTUAL NEGATIVE -->
+<div class="col-span-3 flex items-center justify-end pr-2 text-right">
+<span class="font-label-xs text-label-xs font-bold text-on-surface">ACTUAL: NEG</span>
+</div>
+<!-- Cell FP -->
+<div class="col-span-4 p-space-md bg-error-container/30 rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs font-bold text-error">FALSE POSITIVE (FP)</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-bold">0.9%</span>
+</div>
+<div class="my-2">
+<span class="font-headline-lg text-headline-lg font-bold text-error font-mono">412</span>
+</div>
+<span class="font-label-xs text-label-xs text-error font-bold uppercase tracking-wider">CRITICAL EGRESS RISK</span>
+</div>
+<!-- Cell TN -->
+<div class="col-span-4 p-space-md bg-surface-container rounded flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs font-bold text-on-surface-variant">TRUE NEGATIVE (TN)</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-bold">11.1%</span>
+</div>
+<div class="my-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface font-mono">5,340</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">Unsafe Payload Blocked</span>
+</div>
+<!-- Row 2 Sum -->
+<div class="col-span-1 bg-surface-container-low rounded p-1 flex items-center justify-center font-mono text-label-xs text-outline font-bold">
+            5,752
+          </div>
+</div>
+<!-- Matrix Diagnostics Bar -->
+<div class="grid grid-cols-4 gap-2 mt-space-sm pt-space-xs bg-surface-container-low/40 p-space-sm rounded">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">Sensitivity (TPR)</span>
+<span class="font-label-md text-label-md font-bold text-on-surface font-mono">97.08%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">Specificity (TNR)</span>
+<span class="font-label-md text-label-md font-bold text-on-surface font-mono">92.84%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">Precision (PPV)</span>
+<span class="font-label-md text-label-md font-bold text-on-surface font-mono">99.01%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">Fall-Out (FPR)</span>
+<span class="font-label-md text-label-md font-bold text-error font-mono">7.16%</span>
+</div>
+</div>
+</div>
+<!-- PANEL D: Probability Histogram & Score Separation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded bg-outline"></span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Score Separation &amp; Density Distribution</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 font-label-xs text-label-xs text-outline">
+<span class="w-2 h-2 rounded bg-outline-variant"></span> Neg Class (Unsafe)
+            </span>
+<span class="flex items-center gap-1 font-label-xs text-label-xs text-primary">
+<span class="w-2 h-2 rounded bg-primary"></span> Pos Class (Admissible)
+            </span>
+</div>
+</div>
+<!-- SVG Dual Density Histogram -->
+<div class="w-full bg-surface-container-low/30 rounded p-space-sm relative">
+<svg class="w-full h-auto overflow-visible select-none" preserveaspectratio="xMidYMid meet" viewbox="0 0 540 180">
+<!-- Grid baseline -->
+<line stroke="#747688" stroke-width="1.2" x1="40" x2="520" y1="140" y2="140"></line>
+<!-- Negative Class Distribution (Slate bars peaked around 0.12) -->
+<rect fill="#747688" height="70" opacity="0.6" rx="1" width="16" x="50" y="70"></rect>
+<rect fill="#747688" height="110" opacity="0.75" rx="1" width="16" x="70" y="30"></rect>
+<rect fill="#747688" height="125" opacity="0.85" rx="1" width="16" x="90" y="15"></rect>
+<rect fill="#747688" height="95" opacity="0.7" rx="1" width="16" x="110" y="45"></rect>
+<rect fill="#747688" height="55" opacity="0.55" rx="1" width="16" x="130" y="85"></rect>
+<rect fill="#747688" height="25" opacity="0.4" rx="1" width="16" x="150" y="115"></rect>
+<rect fill="#747688" height="12" opacity="0.3" rx="1" width="16" x="170" y="128"></rect>
+<rect fill="#747688" height="6" opacity="0.2" rx="1" width="16" x="190" y="134"></rect>
+<!-- Positive Class Distribution (Cobalt bars peaked around 0.88) -->
+<rect fill="#003fe1" height="5" opacity="0.2" rx="1" width="16" x="250" y="135"></rect>
+<rect fill="#003fe1" height="10" opacity="0.3" rx="1" width="16" x="270" y="130"></rect>
+<rect fill="#003fe1" height="18" opacity="0.4" rx="1" width="16" x="290" y="122"></rect>
+<rect fill="#003fe1" height="35" opacity="0.55" rx="1" width="16" x="310" y="105"></rect>
+<rect fill="#003fe1" height="60" opacity="0.7" rx="1" width="16" x="330" y="80"></rect>
+<rect fill="#003fe1" height="85" opacity="0.8" rx="1" width="16" x="350" y="55"></rect>
+<rect fill="#003fe1" height="110" opacity="0.9" rx="1" width="16" x="370" y="30"></rect>
+<rect fill="#003fe1" height="130" opacity="0.95" rx="1" width="16" x="390" y="10"></rect>
+<rect fill="#003fe1" height="115" opacity="0.9" rx="1" width="16" x="410" y="25"></rect>
+<rect fill="#003fe1" height="92" opacity="0.8" rx="1" width="16" x="430" y="48"></rect>
+<rect fill="#003fe1" height="60" opacity="0.65" rx="1" width="16" x="450" y="80"></rect>
+<rect fill="#003fe1" height="30" opacity="0.45" rx="1" width="16" x="470" y="110"></rect>
+<!-- Decision Boundary marker @ tau = 0.62 -->
+<!-- 40 + 0.62 * 480 = 337.6 -->
+<line stroke="#ba1a1a" stroke-dasharray="3 3" stroke-width="2" x1="338" x2="338" y1="5" y2="145"></line>
+<polygon fill="#ba1a1a" points="334,146 342,146 338,154"></polygon>
+<!-- Tau Label -->
+<rect fill="#ffdad6" height="18" rx="3" width="76" x="300" y="2"></rect>
+<text class="font-label-xs text-[9px] fill-on-error-container font-bold" text-anchor="middle" x="338" y="14">τ = 0.62 BOUNDARY</text>
+<!-- X Axis ticks & labels -->
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="40" y="156">0.0</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="160" y="156">0.25</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="280" y="156">0.50</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="400" y="156">0.75</text>
+<text class="font-label-xs text-[9px] fill-outline" text-anchor="middle" x="520" y="156">1.0</text>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs mt-space-sm pt-space-xs">
+<span class="text-tertiary font-bold">Separation Margin: Δμ = 0.76 (High Discriminability)</span>
+<span class="font-mono text-outline">Bhattacharyya Distance: 1.84</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: BOTTOM ROW: COMPARATIVE ANALYSIS & SYNTHETIC MODEL CARDS -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md mb-space-md">
+<!-- Left Side: Comparative Bar-Delta Attribution (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Comparative Attribution: Why #1 Beat #3</span>
+<span class="font-label-xs text-label-xs text-outline">CHAMPION [SONNET-V2] VS CANDIDATE #3 [LLAMA-3.1-70B]</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-xs text-label-xs font-bold">HEAD-TO-HEAD</span>
+</div>
+<!-- Delta Horizontal Bars -->
+<div class="flex flex-col gap-3 my-space-sm">
+<!-- Item 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<span class="font-medium">Tool Argument Schema Adherence</span>
+<span class="font-label-xs text-label-xs font-bold text-tertiary font-mono">+18.4%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded overflow-hidden flex">
+<div class="bg-primary h-full rounded" style="width: 82%;"></div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<span class="font-medium">Long-Horizon State Rollback Planning</span>
+<span class="font-label-xs text-label-xs font-bold text-tertiary font-mono">+14.2%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded overflow-hidden flex">
+<div class="bg-primary h-full rounded" style="width: 74%;"></div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<span class="font-medium">Hallucinated Foreign Key Protection</span>
+<span class="font-label-xs text-label-xs font-bold text-tertiary font-mono">+22.8%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded overflow-hidden flex">
+<div class="bg-tertiary h-full rounded" style="width: 91%;"></div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<span class="font-medium">Execution Latency per Output Token</span>
+<span class="font-label-xs text-label-xs font-bold text-secondary font-mono">-34ms (Faster)</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded overflow-hidden flex">
+<div class="bg-secondary h-full rounded" style="width: 65%;"></div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<span class="font-medium">Token Economy &amp; Context Compaction</span>
+<span class="font-label-xs text-label-xs font-bold text-tertiary font-mono">+9.6%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded overflow-hidden flex">
+<div class="bg-primary h-full rounded" style="width: 58%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Explanatory Disqualification Annotation -->
+<div class="bg-surface-container-low p-space-sm rounded border-l-2 border-error mt-space-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-error mt-0.5">report_problem</span>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-error font-bold uppercase tracking-wider">Disqualification Audit Note</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Candidate #3 exhibited non-deterministic argument schema mutation on complex Google Sheet batch clear operations and failed idempotency validation under concurrent async execution loops.
+          </p>
+</div>
+</div>
+</div>
+<!-- Right Side: Model Cards Labeled "SYNTHETIC" (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Card 1: Champion Model #1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">CLAUDE-3.5-SONNET-V2-EVAL</span>
+<span class="px-1.5 py-0.2 bg-primary/10 text-primary font-label-xs text-label-xs font-bold rounded">CHAMPION</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-mono mt-0.5">ARCH: Dense Transformer // 200k Context</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold">
+            SYNTHETIC // REHEARSAL VERIFIED
+          </span>
+</div>
+<div class="my-space-sm space-y-2">
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-bold block">Safe Operational Envelope</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">
+              Approved for autonomous execution up to $50k financial reconciliation threshold. Zero human-in-loop escalation required for schema migrations.
+            </span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-bold block">Known Limitations</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Sub-50ms hard real-time latency jitter on streaming tool payloads; degraded performance when AST depth exceeds 14 levels without explicit decomposition.
+            </span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-xs text-label-xs text-tertiary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> FLIGHT ELIGIBLE
+          </span>
+<span class="font-label-xs text-label-xs text-outline font-mono">LATENCY: 142ms</span>
+</div>
+</div>
+<!-- Card 2: Candidate Model #3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden opacity-90">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">LLAMA-3.1-70B-INSTRUCT-ORB</span>
+<span class="px-1.5 py-0.2 bg-error-container text-on-error-container font-label-xs text-label-xs font-bold rounded">REJECTED</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-mono mt-0.5">ARCH: Autoregressive 70B // 128k Context</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-xs text-label-xs font-bold">
+            SYNTHETIC // DISQUALIFIED
+          </span>
+</div>
+<div class="my-space-sm space-y-2">
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-bold block">Final Operational Verdict</span>
+<span class="font-body-sm text-body-sm text-error font-medium">
+              Restricted to offline batch log analysis only. Blocked from live egress or autonomous agent dispatch.
+            </span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-bold block">Identified Flaws</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Unbounded retry looping when MCP server returns stream disconnect; failure to respect strict idempotency key hashing under concurrent load.
+            </span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-xs text-label-xs text-error font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> LOCK ENGAGED
+          </span>
+<span class="font-label-xs text-label-xs text-outline font-mono">FAIL GATE #4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 5: FOOTER TELEMETRY & RUN AUDIT -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-sm text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-1">
+<span class="font-bold uppercase text-on-surface">VALIDATION SEED:</span>
+<span class="font-mono text-on-surface-variant">0x98EF_4412</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-bold uppercase text-on-surface">BENCHMARK DURATION:</span>
+<span class="font-mono text-on-surface-variant">14m 22s</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-bold uppercase text-on-surface">CLUSTER:</span>
+<span class="font-mono text-on-surface-variant">8x H100 SXM5 (ORBITAL-04)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-bold uppercase text-on-surface">HASH INTEGRITY:</span>
+<span class="text-tertiary font-bold">SHA-256 MATCH</span>
+</div>
+</div>
+<!-- Keyboard shortcuts -->
+<div class="flex items-center gap-2">
+<span class="bg-surface-container px-1.5 py-0.5 rounded text-on-surface font-mono">[R] Re-eval</span>
+<span class="bg-surface-container px-1.5 py-0.5 rounded text-on-surface font-mono">[G] Inspect Gates</span>
+<span class="bg-surface-container px-1.5 py-0.5 rounded text-on-surface font-mono">[M] Compare Models</span>
+</div>
+</div>
+</div></main></div></body></html>

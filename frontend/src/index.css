@@ -1,0 +1,163 @@
+@import "./styles/tokens.css";
+@import "@fontsource/bricolage-grotesque/600.css";
+@import "@fontsource/bricolage-grotesque/700.css";
+@import "@fontsource/hanken-grotesk/400.css";
+@import "@fontsource/hanken-grotesk/500.css";
+@import "@fontsource/hanken-grotesk/600.css";
+@import "@fontsource/space-mono/400.css";
+@import "@fontsource/space-mono/700.css";
+@import "material-symbols/outlined.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    background-color: var(--page);
+    color: var(--ink);
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::selection {
+    background-color: var(--predict-light);
+    color: var(--predict-text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--predict);
+    outline-offset: 2px;
+  }
+}
+
+/* ==========================================================================
+   Surfaces, Tiles, and Accents
+   ========================================================================== */
+
+.tile {
+  background-color: var(--tile);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-tile);
+  box-shadow: var(--shadow-tile);
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease;
+}
+
+.tile:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.tile-no-hover {
+  background-color: var(--tile);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-tile);
+  box-shadow: var(--shadow-tile);
+  position: relative;
+}
+
+/* 3px Top Verb Accents */
+.accent-top-predict::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  right: 20px;
+  height: var(--accent-top-h);
+  background-color: var(--predict);
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+.accent-top-prove::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  right: 20px;
+  height: var(--accent-top-h);
+  background-color: var(--prove);
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+.accent-top-recover::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  right: 20px;
+  height: var(--accent-top-h);
+  background-color: var(--recover);
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+.accent-top-rewind::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  right: 20px;
+  height: var(--accent-top-h);
+  background-color: var(--rewind);
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+/* Frosted Cream Glass (floating nav, drawers, modals) */
+.frosted-glass {
+  background-color: var(--tile-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-tile);
+}
+
+/* Ambient Dot Grid */
+.ambient-dot-grid {
+  background-image: radial-gradient(var(--ink-3) 0.8px, transparent 0.8px);
+  background-size: 20px 20px;
+  opacity: 0.12;
+}
+
+/* Gradient Text on key phrases (red to plum) */
+.gradient-text-hero {
+  background: linear-gradient(135deg, var(--predict-text) 0%, var(--rewind-text) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-3);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

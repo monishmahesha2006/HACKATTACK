@@ -1,0 +1,16 @@
+{
+  "mode": "LOCAL_DEMO",
+  "llm": {
+    "provider": "fake",
+    "available": true
+  },
+  "ml": {
+    "available": true,
+    "missing": []
+  },
+  "mcp": {
+    "connected": 5,
+    "total": 5
+  },
+  "db": "CONNECTED"
+}

@@ -1,0 +1,47 @@
+{
+  "sheet_id": "internships_msn_983370ec",
+  "title": "internships_msn_983370ec",
+  "rows": [
+    {
+      "row_id": "row_0001",
+      "idempotency_key": "a6cf102c5c67b174526199763a79fc1486def07eb7c1353da5e6fb58d87fc681",
+      "data": {
+        "rank": 1,
+        "company": "TechCorp-29",
+        "role": "Software & AI Engineering Intern 29",
+        "stipend": 54000,
+        "deadline": "2026-12-13",
+        "url": "https://techcorp-29.example/internships/role-29"
+      }
+    },
+    {
+      "row_id": "row_0002",
+      "idempotency_key": "16bc77b5a24742c57ab04e9adba02770e271dde9c7f1fc945dd93e6090011c8c",
+      "data": {
+        "rank": 2,
+        "company": "Quantum Edge Systems",
+        "role": "Autonomous Systems & Full-Stack AI Intern",
+        "stipend": 75000,
+        "deadline": "2026-12-15",
+        "url": "https://quantum-edge.example/jobs/intern-systems-ml-2026"
+      }
+    },
+    {
+      "row_id": "row_0003",
+      "idempotency_key": "99ff8e20556e6565dbd50459781bd38dde62e020370d520f988626182a7bd9a6",
+      "data": {
+        "rank": 3,
+        "company": "Vertex AI Labs",
+        "role": "Applied Machine Learning Intern",
+        "stipend": 65000,
+        "deadline": "2026-11-30",
+        "url": "https://careers.vertexai-labs.example/internships/applied-ml-intern-2026"
+      }
+    }
+  ],
+  "keys": {
+    "a6cf102c5c67b174526199763a79fc1486def07eb7c1353da5e6fb58d87fc681": "row_0001",
+    "16bc77b5a24742c57ab04e9adba02770e271dde9c7f1fc945dd93e6090011c8c": "row_0002",
+    "99ff8e20556e6565dbd50459781bd38dde62e020370d520f988626182a7bd9a6": "row_0003"
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "mission_id": "msn_b654538b",
+  "steps": [
+    {
+      "id": "stp_msn_b654538b_01",
+      "mission_id": "msn_b654538b",
+      "index": 1,
+      "description": "Discover 3rd-year CS/AIML internship postings across verified web sources",
+      "tool": "search",
+      "server": "web_fixture",
+      "source": "LOCAL_DEMO",
+      "args": {
+        "query": "computer science aiml internship third year 2026",
+        "limit": 10
+      },
+      "depends_on": [],
+      "risk": "LOW",
+      "reversibility": "REVERSIBLE",
+      "status": "PENDING",
+      "attempts": 0,
+      "max_attempts": 3,
+      "idempotency_key": "46005faa3482e4c893a8fec5b83051e85ab35a0f00bea7501c3ae5a0b84949fb",
+      "fallback_tool": null,
+      "used_fallback": false,
+      "postconditions": [],
+      "started_at": null,
+      "finished_at": null,
+      "duration_ms": null,
+      "result_summary": null,
+      "error": null,
+      "evidence_ids": [],
+      "inverse_available": false
+    },
+    {
+      "id": "stp_msn_b654538b_02",
+      "mission_id": "msn_b654538b",
+      "index": 2,
+      "description": "Evaluate eligibility criteria, minimum CGPA, and non-expired application deadlines",
+      "tool": "assess_internship_eligibility",
+      "server": "rewindx_domain",
+      "source": "LOCAL_DEMO",
+      "args": {
+        "candidate_profile": "profile_001"
+      },
+      "depends_on": [
+        "stp_msn_b654538b_01"
+      ],
+      "risk": "LOW",
+      "reversibility": "REVERSIBLE",
+      "status": "PENDING",
+      "attempts": 0,
+      "max_attempts": 3,
+      "idempotency_key": "49ba0e7eb9682b69ee1a0e59b0c1cee1381683d4ac55a00b74500762a6e8d5e9",
+      "fallback_tool": null,
+      "used_fallback": false,
+      "postconditions": [],
+      "started_at": null,
+      "finished_at": null,
+      "duration_ms": null,
+      "result_summary": null,
+      "error": null,
+      "evidence_ids": [],
+      "inverse_available": false
+    },
+    {
+      "id": "stp_msn_b654538b_03",
+      "mission_id": "msn_b654538b",
+      "index": 3,
+      "description": "Rank qualified opportunities with ML-weighted skill and stipend attribution",
+      "tool": "rank_internship_opportunities",
+      "server": "rewindx_domain",
+      "source": "LOCAL_DEMO",
+      "args": {
+        "top_k": 3
+      },
+      "depends_on": [
+        "stp_msn_b654538b_02"
+      ],
+      "risk": "LOW",
+      "reversibility": "REVERSIBLE",
+      "status": "PENDING",
+      "attempts": 0,
+      "max_attempts": 3,
+      "idempotency_key": "fb70fd3ff9e6b97429b5e29ec350675dabaeb7a89448f79156dcc22699749231",
+      "fallback_tool": null,
+      "used_fallback": false,
+      "postconditions": [],
+      "started_at": null,
+      "finished_at": null,
+      "duration_ms": null,
+      "result_summary": null,
+      "error": null,
+      "evidence_ids": [],
+      "inverse_available": false
+    },
+    {
+      "id": "stp_msn_b654538b_04",
+      "mission_id": "msn_b654538b",
+      "index": 4,
+      "description": "Record top-3 verified opportunities and direct links to tracking spreadsheet",
+      "tool": "append_row",
+      "server": "sheets",
+      "source": "LOCAL_DEMO",
+      "args": {
+        "sheet_id": "internships_msn_b654538b",
+        "table": "findings"
+      },
+      "depends_on": [
+        "stp_msn_b654538b_03"
+      ],
+      "risk": "MEDIUM",
+      "reversibility": "REVERSIBLE",
+      "status": "PENDING",
+      "attempts": 0,
+      "max_attempts": 3,
+      "idempotency_key": "c3b49b950922aae0afcab3e164a0dfb35de9d4d704fab9cc69bc4f084eb35d07",
+      "fallback_tool": "save_csv_fallback",
+      "used_fallback": false,
+      "postconditions": [],
+      "started_at": null,
+      "finished_at": null,
+      "duration_ms": null,
+      "result_summary": null,
+      "error": null,
+      "evidence_ids": [],
+      "inverse_available": true
+    },
+    {
+      "id": "stp_msn_b654538b_05",
+      "mission_id": "msn_b654538b",
+      "index": 5,
+      "description": "Generate 3 personalized email application drafts citing grounded candidate projects",
+      "tool": "create_draft",
+      "server": "drafts",
+      "source": "LOCAL_DEMO",
+      "args": {
+        "count": 3,
+        "candidate_profile": "profile_001"
+      },
+      "depends_on": [
+        "stp_msn_b654538b_03"
+      ],
+      "risk": "LOW",
+      "reversibility": "REVERSIBLE",
+      "status": "PENDING",
+      "attempts": 0,
+      "max_attempts": 3,
+      "idempotency_key": "5e9ecd799ab0538190821ef48220e383f35f6799e5c84fd4d789aef36b554dc1",
+      "fallback_tool": null,
+      "used_fallback": false,
+      "postconditions": [],
+      "started_at": null,
+      "finished_at": null,
+      "duration_ms": null,
+      "result_summary": null,
+      "error": null,
+      "evidence_ids": [],
+      "inverse_available": true
+    },
+    {
+      "id": "stp_msn_b654538b_06",
+      "mission_id": "msn_b654538b",
+      "index": 6,
+      "description": "Dispatch personalized outreach email to recruiter (Strict Approval Interlock)",
+      "tool": "send_email",
+      "server": "drafts",
+      "source": "LOCAL_DEMO",
+      "args": {
+        "draft_id": "dft_0001"
+      },
+      "depends_on": [
+        "stp_msn_b654538b_05"
+      ],
+      "risk": "CRITICAL",
+      "reversibility": "IRREVERSIBLE",
+      "status": "PENDING",
+      "attempts": 0,
+      "max_attempts": 3,
+      "idempotency_key": "9b9bfc478f7135d90464a43489430f190e78e7a00d85887317451ff2c4285b06",
+      "fallback_tool": null,
+      "used_fallback": false,
+      "postconditions": [],
+      "started_at": null,
+      "finished_at": null,
+      "duration_ms": null,
+      "result_summary": null,
+      "error": null,
+      "evidence_ids": [],
+      "inverse_available": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "stp_msn_b654538b_01",
+      "to": "stp_msn_b654538b_02"
+    },
+    {
+      "from": "stp_msn_b654538b_02",
+      "to": "stp_msn_b654538b_03"
+    },
+    {
+      "from": "stp_msn_b654538b_03",
+      "to": "stp_msn_b654538b_04"
+    },
+    {
+      "from": "stp_msn_b654538b_03",
+      "to": "stp_msn_b654538b_05"
+    },
+    {
+      "from": "stp_msn_b654538b_05",
+      "to": "stp_msn_b654538b_06"
+    }
+  ],
+  "planner_notes": "Acyclic dependency DAG compiled with verified tool schemas and frozen postconditions.",
+  "dissent": {
+    "score": 0.1,
+    "differing_decisions": [
+      "Planner A selected tools not in Planner B: assess_internship_eligibility"
+    ]
+  }
+}

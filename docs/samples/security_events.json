@@ -1,0 +1,10 @@
+[
+  {
+    "id": "sec_0001",
+    "mission_id": null,
+    "kind": "INJECTION_QUARANTINED",
+    "detail": "Prompt injection pattern detected in web scraping stream; quarantined before planning DAG.",
+    "source": "web_fixture",
+    "ts": "2026-10-15T12:00:00Z"
+  }
+]

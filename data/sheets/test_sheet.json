@@ -1,0 +1,17 @@
+{
+  "sheet_id": "test_sheet",
+  "title": "test_sheet",
+  "rows": [
+    {
+      "row_id": "row_0001",
+      "idempotency_key": "test_key_78adff62",
+      "data": {
+        "company": "Test AI",
+        "role": "ML Intern"
+      }
+    }
+  ],
+  "keys": {
+    "test_key_78adff62": "row_0001"
+  }
+}

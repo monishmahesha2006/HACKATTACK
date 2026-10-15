@@ -1,0 +1,46 @@
+[
+  {
+    "id": "apr_msn_078ae5c2_6",
+    "mission_id": "msn_078ae5c2",
+    "step_id": "stp_msn_078ae5c2_06",
+    "status": "PENDING",
+    "action": "send_email",
+    "target": "recruiter@opportunity.example",
+    "args_redacted": {
+      "draft_id": "dft_0001"
+    },
+    "call_hash": "5872029fb24b9cf49b40454c502746585cbe9385f50abcf524db858eaf8d861d",
+    "expected_changes": {
+      "outbound_email_count": 1
+    },
+    "risk": "CRITICAL",
+    "risk_explanation": "Irreversible action: outbound email transmission to external recruiter.",
+    "compensation_available": false,
+    "expires_at": "2026-10-15T18:00:00Z",
+    "decided_at": null,
+    "decided_by": null,
+    "note": null
+  },
+  {
+    "id": "apr_msn_4bdcb099_6",
+    "mission_id": "msn_4bdcb099",
+    "step_id": "stp_msn_4bdcb099_06",
+    "status": "APPROVED",
+    "action": "send_email",
+    "target": "recruiter@opportunity.example",
+    "args_redacted": {
+      "draft_id": "dft_0001"
+    },
+    "call_hash": "5872029fb24b9cf49b40454c502746585cbe9385f50abcf524db858eaf8d861d",
+    "expected_changes": {
+      "outbound_email_count": 1
+    },
+    "risk": "CRITICAL",
+    "risk_explanation": "Irreversible action: outbound email transmission to external recruiter.",
+    "compensation_available": false,
+    "expires_at": "2026-10-15T18:00:00Z",
+    "decided_at": "2026-10-15T09:27:17.860330+00:00",
+    "decided_by": "OPERATOR_LOCAL",
+    "note": "e2e acceptance"
+  }
+]

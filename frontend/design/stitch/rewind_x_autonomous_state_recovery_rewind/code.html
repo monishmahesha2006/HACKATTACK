@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } .instrument-grid-bg { background-image: radial-gradient(#151b2a 0.75px, transparent 0.75px); background-size: 16px 16px; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#f9f9ff", "tertiary": "#006247", "on-tertiary-container": "#beffe0", "secondary-fixed": "#8ef2ff", "tertiary-fixed-dim": "#60dcae", "on-tertiary": "#ffffff", "secondary-container": "#8ef2ff", "error-container": "#ffdad6", "inverse-surface": "#2a3040", "error": "#ba1a1a", "on-background": "#151b2a", "surface-variant": "#dce2f6", "on-primary-fixed": "#001356", "on-secondary-container": "#006f79", "outline": "#747688", "on-primary-container": "#efefff", "on-secondary-fixed-variant": "#004f56", "on-error-container": "#93000a", "background": "#f9f9ff", "on-primary-fixed-variant": "#0034bf", "inverse-primary": "#b9c3ff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "inverse-on-surface": "#edf0ff", "on-surface": "#151b2a", "secondary": "#006972", "on-tertiary-fixed-variant": "#00513a", "surface-container-low": "#f1f3ff", "surface-container-high": "#e2e8fc", "surface-dim": "#d3daee", "surface-container-highest": "#dce2f6", "on-surface-variant": "#434656", "surface-container-lowest": "#ffffff", "surface-tint": "#1349f0", "outline-variant": "#c4c5d9", "on-error": "#ffffff", "tertiary-fixed": "#7ef9c9", "primary-container": "#2f5bff", "on-tertiary-fixed": "#002115", "on-secondary-fixed": "#001f23", "secondary-fixed-dim": "#71d5e2", "surface-container": "#e9edff", "primary-fixed-dim": "#b9c3ff", "primary": "#003fe1", "primary-fixed": "#dde1ff", "tertiary-container": "#007d5c", "surface": "#f9f9ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "space-xs": "0.25rem", "space-xl": "1.5rem", "margin-sm": "0.75rem", "margin-lg": "1.5rem", "margin": "1rem", "gutter": "0.75rem", "gutter-lg": "1rem", "space-sm": "0.5rem", "space-md": "0.75rem", "gutter-sm": "0.5rem" }, "fontFamily": { "headline-md": [ "Bricolage Grotesque" ], "headline-xl-mobile": [ "Bricolage Grotesque" ], "label-md": [ "Space Mono" ], "body-sm": [ "Hanken Grotesk" ], "label-sm": [ "Space Mono" ], "label-lg": [ "Space Mono" ], "headline-xl": [ "Bricolage Grotesque" ], "body-md": [ "Hanken Grotesk" ], "label-xs": [ "Space Mono" ], "headline-lg": [ "Bricolage Grotesque" ], "body-lg": [ "Hanken Grotesk" ], "headline-sm": [ "Bricolage Grotesque" ] }, "fontSize": { "headline-md": [ "16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-xl-mobile": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-md": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-sm": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.12em", "fontWeight": "400" } ], "label-lg": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" } ], "headline-xl": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-xs": [ "9px", { "lineHeight": "12px", "letterSpacing": "0.15em", "fontWeight": "400" } ], "headline-lg": [ "20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "headline-sm": [ "14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface instrument-grid-bg antialiased selection:bg-secondary-container selection:text-on-secondary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-14 px-margin-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><div class="w-5 h-5 rounded-DEFAULT bg-primary-container flex items-center justify-center text-on-primary font-label-md text-label-md">RX</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-none">REWIND X</span><span class="font-label-xs text-label-xs text-outline uppercase tracking-widest mt-0.5">FLT-OPS v4.2</span></div></div><span class="font-label-xs text-label-xs text-outline font-normal">[+]</span></div><div class="px-margin-sm py-space-xs"><div class="px-space-md py-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Operational Racks</div></div><nav class="flex flex-col gap-space-xs px-margin-sm" data-active-classes="bg-surface-container-low text-primary font-semibold before:absolute before:left-0 before:top-1.5 before:bottom-1.5 before:w-1 before:bg-primary-container after:absolute after:right-2 after:top-1/2 after:-translate-y-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-secondary-fixed"><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="mission" href="#"><span class="material-symbols-outlined text-lg leading-none">rocket_launch</span><span>Mission</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="rehearsal" href="#"><span class="material-symbols-outlined text-lg leading-none">sync_saved_locally</span><span>Rehearsal</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="verification" href="#"><span class="material-symbols-outlined text-lg leading-none">verified_user</span><span>Verification</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="rewind" href="#"><span class="material-symbols-outlined text-lg leading-none">history</span><span>Rewind</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="audit" href="#"><span class="material-symbols-outlined text-lg leading-none">receipt_long</span><span>Audit</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-space-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="gap-monitor" href="#"><span class="material-symbols-outlined text-lg leading-none">monitoring</span><span>Gap Monitor</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="mcp-control" href="#"><span class="material-symbols-outlined text-lg leading-none">hub</span><span>MCP Control</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="intelligence-lab" href="#"><span class="material-symbols-outlined text-lg leading-none">neurology</span><span>Intelligence Lab</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="chaos-arena" href="#"><span class="material-symbols-outlined text-lg leading-none">bolt</span><span>Chaos Arena</span></a></nav></div><div class="p-margin-sm bg-surface-container-lowest"><div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-xs text-label-xs uppercase text-outline">TELEMETRY FEED</span><span class="font-label-xs text-label-xs text-tertiary font-bold">NOMINAL</span></div><div class="flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant"><span class="font-label-xs text-label-xs">BUS: 0x48A</span><span class="font-label-xs text-label-xs text-on-surface font-semibold">102.4 kb/s</span></div><div class="w-full bg-surface-variant h-1 rounded-DEFAULT overflow-hidden"><div class="bg-primary-container h-full w-4/5"></div></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-margin-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="px-space-sm py-0.5 rounded-DEFAULT bg-surface-container text-primary-container font-label-xs text-label-xs uppercase tracking-wider font-bold">LOCAL_DEMO</div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-0.5 rounded-DEFAULT"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-xs text-label-xs uppercase text-on-surface-variant font-medium">ACTIVE LINK</span></div><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-0.5 rounded-DEFAULT"><span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary"></span><span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">STATE: RUNNING</span></div><div class="h-4 w-px bg-surface-variant mx-space-xs"></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2 text-base text-outline pointer-events-none">search</span><input class="bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-7 pr-12 py-1 rounded-DEFAULT focus:outline-none focus:bg-surface-container-lowest transition-all w-64" placeholder="Cmd+K quick dispatch..." type="text"/><span class="absolute right-2 font-label-xs text-label-xs bg-surface-variant text-on-surface-variant px-1 rounded-DEFAULT">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-md bg-surface-container-low px-space-md py-1 rounded-DEFAULT"><div class="flex items-center gap-space-xs"><span class="font-label-xs text-label-xs text-outline uppercase">LATENCY:</span><span class="font-label-xs text-label-xs text-on-surface font-bold">0.12ms</span></div><div class="h-3 w-px bg-surface-variant"></div><div class="flex items-center gap-space-xs"><span class="font-label-xs text-label-xs text-outline uppercase">SYNC:</span><span class="font-label-xs text-label-xs text-tertiary font-bold">100%</span></div></div><div class="flex items-center gap-space-sm"><button class="w-8 h-8 rounded-DEFAULT bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-lg leading-none">tune</span></button><button class="w-8 h-8 rounded-DEFAULT bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-lg leading-none">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W0oVSLhqQUn2JI2dM6Rei4wdenxjac7HChchlK1Gr_alRmwpmaGEoeGHhtwz4Cxh4vmKmlNHPdy2rxTcaOqfX22jG8JTSAxxsZMXbVIeD0waFxWIDUy1YdN40BOtbbfNCoy08xrhd8--pIIJVRk6VfUwzOlGl6DW5oSXxk87QdKSwwygTMZAPUnaDV4T6e-p-GUpOxVwh1tp1MYfDFmUfX9mWPIsZDhv6mQiyJ9QV2Ux0rhHJeJkNqTV3n"/></div></div></header><main class="relative pt-14 w-full px-gutter min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Interactive Script for Navigation Anchor & Dynamic State Scrubbing -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Synchronize Sidebar Navigation Active State for 'Rewind'
+      const navLinks = document.querySelectorAll('aside nav a');
+      const activeClasses = (document.querySelector('aside nav')?.getAttribute('data-active-classes') || '').split(' ');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'rewind') {
+          link.classList.add(...activeClasses);
+          link.classList.remove('text-on-surface-variant');
+        } else {
+          link.classList.remove(...activeClasses);
+        }
+      });
+
+      // 2. Precision Timeline Scrubber State Matrix
+      const scrubber = document.getElementById('timeline-slider');
+      const timeDisplay = document.getElementById('scrubber-timestamp-display');
+      const playheadLine = document.getElementById('playhead-vertical-line');
+      const targetPin = document.getElementById('target-rollback-pin');
+      const recoveryProgress = document.getElementById('recovery-progress-bar');
+      const recoveryRatio = document.getElementById('recovery-ratio-label');
+      const stepCountBadge = document.getElementById('steps-armed-badge');
+
+      // State Nodes registered on the timeline
+      const stateNodes = [
+        { id: 'node-sheet-1423', time: 82, name: 'Row #1423' },
+        { id: 'node-sheet-1422', time: 78, name: 'Row #1422' },
+        { id: 'node-sheet-1421', time: 74, name: 'Row #1421' },
+        { id: 'node-mail-3', time: 64, name: 'Gmail Draft #3' },
+        { id: 'node-mail-2', time: 58, name: 'Gmail Draft #2' },
+        { id: 'node-mail-1', time: 52, name: 'Gmail Draft #1' },
+        { id: 'node-worker', time: 24, name: 'Worker-04 Quarantine' },
+        { id: 'node-wal', time: 8, name: 'WAL Snapshot Freeze' }
+      ];
+
+      function updateScrubState(val) {
+        const value = parseInt(val, 10);
+        // Map 0 - 100 range to T-00:00:00.000 -> T+00:02:14.200
+        const totalMs = Math.round((value / 100) * 134200);
+        const mins = String(Math.floor(totalMs / 60000)).padStart(2, '0');
+        const secs = String(Math.floor((totalMs % 60000) / 1000)).padStart(2, '0');
+        const ms = String(totalMs % 1000).padStart(3, '0');
+        timeDisplay.textContent = `T+00:${mins}:${secs}.${ms}`;
+
+        // Move vertical playhead line indicator
+        playheadLine.style.left = `${value}%`;
+
+        // Update World-State Rows based on scrubber threshold
+        let rolledBackCount = 0;
+        stateNodes.forEach(node => {
+          const el = document.getElementById(node.id);
+          const badge = document.getElementById(`${node.id}-badge`);
+          const icon = document.getElementById(`${node.id}-icon`);
+          if (!el) return;
+
+          if (value < node.time) {
+            // Reverted / Purged state
+            rolledBackCount++;
+            el.classList.add('opacity-40', 'bg-surface-container-high/40');
+            el.classList.remove('bg-surface-container-lowest');
+            if (badge) {
+              badge.textContent = 'PURGED [REVERTED]';
+              badge.className = 'font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-surface-container text-outline';
+            }
+            if (icon) icon.textContent = 'history_toggle_off';
+          } else {
+            // Live / Committed state
+            el.classList.remove('opacity-40', 'bg-surface-container-high/40');
+            el.classList.add('bg-surface-container-lowest');
+            if (badge) {
+              badge.textContent = 'ACTIVE STATE';
+              badge.className = 'font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold';
+            }
+            if (icon) icon.textContent = 'check_circle';
+          }
+        });
+
+        // Update Compensation Steps dynamic opacity
+        const stepItems = [
+          { id: 'comp-step-1', cut: 60 },
+          { id: 'comp-step-2', cut: 75 },
+          { id: 'comp-step-3', cut: 25 },
+          { id: 'comp-step-4', cut: 10 }
+        ];
+
+        stepItems.forEach(step => {
+          const stepEl = document.getElementById(step.id);
+          if (!stepEl) return;
+          if (value <= step.cut) {
+            stepEl.classList.add('ring-1', 'ring-primary-container', 'bg-surface-container-low');
+          } else {
+            stepEl.classList.remove('ring-1', 'ring-primary-container', 'bg-surface-container-low');
+          }
+        });
+
+        // Sync meter
+        if (recoveryProgress) {
+          recoveryProgress.style.width = `${100 - value}%`;
+        }
+        if (recoveryRatio) {
+          recoveryRatio.textContent = `${100 - value}%`;
+        }
+        if (stepCountBadge) {
+          stepCountBadge.textContent = `${rolledBackCount}/8 MUTATIONS ARMED`;
+        }
+      }
+
+      scrubber.addEventListener('input', (e) => {
+        updateScrubState(e.target.value);
+      });
+
+      // Quick step buttons
+      window.stepTimeline = function(delta) {
+        let cur = parseInt(scrubber.value, 10);
+        cur = Math.max(0, Math.min(100, cur + delta));
+        scrubber.value = cur;
+        updateScrubState(cur);
+      };
+
+      window.jumpToTick = function(pct) {
+        scrubber.value = pct;
+        updateScrubState(pct);
+      };
+
+      // Atomic Rollback Hold Simulation
+      const execBtn = document.getElementById('btn-atomic-rollback');
+      const execBar = document.getElementById('rollback-hold-progress');
+      let holdTimer = null;
+      let holdProgress = 0;
+
+      if (execBtn && execBar) {
+        const startHold = () => {
+          holdProgress = 0;
+          execBar.style.width = '0%';
+          holdTimer = setInterval(() => {
+            holdProgress += 7;
+            execBar.style.width = `${Math.min(100, holdProgress)}%`;
+            if (holdProgress >= 100) {
+              clearInterval(holdTimer);
+              scrubber.value = 8; // Jump to snap-9904a target
+              updateScrubState(8);
+              alert('ATOMIC ROLLBACK EXECUTED: Snapshot #snap-9904a restored in 118ms. Merkle root verified: 7f90e21a.');
+              execBar.style.width = '0%';
+            }
+          }, 100);
+        };
+
+        const cancelHold = () => {
+          clearInterval(holdTimer);
+          holdProgress = 0;
+          execBar.style.width = '0%';
+        };
+
+        execBtn.addEventListener('mousedown', startHold);
+        execBtn.addEventListener('mouseup', cancelHold);
+        execBtn.addEventListener('mouseleave', cancelHold);
+        execBtn.addEventListener('touchstart', startHold);
+        execBtn.addEventListener('touchend', cancelHold);
+      }
+
+      // Initial Call
+      updateScrubState(scrubber.value);
+    });
+  </script>
+<!-- 1. TOP OPERATIONAL SUBHEADER -->
+<section class="flex flex-col gap-space-sm pt-space-md pb-space-lg">
+<!-- Top System Breadcrumb / Calibration Path -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs text-outline tracking-wider">
+<span class="text-primary font-bold">04 // GATE:</span>
+<span class="text-on-surface font-semibold tracking-normal uppercase">Autonomous State Recovery &amp; Rollback Engine</span>
+<span class="text-outline">::</span>
+<span class="text-on-surface-variant font-label-sm">MODULE_ID: REC-ENG-V4</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 font-label-xs text-label-xs text-tertiary font-bold bg-surface-container-lowest px-2 py-0.5 rounded-DEFAULT shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          CIRCUIT: READY
+        </span>
+<span class="font-label-xs text-label-xs text-outline">HASH: #snap-9904b</span>
+</div>
+</div>
+<!-- Main Operational Metric Strip -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-md">
+<!-- Session Coordinates -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-md flex-1">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">SESSION RUN</span>
+<span class="font-label-md text-label-md text-on-surface font-bold mt-0.5">RX-OPS-9904 RUN #09</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">REWIND TARGET</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-md text-label-md text-primary font-bold">#snap-9904a</span>
+<span class="material-symbols-outlined text-sm text-primary">bookmark</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">ROLLBACK LATENCY</span>
+<span class="font-label-md text-label-md text-on-surface font-bold mt-0.5">&lt; 180ms [TESTED: 118ms]</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">QUORUM CONSENSUS</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-label-md text-label-md text-tertiary font-bold">3/3 READY</span>
+<span class="text-label-xs font-label-xs text-tertiary-container font-semibold">(LEADER + 2 NODES)</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">CRYPTOGRAPHIC DRIFT</span>
+<span class="font-label-md text-label-md text-tertiary font-bold mt-0.5">0.000% [PARITY 1:1]</span>
+</div>
+</div>
+<!-- Quick Action Triggers -->
+<div class="flex items-center gap-space-xs shrink-0 self-start xl:self-center">
+<button class="h-9 px-space-md rounded-DEFAULT bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm uppercase font-bold flex items-center gap-1 shadow-sm" onclick="stepTimeline(-10)">
+<span class="material-symbols-outlined text-base">science</span>
+<span>SIMULATE REWIND</span>
+</button>
+<div class="relative overflow-hidden rounded-DEFAULT">
+<button class="relative z-10 h-9 px-space-lg rounded-DEFAULT bg-primary-container text-on-primary hover:bg-primary transition-colors font-label-sm text-label-sm uppercase font-bold flex items-center gap-1.5 shadow-sm active:scale-[0.99]" id="btn-atomic-rollback">
+<span class="material-symbols-outlined text-base">restart_alt</span>
+<span>EXECUTE ATOMIC ROLLBACK [HOLD 1.5S]</span>
+</button>
+<!-- Dynamic hold-to-execute fill bar -->
+<div class="absolute left-0 top-0 bottom-0 bg-tertiary transition-all duration-75 ease-linear pointer-events-none opacity-40" id="rollback-hold-progress" style="width: 0%;"></div>
+</div>
+<button class="h-9 px-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center shadow-sm" title="Export Cryptographic Audit Proof">
+<span class="material-symbols-outlined text-base leading-none">download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. HERO ELEMENT: PRECISION-RULER TIMELINE SCRUBBER -->
+<section class="flex flex-col gap-space-xs mb-space-lg">
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-md shadow-sm relative overflow-hidden">
+<!-- Instrument Header & Controls -->
+<div class="flex flex-wrap items-center justify-between pb-space-sm mb-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">
+<span class="material-symbols-outlined text-primary text-lg">tune</span>
+<span>Precision-Ruler Micro-Timeline</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline px-1.5 py-0.5 rounded-DEFAULT bg-surface-container">CALIBRATION: 20ms SUB-TICKS</span>
+</div>
+<!-- Scrubber Step Transport Buttons -->
+<div class="flex items-center gap-space-xs">
+<button class="h-7 px-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-DEFAULT font-label-xs text-label-xs flex items-center gap-1 transition-colors" onclick="stepTimeline(-5)">
+<span class="material-symbols-outlined text-sm">fast_rewind</span>
+<span>⯬ 1 STEP</span>
+</button>
+<div class="bg-surface-container px-2.5 py-1 rounded-DEFAULT font-label-sm text-label-sm text-primary font-bold tracking-wider" id="scrubber-timestamp-display">
+            T+00:02:14.200
+          </div>
+<button class="h-7 px-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface rounded-DEFAULT font-label-xs text-label-xs flex items-center gap-1 transition-colors" onclick="stepTimeline(5)">
+<span>STEP 1 ⯮</span>
+<span class="material-symbols-outlined text-sm">fast_forward</span>
+</button>
+<button class="h-7 px-2 bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container rounded-DEFAULT font-label-xs text-label-xs font-bold flex items-center gap-1 transition-colors" onclick="jumpToTick(8)" title="Lock to target snapshot checkpoint">
+<span class="material-symbols-outlined text-sm">pin_drop</span>
+<span>TARGET #snap-9904a</span>
+</button>
+</div>
+</div>
+<!-- Calibrated Aerospace Ruler Frame -->
+<div class="relative w-full h-32 select-none bg-surface-container-low/60 rounded-DEFAULT overflow-hidden p-2 flex flex-col justify-between">
+<!-- Major/Minor Tick Graphic Container (100ms & 20ms markers) -->
+<div class="relative w-full h-12 flex items-end">
+<!-- 10 Major Tick Segments with minor 20ms hashes -->
+<div class="w-full flex justify-between items-end h-8">
+<div class="cursor-pointer group flex flex-col items-center" onclick="jumpToTick(0)">
+<span class="font-label-xs text-label-xs text-outline group-hover:text-primary mb-1">T-00:00.000</span>
+<div class="w-0.5 h-6 bg-outline group-hover:bg-primary"></div>
+</div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="w-px h-2 bg-outline-variant/60"></div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="cursor-pointer group flex flex-col items-center" onclick="jumpToTick(12)">
+<span class="font-label-xs text-label-xs text-outline group-hover:text-primary mb-1">+12.000</span>
+<div class="w-0.5 h-6 bg-outline group-hover:bg-primary"></div>
+</div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="w-px h-2 bg-outline-variant/60"></div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="cursor-pointer group flex flex-col items-center" onclick="jumpToTick(25)">
+<span class="font-label-xs text-label-xs text-outline group-hover:text-primary mb-1">+26.000</span>
+<div class="w-0.5 h-6 bg-outline group-hover:bg-primary"></div>
+</div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="w-px h-2 bg-outline-variant/60"></div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="cursor-pointer group flex flex-col items-center" onclick="jumpToTick(50)">
+<span class="font-label-xs text-label-xs text-outline group-hover:text-primary mb-1">+01:00.000</span>
+<div class="w-0.5 h-6 bg-outline group-hover:bg-primary"></div>
+</div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="w-px h-2 bg-outline-variant/60"></div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="cursor-pointer group flex flex-col items-center" onclick="jumpToTick(75)">
+<span class="font-label-xs text-label-xs text-outline group-hover:text-primary mb-1">+01:40.000</span>
+<div class="w-0.5 h-6 bg-outline group-hover:bg-primary"></div>
+</div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="w-px h-2 bg-outline-variant/60"></div>
+<div class="w-px h-3 bg-outline-variant"></div>
+<div class="cursor-pointer group flex flex-col items-center" onclick="jumpToTick(100)">
+<span class="font-label-xs text-label-xs text-primary font-bold mb-1">+02:14.200</span>
+<div class="w-0.5 h-6 bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Event Marker Pins Band (Sub-pixel precise pins) -->
+<div class="relative w-full h-10 mt-1">
+<!-- Marker 1: db_snapshot_freeze (8%) -->
+<div class="absolute cursor-pointer -translate-x-1/2 top-0 flex flex-col items-center group" onclick="jumpToTick(8)" style="left: 8%;">
+<span class="px-1 py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold leading-none shadow-sm whitespace-nowrap scale-90 group-hover:scale-105 transition-transform">#snap-9904a</span>
+<div class="w-px h-4 bg-tertiary"></div>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+<!-- Marker 2: quarantine_worker_04 (24%) -->
+<div class="absolute cursor-pointer -translate-x-1/2 top-0 flex flex-col items-center group" onclick="jumpToTick(24)" style="left: 24%;">
+<span class="px-1 py-0.5 rounded-DEFAULT bg-surface-container-high text-on-surface font-label-xs text-label-xs leading-none whitespace-nowrap scale-90 group-hover:scale-105 transition-transform">worker-04 iso</span>
+<div class="w-px h-4 bg-outline"></div>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<!-- Marker 3: Google Sheets append block (74% - 82%) -->
+<div class="absolute cursor-pointer -translate-x-1/2 top-0 flex flex-col items-center group" onclick="jumpToTick(78)" style="left: 78%;">
+<span class="px-1 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-label-xs text-label-xs font-bold leading-none shadow-sm whitespace-nowrap scale-90 group-hover:scale-105 transition-transform">Sheets +3 rows</span>
+<div class="w-px h-4 bg-secondary"></div>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<!-- Marker 4: Gmail drafts (58%) -->
+<div class="absolute cursor-pointer -translate-x-1/2 top-0 flex flex-col items-center group" onclick="jumpToTick(58)" style="left: 58%;">
+<span class="px-1 py-0.5 rounded-DEFAULT bg-surface-variant text-on-surface-variant font-label-xs text-label-xs leading-none whitespace-nowrap scale-90 group-hover:scale-105 transition-transform">3 drafts created</span>
+<div class="w-px h-4 bg-outline"></div>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<!-- Marker 5: Edge metric log (94%) -->
+<div class="absolute cursor-pointer -translate-x-1/2 top-0 flex flex-col items-center group" onclick="jumpToTick(94)" style="left: 94%;">
+<span class="px-1 py-0.5 rounded-DEFAULT bg-error-container text-on-error-container font-label-xs text-label-xs leading-none whitespace-nowrap scale-90 group-hover:scale-105 transition-transform">metrics-probe</span>
+<div class="w-px h-4 bg-error"></div>
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+</div>
+<!-- Vertical Active Playhead Line indicator -->
+<div class="absolute top-0 bottom-0 pointer-events-none -translate-x-1/2 flex flex-col items-center transition-all duration-75 ease-out" id="playhead-vertical-line" style="left: 100%;">
+<div class="w-2.5 h-2.5 bg-primary rounded-DEFAULT rotate-45 -mt-1 shadow-sm"></div>
+<div class="w-0.5 h-full bg-primary"></div>
+</div>
+</div>
+<!-- Native Slider / Scrub Range Hooked to JavaScript -->
+<div class="w-full relative pt-1">
+<input class="w-full h-1.5 bg-surface-container-high rounded-lg appearance-none cursor-ew-resize accent-primary" id="timeline-slider" max="100" min="0" step="1" type="range" value="100"/>
+<div class="flex justify-between items-center text-label-xs font-label-xs text-outline pt-1">
+<span>BASELINE [T-0]</span>
+<span class="text-tertiary font-bold tracking-wider">TARGET RECOVERY ZONE [#snap-9904a @ T+12ms]</span>
+<span class="text-primary font-bold">LIVE APEX [T+02:14.200]</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. DYNAMIC WORLD-STATE MUTATION PANEL (COMPARISON) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md mb-space-lg">
+<!-- Left Column: World-State Mutation Trace (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col">
+<div class="flex flex-wrap items-center justify-between pb-space-sm mb-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-lg">schema</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Dynamic World-State Mutations</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold" id="steps-armed-badge">0/8 MUTATIONS ARMED</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">LIFO TOPOLOGICAL TRACE</span>
+</div>
+<!-- Mutation State Table Header -->
+<div class="grid grid-cols-12 px-space-sm py-1.5 bg-surface-container-low rounded-DEFAULT font-label-xs text-label-xs text-outline uppercase tracking-wider mb-space-xs">
+<div class="col-span-4">Target Resource / Mutation Key</div>
+<div class="col-span-3">Baseline (T-0)</div>
+<div class="col-span-3">Current Mission Apex</div>
+<div class="col-span-2 text-right">State Verdict</div>
+</div>
+<!-- List of Live Mutation Rows (Hooked dynamically to timeline slider) -->
+<div class="flex flex-col gap-1">
+<!-- Row 1: Sheet Row 1423 -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-sheet-1423">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary" id="node-sheet-1423-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Google Sheet: Row #1423</span>
+<span class="font-label-xs text-label-xs text-outline">OP: APPEND_ROW [BAL_SETTLE]</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-outline">NULL (EOF @ #1420)</div>
+<div class="col-span-3 font-label-xs text-label-xs text-on-surface font-semibold">"SETTLE_BAL: $42,500.00"</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold" id="node-sheet-1423-badge">ACTIVE STATE</span>
+</div>
+</div>
+<!-- Row 2: Sheet Row 1422 -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-sheet-1422">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary" id="node-sheet-1422-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Google Sheet: Row #1422</span>
+<span class="font-label-xs text-label-xs text-outline">OP: APPEND_ROW [CR-4402]</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-outline">NULL (EOF @ #1420)</div>
+<div class="col-span-3 font-label-xs text-label-xs text-on-surface font-semibold">"CREDIT_MEMO: CR-4402"</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold" id="node-sheet-1422-badge">ACTIVE STATE</span>
+</div>
+</div>
+<!-- Row 3: Sheet Row 1421 -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-sheet-1421">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary" id="node-sheet-1421-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Google Sheet: Row #1421</span>
+<span class="font-label-xs text-label-xs text-outline">OP: APPEND_ROW [INV-9921]</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-outline">NULL (EOF @ #1420)</div>
+<div class="col-span-3 font-label-xs text-label-xs text-on-surface font-semibold">"INVOICE_ITEM: INV-9921"</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold" id="node-sheet-1421-badge">ACTIVE STATE</span>
+</div>
+</div>
+<!-- Row 4: Gmail Draft #3 -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-mail-3">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary" id="node-mail-3-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Gmail API: Draft #03</span>
+<span class="font-label-xs text-label-xs text-outline">ID: drf_99a8039f</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-outline">ABSENT</div>
+<div class="col-span-3 font-label-xs text-label-xs text-on-surface font-semibold">"Notice: Payout Executed"</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold" id="node-mail-3-badge">ACTIVE STATE</span>
+</div>
+</div>
+<!-- Row 5: Gmail Draft #2 -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-mail-2">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary" id="node-mail-2-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Gmail API: Draft #02</span>
+<span class="font-label-xs text-label-xs text-outline">ID: drf_99a8038b</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-outline">ABSENT</div>
+<div class="col-span-3 font-label-xs text-label-xs text-on-surface font-semibold">"Reconciliation Ledger TX"</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold" id="node-mail-2-badge">ACTIVE STATE</span>
+</div>
+</div>
+<!-- Row 6: Gmail Draft #1 -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-mail-1">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary" id="node-mail-1-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Gmail API: Draft #01</span>
+<span class="font-label-xs text-label-xs text-outline">ID: drf_99a8037a</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-outline">ABSENT</div>
+<div class="col-span-3 font-label-xs text-label-xs text-on-surface font-semibold">"Invoice Dispatch Packet"</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold" id="node-mail-1-badge">ACTIVE STATE</span>
+</div>
+</div>
+<!-- Row 7: Worker Isolation -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-worker">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-outline" id="node-worker-icon">lock</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Worker Cluster Node #04</span>
+<span class="font-label-xs text-label-xs text-outline">SYSTEM: ISOLATION_MUTEX</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-on-surface">ONLINE (LEADER BUS)</div>
+<div class="col-span-3 font-label-xs text-label-xs text-error font-semibold">POISON QUARANTINE</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-high text-on-surface-variant font-bold" id="node-worker-badge">HOLD MUTEX</span>
+</div>
+</div>
+<!-- Row 8: DB WAL Pointer -->
+<div class="grid grid-cols-12 items-center px-space-sm py-2 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container-low transition-all" id="node-wal">
+<div class="col-span-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary" id="node-wal-icon">storage</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">WAL Checkpoint Register</span>
+<span class="font-label-xs text-label-xs text-outline">STORAGE: PG_LOG_LSN</span>
+</div>
+</div>
+<div class="col-span-3 font-label-xs text-label-xs text-tertiary font-bold">LSN: 0x48A009 (snap-a)</div>
+<div class="col-span-3 font-label-xs text-label-xs text-outline">LSN: 0x48A944 (snap-b)</div>
+<div class="col-span-2 text-right">
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-bold" id="node-wal-badge">BASELINE ROOT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Cryptographic Snapshot & Parity Telemetry (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-sm">
+<!-- Target Snapshot Lock Summary -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-lowest">
+<span class="font-label-xs text-label-xs uppercase text-outline">ROLLBACK RECOVERY TARGET</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">MERKLE ANCHORED</span>
+</div>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">TARGET IDENTIFIER:</span>
+<span class="text-primary font-bold">snap-9904a</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">MERKLE ROOT SHA256:</span>
+<span class="text-on-surface font-mono">7f90e21a...b901</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">CAPTURED AT:</span>
+<span class="text-on-surface">T+00:00:12.000 (02:14 prior)</span>
+</div>
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">ISOLATION BUDGET:</span>
+<span class="text-tertiary font-bold">180ms [EST. 118ms]</span>
+</div>
+</div>
+<!-- Progress to Restored World -->
+<div class="flex flex-col gap-1 pt-space-xs">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">WORLD PARITY REACHED:</span>
+<span class="text-primary font-bold" id="recovery-ratio-label">0%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-DEFAULT overflow-hidden">
+<div class="bg-primary-container h-full transition-all duration-150" id="recovery-progress-bar" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+<!-- Live Quarantine Engine Health -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase text-outline">COMPENSATION ENGINE BUS</span>
+<span class="font-label-xs text-label-xs text-secondary font-bold">ACTIVE</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="bg-surface-container-low p-space-xs rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">API DRIVERS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">2 CONNECTED</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">BATCH BUDGET</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">300ms SLA</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">UNDO INTEGRITY</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">NON-BLOCKING</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">REVERSIONS</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">8 OPERATIONS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. COMPENSATION PLAN IN REVERSE-DEPENDENCY ORDER (LIFO Topological Order) -->
+<section class="flex flex-col gap-space-xs mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col">
+<div class="flex flex-wrap items-center justify-between pb-space-sm mb-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-lg">fitbit_walk</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Atomic Compensation Plan (LIFO Topological Order)</span>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-surface-container text-primary font-bold">STRICT REVERSE DEPENDENCY</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-xs text-label-xs text-outline">
+<span>DRY RUN:</span>
+<span class="text-tertiary font-bold">100% PRE-VALIDATED</span>
+</div>
+</div>
+<!-- Step Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-sm">
+<!-- Step 01 -->
+<div class="p-space-sm bg-surface-container-lowest rounded-DEFAULT flex flex-col justify-between transition-all shadow-sm" id="comp-step-1">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-primary font-bold">STEP 01 (COMPENSATES #06)</span>
+<span class="font-label-xs text-label-xs text-outline">BUDGET: 60ms</span>
+</div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Gmail API: Discard 3 Drafts</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Executes atomic REST API calls: <span class="font-mono text-label-xs">DELETE /v1/users/me/drafts/{id}</span> for drafts #1, #2, and #3.</p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">RISK: LOW</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-bold">READY [VERIFIED]</span>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="p-space-sm bg-surface-container-lowest rounded-DEFAULT flex flex-col justify-between transition-all shadow-sm" id="comp-step-2">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-primary font-bold">STEP 02 (COMPENSATES #05)</span>
+<span class="font-label-xs text-label-xs text-outline">BUDGET: 45ms</span>
+</div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Google Sheets: Truncate 1421:1423</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dispatches single batchUpdate request with <span class="font-mono text-label-xs">batchClear</span> range <span class="font-mono text-label-xs">'Sheet1!A1421:Z1423'</span> to restore prior EOF.</p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">RISK: MEDIUM</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold">DRY-RUN CONFIRMED</span>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="p-space-sm bg-surface-container-lowest rounded-DEFAULT flex flex-col justify-between transition-all shadow-sm" id="comp-step-3">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-primary font-bold">STEP 03 (COMPENSATES #04)</span>
+<span class="font-label-xs text-label-xs text-outline">BUDGET: 12ms</span>
+</div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Worker Cluster: Release Node-04</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Flushes memory pipeline, resets circuit breaker mutex, and re-registers node-04 to leader cluster traffic.</p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">RISK: MINIMAL</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-primary-fixed text-on-primary-fixed font-bold">ARMED [12ms]</span>
+</div>
+</div>
+<!-- Step 04 -->
+<div class="p-space-sm bg-surface-container-lowest rounded-DEFAULT flex flex-col justify-between transition-all shadow-sm" id="comp-step-4">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-primary font-bold">STEP 04 (COMPENSATES #02)</span>
+<span class="font-label-xs text-label-xs text-outline">BUDGET: 30ms</span>
+</div>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">WAL Pointer: Restore Snapshot</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rewinds PostgreSQL Write-Ahead Log pointer back to exact LSN coordinate associated with tag <span class="font-mono text-label-xs">#snap-9904a</span>.</p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-outline">RISK: ZERO</span>
+<span class="px-1.5 py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-bold">PRE-VALIDATED [0 DIFF]</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. VERDICT & RESIDUE STATUS CARDS -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-md mb-space-lg">
+<!-- Card A: Green / Restored World Residue = 0 -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-DEFAULT bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-base">verified</span>
+</div>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">World Restored: Residue = 0</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-bold">CRYPTOGRAPHIC ATTESTATION</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Complete post-rollback simulation confirms total convergence. Zero dangling foreign keys, zero orphan cloud documents, and zero uncompensated outbound write transactions.
+        </p>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<div class="bg-surface-container-low p-space-xs rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">ORPHAN REFS</span>
+<span class="font-label-md text-label-md font-bold text-tertiary mt-0.5">0 DETECTED</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">LEAKED PACKETS</span>
+<span class="font-label-md text-label-md font-bold text-tertiary mt-0.5">0 BYTES</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline uppercase">MERKLE PARITY</span>
+<span class="font-label-md text-label-md font-bold text-tertiary mt-0.5">100.0% EQUALITY</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-xs text-label-xs text-outline bg-surface-container-lowest mt-space-sm">
+<span>PRE-EXECUTION PARITY: SHA256: 7f90e21a8d0092...</span>
+<span class="text-tertiary font-bold">VERIFIED CLEAN</span>
+</div>
+</div>
+<!-- Card B: Amber / Non-Reversible Effects Ledger -->
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-DEFAULT bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-base">warning</span>
+</div>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Non-Reversible Effects Ledger</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold">INFORMATIONAL ONLY</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          The following external metadata mutations occurred on third-party networks and cannot be un-written. They do not alter business state:
+        </p>
+<!-- Irreversible Ledger Items -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-start gap-2 bg-surface-container-low p-1.5 rounded-DEFAULT">
+<span class="font-label-xs text-label-xs text-outline pt-0.5">01</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Datadog &amp; CloudWatch Egress Logs</span>
+<span class="font-label-xs text-label-xs text-outline">Immutable SIEM audit records sent to remote SOC telemetry cluster.</span>
+</div>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-low p-1.5 rounded-DEFAULT">
+<span class="font-label-xs text-label-xs text-outline pt-0.5">02</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">External DNS Resolver Caches</span>
+<span class="font-label-xs text-label-xs text-outline">A/AAAA record lookup counts logged by Cloudflare 1.1.1.1 recursive resolvers.</span>
+</div>
+</div>
+<div class="flex items-start gap-2 bg-surface-container-low p-1.5 rounded-DEFAULT">
+<span class="font-label-xs text-label-xs text-outline pt-0.5">03</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Edge Node Metric Counters</span>
+<span class="font-label-xs text-label-xs text-outline">Redis cache hit/eviction counters (monotonic increment cannot be decremented).</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between font-label-xs text-label-xs text-outline bg-surface-container-lowest mt-space-sm">
+<span>SECURITY RISK RATING: NIL</span>
+<span class="text-on-surface font-semibold">NO STATE TAINT</span>
+</div>
+</div>
+</section>
+<!-- 6. FOOTER TELEMETRY STATUS BAR -->
+<footer class="bg-surface-container-lowest px-space-md py-space-sm rounded-DEFAULT shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-xs text-label-xs text-on-surface font-bold">STATE ENGINE: RX-V4.2</span>
+</div>
+<div class="h-3 w-px bg-surface-variant"></div>
+<span class="font-label-xs text-label-xs text-outline">WAL LSN: 0x48A009</span>
+<div class="h-3 w-px bg-surface-variant"></div>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">RESTORE CIRCUIT: ARMED (&lt;180ms)</span>
+</div>
+<div class="flex items-center gap-space-md font-label-xs text-label-xs text-outline">
+<span>AUTH OPERATOR: <strong class="text-on-surface font-mono">#rx-9942a</strong></span>
+<div class="h-3 w-px bg-surface-variant"></div>
+<span>SYS TIME: <strong class="text-on-surface font-mono">14:28:44.802 UTC</strong></span>
+</div>
+</footer>
+</div></main></div></body></html>

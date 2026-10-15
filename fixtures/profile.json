@@ -1,0 +1,42 @@
+{
+  "candidate_id": "profile_001",
+  "name": "Monish Gowda M",
+  "degree": "B.Tech Computer Science & AI/ML",
+  "current_year": 3,
+  "graduation_year": 2026,
+  "cgpa": 8.7,
+  "location": "Bengaluru, Karnataka, India",
+  "preferred_modes": ["HYBRID", "ON_SITE", "REMOTE"],
+  "skills": [
+    "Python",
+    "Machine Learning",
+    "React",
+    "FastAPI",
+    "PyTorch",
+    "SQL",
+    "TailwindCSS"
+  ],
+  "projects": [
+    {
+      "id": "proj_01",
+      "title": "Autonomous Edge Telemetry & Vision Pipeline",
+      "summary": "Real-time edge telemetry tracking and low-latency defect detection using PyTorch, ONNX Runtime, and FastAPI.",
+      "technologies": ["Python", "PyTorch", "FastAPI", "OpenCV"],
+      "impact": "Reduced inference latency by 34% while maintaining 98.2% precision."
+    },
+    {
+      "id": "proj_02",
+      "title": "Decentralized State Verification & Audit Ledger",
+      "summary": "Cryptographic append-only hash-chained state verification engine ensuring idempotent operation across distributed workers.",
+      "technologies": ["Python", "SQLite WAL", "SHA-256", "FastAPI"],
+      "impact": "Eliminated race condition duplicates and provided tamper-evident proof chains."
+    },
+    {
+      "id": "proj_03",
+      "title": "Adaptive Full-Stack Mission Control Dashboard",
+      "summary": "High-density aerospace telemetry and mission control interface built with React, Vite, Tailwind CSS, and Server-Sent Events.",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "SSE"],
+      "impact": "Visualized 50+ concurrent real-time telemetry streams at sub-50ms render latency."
+    }
+  ]
+}

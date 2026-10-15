@@ -1,0 +1,12 @@
+[
+  {
+    "send_id": "snd_0001",
+    "draft_id": "dft_0001",
+    "recipient": "recruiting@techcorp-29.example",
+    "subject": "Application for Software & AI Engineering Intern 29 - Monish Gowda M",
+    "body": "Dear TechCorp-29 Hiring Team,\n\nI am writing to express my enthusiastic interest in the Software & AI Engineering Intern 29 position. As a 3rd-year B.Tech student in AI/ML with a CGPA of 8.7, my background in autonomous edge telemetry pipelines and state verification directly aligns with your requirements.\n\nIn my recent project 'Autonomous Edge Telemetry & Vision Pipeline', I reduced inference latency by 34% using PyTorch and FastAPI. I look forward to contributing to TechCorp-29.\n\nSincerely,\nMonish Gowda M",
+    "authorization_token": "apr_tok_msn_983370ec_stp_msn_983370ec_06_5872029f",
+    "status": "DISPATCHED",
+    "source": "LOCAL_DEMO"
+  }
+]

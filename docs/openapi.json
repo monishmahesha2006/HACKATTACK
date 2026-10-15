@@ -1,0 +1,5253 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "REWIND X: Autonomous AI Operator API",
+    "description": "Single source of truth API contract for REWIND X autonomous operator.",
+    "version": "4.2.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "System & Health"
+        ],
+        "summary": "Get Health",
+        "operationId": "get_health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ready": {
+      "get": {
+        "tags": [
+          "System & Health"
+        ],
+        "summary": "Get Ready",
+        "operationId": "get_ready_api_v1_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/stats/overview": {
+      "get": {
+        "tags": [
+          "System & Health"
+        ],
+        "summary": "Get Stats Overview",
+        "operationId": "get_stats_overview_api_v1_stats_overview_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/demo/reset": {
+      "post": {
+        "tags": [
+          "System & Health"
+        ],
+        "summary": "Reset Demo",
+        "description": "Resets demo data only, safely cleaning working tables while leaving schema intact.",
+        "operationId": "reset_demo_api_v1_demo_reset_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions": {
+      "post": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Create Mission",
+        "operationId": "create_mission_api_v1_missions_post",
+        "parameters": [
+          {
+            "name": "x-dev-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-Token"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Mission"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "List Missions",
+        "operationId": "list_missions_api_v1_missions_get",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response List Missions Api V1 Missions Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}": {
+      "get": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Get Mission",
+        "operationId": "get_mission_api_v1_missions__id__get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Mission"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/plan": {
+      "get": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Get Mission Plan",
+        "operationId": "get_mission_plan_api_v1_missions__id__plan_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/tests": {
+      "get": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Get Mission Tests",
+        "operationId": "get_mission_tests_api_v1_missions__id__tests_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AcceptanceTest"
+                  },
+                  "title": "Response Get Mission Tests Api V1 Missions  Id  Tests Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/rehearse": {
+      "post": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Rehearse Mission Endpoint",
+        "operationId": "rehearse_mission_endpoint_api_v1_missions__id__rehearse_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RehearsalReport"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/rehearsal": {
+      "get": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Get Rehearsal",
+        "operationId": "get_rehearsal_api_v1_missions__id__rehearsal_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RehearsalReport"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/run": {
+      "post": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Run Mission",
+        "operationId": "run_mission_api_v1_missions__id__run_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/pause": {
+      "post": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Pause Mission",
+        "operationId": "pause_mission_api_v1_missions__id__pause_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/resume": {
+      "post": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Resume Mission",
+        "operationId": "resume_mission_api_v1_missions__id__resume_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/cancel": {
+      "post": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Cancel Mission",
+        "operationId": "cancel_mission_api_v1_missions__id__cancel_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/steer": {
+      "post": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Steer Mission",
+        "operationId": "steer_mission_api_v1_missions__id__steer_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/steps/{step_id}/invocations": {
+      "get": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Get Step Invocations",
+        "operationId": "get_step_invocations_api_v1_missions_steps__step_id__invocations_get",
+        "parameters": [
+          {
+            "name": "step_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Step Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  },
+                  "title": "Response Get Step Invocations Api V1 Missions Steps  Step Id  Invocations Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/evidence/{evidence_id}": {
+      "get": {
+        "tags": [
+          "Missions"
+        ],
+        "summary": "Get Evidence",
+        "operationId": "get_evidence_api_v1_missions_evidence__evidence_id__get",
+        "parameters": [
+          {
+            "name": "evidence_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Evidence Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Evidence Api V1 Missions Evidence  Evidence Id  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/verify": {
+      "post": {
+        "tags": [
+          "Verification & Reality Gaps"
+        ],
+        "summary": "Run Verification",
+        "operationId": "run_verification_api_v1_missions__id__verify_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerificationReport"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/verification": {
+      "get": {
+        "tags": [
+          "Verification & Reality Gaps"
+        ],
+        "summary": "Get Verification",
+        "operationId": "get_verification_api_v1_missions__id__verification_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerificationReport"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/gaps": {
+      "get": {
+        "tags": [
+          "Verification & Reality Gaps"
+        ],
+        "summary": "List Gaps",
+        "operationId": "list_gaps_api_v1_missions__id__gaps_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Gap"
+                  },
+                  "title": "Response List Gaps Api V1 Missions  Id  Gaps Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/gaps/{gap_id}/repair": {
+      "post": {
+        "tags": [
+          "Verification & Reality Gaps"
+        ],
+        "summary": "Repair Gap",
+        "operationId": "repair_gap_api_v1_missions__id__gaps__gap_id__repair_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          },
+          {
+            "name": "gap_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Gap Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/claims": {
+      "get": {
+        "tags": [
+          "Verification & Reality Gaps"
+        ],
+        "summary": "List Claims",
+        "operationId": "list_claims_api_v1_missions__id__claims_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Claim"
+                  },
+                  "title": "Response List Claims Api V1 Missions  Id  Claims Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/approvals": {
+      "get": {
+        "tags": [
+          "Approvals & Interlocks"
+        ],
+        "summary": "List Approvals",
+        "operationId": "list_approvals_api_v1_approvals_get",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          },
+          {
+            "name": "mission_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Mission Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Approval"
+                  },
+                  "title": "Response List Approvals Api V1 Approvals Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/approvals/{id}/decision": {
+      "post": {
+        "tags": [
+          "Approvals & Interlocks"
+        ],
+        "summary": "Decide Approval",
+        "operationId": "decide_approval_api_v1_approvals__id__decision_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/rewind/preview": {
+      "post": {
+        "tags": [
+          "Rewind & Compensation"
+        ],
+        "summary": "Preview Rewind",
+        "operationId": "preview_rewind_api_v1_missions__id__rewind_preview_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": true
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RewindPreview"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/rewind": {
+      "post": {
+        "tags": [
+          "Rewind & Compensation"
+        ],
+        "summary": "Execute Rewind Route",
+        "operationId": "execute_rewind_route_api_v1_missions__id__rewind_post",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RewindResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Rewind & Compensation"
+        ],
+        "summary": "Get Rewind Status",
+        "operationId": "get_rewind_status_api_v1_missions__id__rewind_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RewindPreview"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/audit/events": {
+      "get": {
+        "tags": [
+          "Audit & Provenance"
+        ],
+        "summary": "List Audit Events",
+        "operationId": "list_audit_events_api_v1_audit_events_get",
+        "parameters": [
+          {
+            "name": "mission_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Mission Id"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response List Audit Events Api V1 Audit Events Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/audit/verify": {
+      "get": {
+        "tags": [
+          "Audit & Provenance"
+        ],
+        "summary": "Verify Audit Chain",
+        "operationId": "verify_audit_chain_api_v1_audit_verify_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/audit/tamper-test": {
+      "post": {
+        "tags": [
+          "Audit & Provenance"
+        ],
+        "summary": "Run Tamper Test",
+        "operationId": "run_tamper_test_api_v1_audit_tamper_test_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/report": {
+      "get": {
+        "tags": [
+          "Audit & Provenance"
+        ],
+        "summary": "Get Mission Report Json",
+        "operationId": "get_mission_report_json_api_v1_missions__id__report_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/report.md": {
+      "get": {
+        "tags": [
+          "Audit & Provenance"
+        ],
+        "summary": "Get Mission Report Markdown",
+        "operationId": "get_mission_report_markdown_api_v1_missions__id__report_md_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/mcp/servers": {
+      "get": {
+        "tags": [
+          "MCP Control"
+        ],
+        "summary": "Get Servers",
+        "operationId": "get_servers_api_v1_mcp_servers_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/McpServer"
+                  },
+                  "type": "array",
+                  "title": "Response Get Servers Api V1 Mcp Servers Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/mcp/tools": {
+      "get": {
+        "tags": [
+          "MCP Control"
+        ],
+        "summary": "Get Tools",
+        "operationId": "get_tools_api_v1_mcp_tools_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/McpTool"
+                  },
+                  "type": "array",
+                  "title": "Response Get Tools Api V1 Mcp Tools Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/mcp/refresh": {
+      "post": {
+        "tags": [
+          "MCP Control"
+        ],
+        "summary": "Refresh Mcp",
+        "operationId": "refresh_mcp_api_v1_mcp_refresh_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/mcp/invocations": {
+      "get": {
+        "tags": [
+          "MCP Control"
+        ],
+        "summary": "List Invocations",
+        "operationId": "list_invocations_api_v1_mcp_invocations_get",
+        "parameters": [
+          {
+            "name": "mission_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Mission Id"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response List Invocations Api V1 Mcp Invocations Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ml/models": {
+      "get": {
+        "tags": [
+          "Intelligence Lab & ML"
+        ],
+        "summary": "Get Models",
+        "operationId": "get_models_api_v1_ml_models_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ModelInfo"
+                  },
+                  "type": "array",
+                  "title": "Response Get Models Api V1 Ml Models Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ml/models/{name}/evaluation": {
+      "get": {
+        "tags": [
+          "Intelligence Lab & ML"
+        ],
+        "summary": "Get Evaluation",
+        "operationId": "get_evaluation_api_v1_ml_models__name__evaluation_get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelEvaluation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ml/infer/failure": {
+      "post": {
+        "tags": [
+          "Intelligence Lab & ML"
+        ],
+        "summary": "Infer Failure",
+        "operationId": "infer_failure_api_v1_ml_infer_failure_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Payload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ml/infer/risk": {
+      "post": {
+        "tags": [
+          "Intelligence Lab & ML"
+        ],
+        "summary": "Infer Risk",
+        "operationId": "infer_risk_api_v1_ml_infer_risk_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Payload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RiskAssessment"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ml/anomalies": {
+      "get": {
+        "tags": [
+          "Intelligence Lab & ML"
+        ],
+        "summary": "Get Anomalies",
+        "operationId": "get_anomalies_api_v1_ml_anomalies_get",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnomalyItem"
+                  },
+                  "title": "Response Get Anomalies Api V1 Ml Anomalies Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ml/ranking/{mission_id}": {
+      "get": {
+        "tags": [
+          "Intelligence Lab & ML"
+        ],
+        "summary": "Get Ranking",
+        "operationId": "get_ranking_api_v1_ml_ranking__mission_id__get",
+        "parameters": [
+          {
+            "name": "mission_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Mission Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InternshipRankingItem"
+                  },
+                  "title": "Response Get Ranking Api V1 Ml Ranking  Mission Id  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/chaos/scenarios": {
+      "get": {
+        "tags": [
+          "Chaos Arena"
+        ],
+        "summary": "List Scenarios",
+        "operationId": "list_scenarios_api_v1_chaos_scenarios_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Fault"
+                  },
+                  "type": "array",
+                  "title": "Response List Scenarios Api V1 Chaos Scenarios Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/chaos/runs": {
+      "get": {
+        "tags": [
+          "Chaos Arena"
+        ],
+        "summary": "List Runs",
+        "operationId": "list_runs_api_v1_chaos_runs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/FaultRun"
+                  },
+                  "type": "array",
+                  "title": "Response List Runs Api V1 Chaos Runs Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/chaos/run": {
+      "post": {
+        "tags": [
+          "Chaos Arena"
+        ],
+        "summary": "Run Chaos",
+        "operationId": "run_chaos_api_v1_chaos_run_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Payload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/chaos/inject": {
+      "post": {
+        "tags": [
+          "Chaos Arena"
+        ],
+        "summary": "Inject Live Fault",
+        "operationId": "inject_live_fault_api_v1_chaos_inject_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Payload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/chaos/clear": {
+      "post": {
+        "tags": [
+          "Chaos Arena"
+        ],
+        "summary": "Clear Fault",
+        "operationId": "clear_fault_api_v1_chaos_clear_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/security/events": {
+      "get": {
+        "tags": [
+          "Security & Interlocks"
+        ],
+        "summary": "List Security Events",
+        "operationId": "list_security_events_api_v1_security_events_get",
+        "parameters": [
+          {
+            "name": "mission_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Mission Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SecurityEvent"
+                  },
+                  "title": "Response List Security Events Api V1 Security Events Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/events": {
+      "get": {
+        "tags": [
+          "Server-Sent Events"
+        ],
+        "summary": "Stream Mission Events",
+        "description": "Server-Sent Events stream for a specific mission with catch-up replay and heartbeat.",
+        "operationId": "stream_mission_events_api_v1_missions__id__events_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          },
+          {
+            "name": "last_event_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last Event Id"
+            }
+          },
+          {
+            "name": "lastEventId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Lasteventid"
+            }
+          },
+          {
+            "name": "Last-Event-ID",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last-Event-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/events": {
+      "get": {
+        "tags": [
+          "Server-Sent Events"
+        ],
+        "summary": "Stream Global Events",
+        "description": "Global Server-Sent Events stream (approvals, mode changes, security) with catch-up replay.",
+        "operationId": "stream_global_events_api_v1_events_get",
+        "parameters": [
+          {
+            "name": "last_event_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last Event Id"
+            }
+          },
+          {
+            "name": "lastEventId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Lasteventid"
+            }
+          },
+          {
+            "name": "Last-Event-ID",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last-Event-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/events/history": {
+      "get": {
+        "tags": [
+          "Server-Sent Events"
+        ],
+        "summary": "Get Event History",
+        "operationId": "get_event_history_api_v1_missions__id__events_history_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "title": "After"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Envelope"
+                  },
+                  "title": "Response Get Event History Api V1 Missions  Id  Events History Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/compare": {
+      "post": {
+        "tags": [
+          "Compare & Baseline Split Screen"
+        ],
+        "summary": "Create Comparison",
+        "description": "Starts a concurrent comparison run between Baseline and REWIND X.",
+        "operationId": "create_comparison_api_v1_compare_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompareRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/compare/{compare_id}": {
+      "get": {
+        "tags": [
+          "Compare & Baseline Split Screen"
+        ],
+        "summary": "Get Comparison Result",
+        "description": "Returns baseline and REWIND X execution results for a comparison run.",
+        "operationId": "get_comparison_result_api_v1_compare__compare_id__get",
+        "parameters": [
+          {
+            "name": "compare_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Compare Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompareResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/compare/{compare_id}/events": {
+      "get": {
+        "tags": [
+          "Compare & Baseline Split Screen"
+        ],
+        "summary": "Stream Comparison Events",
+        "description": "Server-Sent Events stream for compare runs with catch-up replay.",
+        "operationId": "stream_comparison_events_api_v1_compare__compare_id__events_get",
+        "parameters": [
+          {
+            "name": "compare_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Compare Id"
+            }
+          },
+          {
+            "name": "last_event_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last Event Id"
+            }
+          },
+          {
+            "name": "lastEventId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Lasteventid"
+            }
+          },
+          {
+            "name": "Last-Event-ID",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last-Event-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/compare/run-all": {
+      "post": {
+        "tags": [
+          "Compare & Baseline Split Screen"
+        ],
+        "summary": "Run All Faults",
+        "description": "Evaluates Baseline vs REWIND X across all 8 fault scenarios.",
+        "operationId": "run_all_faults_api_v1_compare_run_all_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompareRunAllResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/receipt": {
+      "get": {
+        "tags": [
+          "Proof Receipt"
+        ],
+        "summary": "Get Mission Receipt",
+        "operationId": "get_mission_receipt_api_v1_missions__id__receipt_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProofReceiptResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/receipts/{final_hash}/verify": {
+      "get": {
+        "tags": [
+          "Proof Receipt"
+        ],
+        "summary": "Verify Receipt Hash",
+        "operationId": "verify_receipt_hash_api_v1_receipts__final_hash__verify_get",
+        "parameters": [
+          {
+            "name": "final_hash",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Final Hash"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProofVerifyResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/receipt.pdf": {
+      "get": {
+        "tags": [
+          "Proof Receipt"
+        ],
+        "summary": "Get Mission Receipt Pdf",
+        "operationId": "get_mission_receipt_pdf_api_v1_missions__id__receipt_pdf_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/missions/{id}/timeline": {
+      "get": {
+        "tags": [
+          "Mission Timeline"
+        ],
+        "summary": "Get Mission Timeline",
+        "operationId": "get_mission_timeline_api_v1_missions__id__timeline_get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimelineResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Root",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AcceptanceTest": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "kind": {
+            "type": "string",
+            "title": "Kind"
+          },
+          "mandatory": {
+            "type": "boolean",
+            "title": "Mandatory"
+          },
+          "spec": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Spec"
+          },
+          "frozen_hash": {
+            "type": "string",
+            "title": "Frozen Hash"
+          },
+          "registered_at": {
+            "type": "string",
+            "title": "Registered At"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AcceptanceTestResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "mission_id",
+          "description",
+          "kind",
+          "mandatory",
+          "spec",
+          "frozen_hash",
+          "registered_at"
+        ],
+        "title": "AcceptanceTest"
+      },
+      "AcceptanceTestResult": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Ids"
+          },
+          "observed": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed"
+          },
+          "ran_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ran At"
+          },
+          "duration_ms": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "AcceptanceTestResult"
+      },
+      "AnomalyItem": {
+        "properties": {
+          "ts": {
+            "type": "string",
+            "title": "Ts"
+          },
+          "tool": {
+            "type": "string",
+            "title": "Tool"
+          },
+          "metric": {
+            "type": "string",
+            "title": "Metric"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "threshold": {
+            "type": "number",
+            "title": "Threshold"
+          },
+          "flagged": {
+            "type": "boolean",
+            "title": "Flagged"
+          },
+          "injected": {
+            "type": "boolean",
+            "title": "Injected"
+          }
+        },
+        "type": "object",
+        "required": [
+          "ts",
+          "tool",
+          "metric",
+          "score",
+          "threshold",
+          "flagged",
+          "injected"
+        ],
+        "title": "AnomalyItem"
+      },
+      "Approval": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "step_id": {
+            "type": "string",
+            "title": "Step Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ApprovalStatus"
+          },
+          "action": {
+            "type": "string",
+            "title": "Action"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "args_redacted": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Args Redacted"
+          },
+          "call_hash": {
+            "type": "string",
+            "title": "Call Hash"
+          },
+          "expected_changes": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Expected Changes"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/Risk"
+          },
+          "risk_explanation": {
+            "type": "string",
+            "title": "Risk Explanation"
+          },
+          "compensation_available": {
+            "type": "boolean",
+            "title": "Compensation Available"
+          },
+          "expires_at": {
+            "type": "string",
+            "title": "Expires At"
+          },
+          "decided_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided At"
+          },
+          "decided_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Decided By"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "mission_id",
+          "step_id",
+          "status",
+          "action",
+          "target",
+          "args_redacted",
+          "call_hash",
+          "expected_changes",
+          "risk",
+          "risk_explanation",
+          "compensation_available",
+          "expires_at"
+        ],
+        "title": "Approval"
+      },
+      "ApprovalStatus": {
+        "type": "string",
+        "enum": [
+          "PENDING",
+          "APPROVED",
+          "REJECTED",
+          "EXPIRED",
+          "CANCELLED"
+        ],
+        "title": "ApprovalStatus"
+      },
+      "BaselineComparison": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Metrics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "metrics"
+        ],
+        "title": "BaselineComparison"
+      },
+      "Claim": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ClaimStatus"
+          },
+          "method": {
+            "type": "string",
+            "title": "Method"
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Ids"
+          },
+          "ts": {
+            "type": "string",
+            "title": "Ts"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ClaimLocation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "mission_id",
+          "text",
+          "status",
+          "method",
+          "ts"
+        ],
+        "title": "Claim"
+      },
+      "ClaimLocation": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "title": "Kind"
+          },
+          "ref": {
+            "type": "string",
+            "title": "Ref"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "ref"
+        ],
+        "title": "ClaimLocation"
+      },
+      "ClaimStatus": {
+        "type": "string",
+        "enum": [
+          "VERIFIED",
+          "INFERRED",
+          "UNVERIFIED",
+          "FAILED"
+        ],
+        "title": "ClaimStatus"
+      },
+      "CompareRequest": {
+        "properties": {
+          "goal": {
+            "type": "string",
+            "title": "Goal"
+          },
+          "faults": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Faults"
+          },
+          "seed": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seed",
+            "default": 42
+          }
+        },
+        "type": "object",
+        "required": [
+          "goal"
+        ],
+        "title": "CompareRequest"
+      },
+      "CompareResponse": {
+        "properties": {
+          "baseline": {
+            "$ref": "#/components/schemas/CompareResultSide"
+          },
+          "rewindx": {
+            "$ref": "#/components/schemas/CompareResultSide"
+          }
+        },
+        "type": "object",
+        "required": [
+          "baseline",
+          "rewindx"
+        ],
+        "title": "CompareResponse"
+      },
+      "CompareResultSide": {
+        "properties": {
+          "duration_ms": {
+            "type": "number",
+            "title": "Duration Ms"
+          },
+          "duplicates": {
+            "type": "integer",
+            "title": "Duplicates"
+          },
+          "retries": {
+            "type": "integer",
+            "title": "Retries"
+          },
+          "verified": {
+            "type": "boolean",
+            "title": "Verified"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "duration_ms",
+          "duplicates",
+          "retries",
+          "verified",
+          "status"
+        ],
+        "title": "CompareResultSide"
+      },
+      "CompareRunAllItem": {
+        "properties": {
+          "fault": {
+            "type": "string",
+            "title": "Fault"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "baseline": {
+            "$ref": "#/components/schemas/CompareResultSide"
+          },
+          "rewindx": {
+            "$ref": "#/components/schemas/CompareResultSide"
+          }
+        },
+        "type": "object",
+        "required": [
+          "fault",
+          "name",
+          "baseline",
+          "rewindx"
+        ],
+        "title": "CompareRunAllItem"
+      },
+      "CompareRunAllResponse": {
+        "properties": {
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/CompareRunAllItem"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "type": "object",
+        "required": [
+          "results"
+        ],
+        "title": "CompareRunAllResponse"
+      },
+      "ConfusionMatrix": {
+        "properties": {
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          },
+          "matrix": {
+            "items": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Matrix"
+          }
+        },
+        "type": "object",
+        "required": [
+          "labels",
+          "matrix"
+        ],
+        "title": "ConfusionMatrix"
+      },
+      "DatasetMeta": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "title": "Kind"
+          },
+          "size": {
+            "type": "integer",
+            "title": "Size"
+          },
+          "seed": {
+            "type": "integer",
+            "title": "Seed"
+          },
+          "split": {
+            "$ref": "#/components/schemas/DatasetSplit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "size",
+          "seed",
+          "split"
+        ],
+        "title": "DatasetMeta"
+      },
+      "DatasetSplit": {
+        "properties": {
+          "train": {
+            "type": "integer",
+            "title": "Train"
+          },
+          "val": {
+            "type": "integer",
+            "title": "Val"
+          },
+          "test": {
+            "type": "integer",
+            "title": "Test"
+          }
+        },
+        "type": "object",
+        "required": [
+          "train",
+          "val",
+          "test"
+        ],
+        "title": "DatasetSplit"
+      },
+      "Envelope": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "mission_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mission Id"
+          },
+          "step_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Step Id"
+          },
+          "correlation_id": {
+            "type": "string",
+            "title": "Correlation Id"
+          },
+          "ts": {
+            "type": "string",
+            "title": "Ts"
+          },
+          "data": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "correlation_id",
+          "ts"
+        ],
+        "title": "Envelope"
+      },
+      "ErrorClass": {
+        "type": "string",
+        "enum": [
+          "TRANSIENT_NETWORK",
+          "RATE_LIMIT",
+          "AUTH",
+          "PERMISSION",
+          "INVALID_ARGS",
+          "TOOL_UNAVAILABLE",
+          "PARTIAL_WRITE",
+          "DUPLICATE_CONFLICT",
+          "VERIFICATION_FAILURE",
+          "UNKNOWN_OUTCOME",
+          "PERMANENT"
+        ],
+        "title": "ErrorClass"
+      },
+      "Fault": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "expected_behavior": {
+            "type": "string",
+            "title": "Expected Behavior"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "expected_behavior"
+        ],
+        "title": "Fault"
+      },
+      "FaultRun": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "fault_id": {
+            "type": "string",
+            "title": "Fault Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "injected": {
+            "type": "string",
+            "title": "Injected"
+          },
+          "initial_state": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Initial State"
+          },
+          "expected": {
+            "type": "string",
+            "title": "Expected"
+          },
+          "actual": {
+            "type": "string",
+            "title": "Actual"
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts"
+          },
+          "recovery_strategy": {
+            "type": "string",
+            "title": "Recovery Strategy"
+          },
+          "duplicates": {
+            "type": "integer",
+            "title": "Duplicates",
+            "default": 0
+          },
+          "false_success_claims": {
+            "type": "integer",
+            "title": "False Success Claims",
+            "default": 0
+          },
+          "final_verification": {
+            "$ref": "#/components/schemas/VerificationStatus"
+          },
+          "duration_ms": {
+            "type": "number",
+            "title": "Duration Ms"
+          },
+          "ran_at": {
+            "type": "string",
+            "title": "Ran At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "fault_id",
+          "status",
+          "target",
+          "injected",
+          "expected",
+          "actual",
+          "attempts",
+          "recovery_strategy",
+          "final_verification",
+          "duration_ms",
+          "ran_at"
+        ],
+        "title": "FaultRun"
+      },
+      "FeatureContribution": {
+        "properties": {
+          "feature": {
+            "type": "string",
+            "title": "Feature"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          },
+          "contribution": {
+            "type": "number",
+            "title": "Contribution"
+          }
+        },
+        "type": "object",
+        "required": [
+          "feature",
+          "weight",
+          "value",
+          "contribution"
+        ],
+        "title": "FeatureContribution"
+      },
+      "Gap": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/GapKind"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/Severity"
+          },
+          "expected": {
+            "title": "Expected"
+          },
+          "observed": {
+            "title": "Observed"
+          },
+          "required": {
+            "title": "Required"
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Ids"
+          },
+          "likely_cause": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Likely Cause"
+          },
+          "safe_next_action": {
+            "type": "string",
+            "title": "Safe Next Action"
+          },
+          "needs_human": {
+            "type": "boolean",
+            "title": "Needs Human"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "detected_at": {
+            "type": "string",
+            "title": "Detected At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "mission_id",
+          "kind",
+          "severity",
+          "expected",
+          "observed",
+          "required",
+          "safe_next_action",
+          "needs_human",
+          "status",
+          "detected_at"
+        ],
+        "title": "Gap"
+      },
+      "GapKind": {
+        "type": "string",
+        "enum": [
+          "MISSING",
+          "EXTRA",
+          "DUPLICATE",
+          "WRONG_VALUE",
+          "BAD_URL",
+          "INVALID_DEADLINE",
+          "PARTIAL_WORKFLOW",
+          "UNEXPECTED_CHANGE",
+          "UNVERIFIED_CLAIM",
+          "FALSE_SUCCESS"
+        ],
+        "title": "GapKind"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InternshipRankingItem": {
+        "properties": {
+          "opportunity_id": {
+            "type": "string",
+            "title": "Opportunity Id"
+          },
+          "rank": {
+            "type": "integer",
+            "title": "Rank"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "contributions": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureContribution"
+            },
+            "type": "array",
+            "title": "Contributions"
+          },
+          "eligibility": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Eligibility"
+          },
+          "why_ranked_above_next": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Why Ranked Above Next"
+          }
+        },
+        "type": "object",
+        "required": [
+          "opportunity_id",
+          "rank",
+          "score",
+          "contributions",
+          "eligibility"
+        ],
+        "title": "InternshipRankingItem"
+      },
+      "McpServer": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "transport": {
+            "type": "string",
+            "title": "Transport"
+          },
+          "source": {
+            "$ref": "#/components/schemas/Source"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "last_seen": {
+            "type": "string",
+            "title": "Last Seen"
+          },
+          "tool_count": {
+            "type": "integer",
+            "title": "Tool Count"
+          },
+          "latency_ms_ewma": {
+            "type": "number",
+            "title": "Latency Ms Ewma"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "transport",
+          "source",
+          "status",
+          "last_seen",
+          "tool_count",
+          "latency_ms_ewma"
+        ],
+        "title": "McpServer"
+      },
+      "McpTool": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "server_id": {
+            "type": "string",
+            "title": "Server Id"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "input_schema": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Input Schema"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/Risk"
+          },
+          "reversibility": {
+            "$ref": "#/components/schemas/Reversibility"
+          },
+          "idempotent_by": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Idempotent By"
+          },
+          "has_inverse": {
+            "type": "boolean",
+            "title": "Has Inverse",
+            "default": false
+          },
+          "fallback": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback"
+          },
+          "timeout_s": {
+            "type": "number",
+            "title": "Timeout S",
+            "default": 30.0
+          },
+          "permissions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Permissions"
+          },
+          "taints_output": {
+            "type": "boolean",
+            "title": "Taints Output",
+            "default": false
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available",
+            "default": true
+          },
+          "health": {
+            "$ref": "#/components/schemas/ToolHealth"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "server_id",
+          "description",
+          "risk",
+          "reversibility"
+        ],
+        "title": "McpTool"
+      },
+      "MetricGate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "threshold": {
+            "type": "number",
+            "title": "Threshold"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          },
+          "passed": {
+            "type": "boolean",
+            "title": "Passed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "threshold",
+          "value",
+          "passed"
+        ],
+        "title": "MetricGate"
+      },
+      "Mission": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "goal": {
+            "type": "string",
+            "title": "Goal"
+          },
+          "constraints": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Constraints"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MissionStatus"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/Mode"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/MissionCounts"
+          },
+          "phase": {
+            "$ref": "#/components/schemas/Phase"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "goal",
+          "status",
+          "mode",
+          "created_at",
+          "updated_at",
+          "counts",
+          "phase"
+        ],
+        "title": "Mission"
+      },
+      "MissionCounts": {
+        "properties": {
+          "steps": {
+            "type": "integer",
+            "title": "Steps",
+            "default": 0
+          },
+          "done": {
+            "type": "integer",
+            "title": "Done",
+            "default": 0
+          },
+          "failed": {
+            "type": "integer",
+            "title": "Failed",
+            "default": 0
+          },
+          "retries": {
+            "type": "integer",
+            "title": "Retries",
+            "default": 0
+          },
+          "gaps_open": {
+            "type": "integer",
+            "title": "Gaps Open",
+            "default": 0
+          },
+          "approvals_pending": {
+            "type": "integer",
+            "title": "Approvals Pending",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "title": "MissionCounts"
+      },
+      "MissionStatus": {
+        "type": "string",
+        "enum": [
+          "CREATED",
+          "PLANNING",
+          "AWAITING_APPROVAL",
+          "REHEARSING",
+          "READY",
+          "RUNNING",
+          "PAUSED",
+          "RECOVERING",
+          "VERIFYING",
+          "COMPLETED",
+          "PARTIALLY_COMPLETED",
+          "FAILED",
+          "CANCELLED",
+          "REWINDING",
+          "REWOUND"
+        ],
+        "title": "MissionStatus"
+      },
+      "Mode": {
+        "type": "string",
+        "enum": [
+          "LOCAL_DEMO",
+          "REAL",
+          "DEGRADED"
+        ],
+        "title": "Mode"
+      },
+      "ModelCurves": {
+        "properties": {
+          "roc": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Roc"
+          },
+          "calibration": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibration"
+          }
+        },
+        "type": "object",
+        "title": "ModelCurves"
+      },
+      "ModelEvaluation": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Metrics"
+          },
+          "confusion_matrix": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConfusionMatrix"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "curves": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelCurves"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "prob_histogram": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ScoreHistogram"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "baseline_comparison": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/BaselineComparison"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Comparison"
+          },
+          "gates": {
+            "items": {
+              "$ref": "#/components/schemas/MetricGate"
+            },
+            "type": "array",
+            "title": "Gates"
+          },
+          "evaluated_at": {
+            "type": "string",
+            "title": "Evaluated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model",
+          "version",
+          "metrics",
+          "evaluated_at"
+        ],
+        "title": "ModelEvaluation"
+      },
+      "ModelInfo": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "trained_at": {
+            "type": "string",
+            "title": "Trained At"
+          },
+          "dataset": {
+            "$ref": "#/components/schemas/DatasetMeta"
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "safe_envelope": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Safe Envelope"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "version",
+          "trained_at",
+          "dataset",
+          "available"
+        ],
+        "title": "ModelInfo"
+      },
+      "Phase": {
+        "type": "string",
+        "enum": [
+          "PLAN",
+          "REHEARSE",
+          "PERFORM",
+          "PROVE",
+          "REWIND"
+        ],
+        "title": "Phase"
+      },
+      "Plan": {
+        "properties": {
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/Step"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "edges": {
+            "items": {
+              "$ref": "#/components/schemas/PlanEdge"
+            },
+            "type": "array",
+            "title": "Edges"
+          },
+          "planner_notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Planner Notes"
+          },
+          "dissent": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PlanDissent"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "mission_id",
+          "steps",
+          "edges"
+        ],
+        "title": "Plan"
+      },
+      "PlanDissent": {
+        "properties": {
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "differing_decisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Differing Decisions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "score"
+        ],
+        "title": "PlanDissent"
+      },
+      "PlanEdge": {
+        "properties": {
+          "from": {
+            "type": "string",
+            "title": "From"
+          },
+          "to": {
+            "type": "string",
+            "title": "To"
+          }
+        },
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "title": "PlanEdge"
+      },
+      "Postcondition": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "params": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Params"
+          },
+          "passed": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Passed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "Postcondition"
+      },
+      "PredictedDiff": {
+        "properties": {
+          "creates": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceCreate"
+            },
+            "type": "array",
+            "title": "Creates"
+          },
+          "updates": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Updates"
+          },
+          "deletes": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Deletes"
+          },
+          "sends": {
+            "type": "integer",
+            "title": "Sends",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "title": "PredictedDiff"
+      },
+      "PremortemItem": {
+        "properties": {
+          "failure_mode": {
+            "type": "string",
+            "title": "Failure Mode"
+          },
+          "probability": {
+            "type": "number",
+            "title": "Probability"
+          },
+          "mitigation": {
+            "type": "string",
+            "title": "Mitigation"
+          },
+          "fallback": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback"
+          }
+        },
+        "type": "object",
+        "required": [
+          "failure_mode",
+          "probability",
+          "mitigation"
+        ],
+        "title": "PremortemItem"
+      },
+      "ProofReceiptResponse": {
+        "properties": {
+          "goal": {
+            "type": "string",
+            "title": "Goal"
+          },
+          "tests_passed": {
+            "type": "integer",
+            "title": "Tests Passed"
+          },
+          "tests_total": {
+            "type": "integer",
+            "title": "Tests Total"
+          },
+          "duplicates": {
+            "type": "integer",
+            "title": "Duplicates"
+          },
+          "residue": {
+            "type": "integer",
+            "title": "Residue"
+          },
+          "audit_chain_ok": {
+            "type": "boolean",
+            "title": "Audit Chain Ok"
+          },
+          "final_hash": {
+            "type": "string",
+            "title": "Final Hash"
+          },
+          "verdict": {
+            "type": "string",
+            "title": "Verdict"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "mode": {
+            "type": "string",
+            "title": "Mode"
+          },
+          "verify_url": {
+            "type": "string",
+            "title": "Verify Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "goal",
+          "tests_passed",
+          "tests_total",
+          "duplicates",
+          "residue",
+          "audit_chain_ok",
+          "final_hash",
+          "verdict",
+          "created_at",
+          "mode",
+          "verify_url"
+        ],
+        "title": "ProofReceiptResponse"
+      },
+      "ProofVerifyResponse": {
+        "properties": {
+          "final_hash": {
+            "type": "string",
+            "title": "Final Hash"
+          },
+          "matched": {
+            "type": "boolean",
+            "title": "Matched"
+          },
+          "chain_valid": {
+            "type": "boolean",
+            "title": "Chain Valid"
+          },
+          "audit_event_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audit Event Id"
+          },
+          "seq": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seq"
+          },
+          "timestamp": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timestamp"
+          },
+          "actor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actor"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "final_hash",
+          "matched",
+          "chain_valid",
+          "status"
+        ],
+        "title": "ProofVerifyResponse"
+      },
+      "Provenance": {
+        "type": "string",
+        "enum": [
+          "PREDICTED",
+          "OBSERVED",
+          "VERIFIED"
+        ],
+        "title": "Provenance"
+      },
+      "RehearsalReport": {
+        "properties": {
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "provenance": {
+            "$ref": "#/components/schemas/Provenance",
+            "default": "PREDICTED"
+          },
+          "predicted_diff": {
+            "$ref": "#/components/schemas/PredictedDiff"
+          },
+          "irreversible_ops": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Irreversible Ops"
+          },
+          "premortem": {
+            "items": {
+              "$ref": "#/components/schemas/PremortemItem"
+            },
+            "type": "array",
+            "title": "Premortem"
+          },
+          "uncertainty_notes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Uncertainty Notes"
+          },
+          "approval_required": {
+            "type": "boolean",
+            "title": "Approval Required"
+          },
+          "cached_reads": {
+            "type": "integer",
+            "title": "Cached Reads",
+            "default": 0
+          },
+          "real_state_unchanged_proof": {
+            "$ref": "#/components/schemas/StateUnchangedProof"
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mission_id",
+          "predicted_diff",
+          "approval_required",
+          "real_state_unchanged_proof"
+        ],
+        "title": "RehearsalReport"
+      },
+      "ResourceCreate": {
+        "properties": {
+          "resource": {
+            "type": "string",
+            "title": "Resource"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "count"
+        ],
+        "title": "ResourceCreate"
+      },
+      "Reversibility": {
+        "type": "string",
+        "enum": [
+          "REVERSIBLE",
+          "PARTIAL",
+          "IRREVERSIBLE"
+        ],
+        "title": "Reversibility"
+      },
+      "RewindPreview": {
+        "properties": {
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "preview_hash": {
+            "type": "string",
+            "title": "Preview Hash"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/RewindPreviewItem"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "non_reversible": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Non Reversible"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mission_id",
+          "preview_hash",
+          "items"
+        ],
+        "title": "RewindPreview"
+      },
+      "RewindPreviewItem": {
+        "properties": {
+          "step_id": {
+            "type": "string",
+            "title": "Step Id"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "inverse_tool": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Inverse Tool"
+          },
+          "reversible": {
+            "type": "boolean",
+            "title": "Reversible"
+          },
+          "concurrent_change_detected": {
+            "type": "boolean",
+            "title": "Concurrent Change Detected",
+            "default": false
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "step_id",
+          "description",
+          "reversible"
+        ],
+        "title": "RewindPreviewItem"
+      },
+      "RewindResult": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/RewindResultItem"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "verification": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/VerificationReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "residual_effects": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Residual Effects"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "mission_id",
+          "status",
+          "items"
+        ],
+        "title": "RewindResult"
+      },
+      "RewindResultItem": {
+        "properties": {
+          "step_id": {
+            "type": "string",
+            "title": "Step Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "step_id",
+          "status"
+        ],
+        "title": "RewindResultItem"
+      },
+      "Risk": {
+        "type": "string",
+        "enum": [
+          "LOW",
+          "MEDIUM",
+          "HIGH",
+          "CRITICAL"
+        ],
+        "title": "Risk"
+      },
+      "RiskAssessment": {
+        "properties": {
+          "p_fail": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P Fail"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/Risk"
+          },
+          "reversibility": {
+            "$ref": "#/components/schemas/Reversibility"
+          },
+          "policy_decision": {
+            "type": "string",
+            "title": "Policy Decision"
+          },
+          "approval_level": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approval Level"
+          },
+          "mitigation": {
+            "type": "string",
+            "title": "Mitigation"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "ml_available": {
+            "type": "boolean",
+            "title": "Ml Available"
+          },
+          "policy_override": {
+            "type": "boolean",
+            "title": "Policy Override"
+          }
+        },
+        "type": "object",
+        "required": [
+          "severity",
+          "reversibility",
+          "policy_decision",
+          "mitigation",
+          "explanation",
+          "ml_available",
+          "policy_override"
+        ],
+        "title": "RiskAssessment"
+      },
+      "ScoreHistogram": {
+        "properties": {
+          "bins": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Bins"
+          },
+          "counts": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Counts"
+          }
+        },
+        "type": "object",
+        "required": [
+          "bins",
+          "counts"
+        ],
+        "title": "ScoreHistogram"
+      },
+      "SecurityEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "mission_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mission Id"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/SecurityEventKind"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          },
+          "source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source"
+          },
+          "ts": {
+            "type": "string",
+            "title": "Ts"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "detail",
+          "ts"
+        ],
+        "title": "SecurityEvent"
+      },
+      "SecurityEventKind": {
+        "type": "string",
+        "enum": [
+          "INJECTION_QUARANTINED",
+          "UNAUTHORIZED_TOOL_CALL",
+          "APPROVAL_BYPASS_BLOCKED",
+          "PATH_TRAVERSAL_BLOCKED",
+          "SECRET_REDACTED"
+        ],
+        "title": "SecurityEventKind"
+      },
+      "Severity": {
+        "type": "string",
+        "enum": [
+          "INFO",
+          "WARN",
+          "ERROR",
+          "CRITICAL"
+        ],
+        "title": "Severity"
+      },
+      "Source": {
+        "type": "string",
+        "enum": [
+          "LOCAL_DEMO",
+          "REAL"
+        ],
+        "title": "Source"
+      },
+      "StateUnchangedProof": {
+        "properties": {
+          "before_hash": {
+            "type": "string",
+            "title": "Before Hash"
+          },
+          "after_hash": {
+            "type": "string",
+            "title": "After Hash"
+          }
+        },
+        "type": "object",
+        "required": [
+          "before_hash",
+          "after_hash"
+        ],
+        "title": "StateUnchangedProof"
+      },
+      "Step": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "tool": {
+            "type": "string",
+            "title": "Tool"
+          },
+          "server": {
+            "type": "string",
+            "title": "Server"
+          },
+          "source": {
+            "$ref": "#/components/schemas/Source"
+          },
+          "args": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Args"
+          },
+          "depends_on": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Depends On"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/Risk"
+          },
+          "reversibility": {
+            "$ref": "#/components/schemas/Reversibility"
+          },
+          "status": {
+            "$ref": "#/components/schemas/StepStatus"
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts",
+            "default": 0
+          },
+          "max_attempts": {
+            "type": "integer",
+            "title": "Max Attempts",
+            "default": 3
+          },
+          "idempotency_key": {
+            "type": "string",
+            "title": "Idempotency Key"
+          },
+          "fallback_tool": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fallback Tool"
+          },
+          "used_fallback": {
+            "type": "boolean",
+            "title": "Used Fallback",
+            "default": false
+          },
+          "postconditions": {
+            "items": {
+              "$ref": "#/components/schemas/Postcondition"
+            },
+            "type": "array",
+            "title": "Postconditions"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "duration_ms": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration Ms"
+          },
+          "result_summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Result Summary"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StepError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Ids"
+          },
+          "inverse_available": {
+            "type": "boolean",
+            "title": "Inverse Available",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "mission_id",
+          "index",
+          "description",
+          "tool",
+          "server",
+          "source",
+          "risk",
+          "reversibility",
+          "status",
+          "idempotency_key"
+        ],
+        "title": "Step"
+      },
+      "StepError": {
+        "properties": {
+          "class": {
+            "$ref": "#/components/schemas/ErrorClass"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "class",
+          "message"
+        ],
+        "title": "StepError"
+      },
+      "StepStatus": {
+        "type": "string",
+        "enum": [
+          "PENDING",
+          "AWAITING_APPROVAL",
+          "RUNNING",
+          "RETRYING",
+          "FALLBACK",
+          "DONE",
+          "FAILED",
+          "SKIPPED",
+          "COMPENSATED"
+        ],
+        "title": "StepStatus"
+      },
+      "TimelineFault": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "ts": {
+            "type": "string",
+            "title": "Ts"
+          },
+          "step_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Step Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "ts"
+        ],
+        "title": "TimelineFault"
+      },
+      "TimelineResponse": {
+        "properties": {
+          "stages": {
+            "items": {
+              "$ref": "#/components/schemas/TimelineStage"
+            },
+            "type": "array",
+            "title": "Stages"
+          },
+          "faults": {
+            "items": {
+              "$ref": "#/components/schemas/TimelineFault"
+            },
+            "type": "array",
+            "title": "Faults"
+          }
+        },
+        "type": "object",
+        "required": [
+          "stages",
+          "faults"
+        ],
+        "title": "TimelineResponse"
+      },
+      "TimelineStage": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "started_at": {
+            "type": "string",
+            "title": "Started At"
+          },
+          "ended_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ended At"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "started_at",
+          "status"
+        ],
+        "title": "TimelineStage"
+      },
+      "ToolHealth": {
+        "properties": {
+          "p_fail": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P Fail"
+          },
+          "anomaly": {
+            "type": "boolean",
+            "title": "Anomaly",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "ToolHealth"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VerificationReport": {
+        "properties": {
+          "mission_id": {
+            "type": "string",
+            "title": "Mission Id"
+          },
+          "status": {
+            "$ref": "#/components/schemas/VerificationStatus"
+          },
+          "tests": {
+            "items": {
+              "$ref": "#/components/schemas/AcceptanceTest"
+            },
+            "type": "array",
+            "title": "Tests"
+          },
+          "claims": {
+            "items": {
+              "$ref": "#/components/schemas/Claim"
+            },
+            "type": "array",
+            "title": "Claims"
+          },
+          "gaps_open": {
+            "type": "integer",
+            "title": "Gaps Open",
+            "default": 0
+          },
+          "ran_at": {
+            "type": "string",
+            "title": "Ran At"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mission_id",
+          "status",
+          "tests",
+          "claims",
+          "ran_at"
+        ],
+        "title": "VerificationReport"
+      },
+      "VerificationStatus": {
+        "type": "string",
+        "enum": [
+          "VERIFIED",
+          "FAILED",
+          "PARTIALLY_VERIFIED",
+          "UNVERIFIED",
+          "BLOCKED"
+        ],
+        "title": "VerificationStatus"
+      }
+    }
+  }
+}

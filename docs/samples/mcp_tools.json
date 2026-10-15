@@ -1,0 +1,652 @@
+[
+  {
+    "name": "search",
+    "server_id": "web_fixture",
+    "description": "Search internship postings",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "query"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "web_fixture:search"
+    ],
+    "taints_output": true,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "fetch",
+    "server_id": "web_fixture",
+    "description": "Fetch page details and content",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "url"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "web_fixture:fetch"
+    ],
+    "taints_output": true,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "create_sheet",
+    "server_id": "sheets",
+    "description": "Create new sheet",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "title"
+    ],
+    "has_inverse": true,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "sheets:create_sheet"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "append_row",
+    "server_id": "sheets",
+    "description": "Append row idempotently",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "idempotency_key": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "MEDIUM",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "idempotency_key"
+    ],
+    "has_inverse": true,
+    "fallback": "save_csv_fallback",
+    "timeout_s": 30.0,
+    "permissions": [
+      "sheets:append_row"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "update_row",
+    "server_id": "sheets",
+    "description": "Update existing row",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "row_id": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "MEDIUM",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "row_id"
+    ],
+    "has_inverse": true,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "sheets:update_row"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "delete_row",
+    "server_id": "sheets",
+    "description": "Delete row by row_id",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "row_id": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "MEDIUM",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "row_id"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "sheets:delete_row"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "read_rows",
+    "server_id": "sheets",
+    "description": "Read all rows from sheet",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "sheet_id": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "sheet_id"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "sheets:read_rows"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "create_draft",
+    "server_id": "drafts",
+    "description": "Create candidate email draft",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "recipient": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "recipient",
+      "subject"
+    ],
+    "has_inverse": true,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "drafts:create_draft"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "update_draft",
+    "server_id": "drafts",
+    "description": "Update existing email draft",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "draft_id": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "draft_id"
+    ],
+    "has_inverse": true,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "drafts:update_draft"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "delete_draft",
+    "server_id": "drafts",
+    "description": "Delete email draft",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "draft_id": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "draft_id"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "drafts:delete_draft"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "read_draft",
+    "server_id": "drafts",
+    "description": "Read draft content",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "draft_id": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "draft_id"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "drafts:read_draft"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "list_drafts",
+    "server_id": "drafts",
+    "description": "List all created drafts",
+    "input_schema": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "drafts:list_drafts"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "send_email",
+    "server_id": "drafts",
+    "description": "Send outreach email (Irreversible, Strict Token)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "draft_id": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "CRITICAL",
+    "reversibility": "IRREVERSIBLE",
+    "idempotent_by": [
+      "draft_id"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "drafts:send_email"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "assess_internship_eligibility",
+    "server_id": "rewindx_domain",
+    "description": "Assess candidate eligibility",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "opportunity": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "opportunity"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "rewindx_domain:assess_internship_eligibility"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "rank_internship_opportunities",
+    "server_id": "rewindx_domain",
+    "description": "Rank opportunities by score",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "opportunities": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "opportunities"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "rewindx_domain:rank_internship_opportunities"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "validate_deadline",
+    "server_id": "rewindx_domain",
+    "description": "Validate deadline date",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "deadline_str": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "deadline_str"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "rewindx_domain:validate_deadline"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "check_evidence_completeness",
+    "server_id": "rewindx_domain",
+    "description": "Check citation grounding",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "claims"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "rewindx_domain:check_evidence_completeness"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "compare_candidate_requirements",
+    "server_id": "rewindx_domain",
+    "description": "Compare skill sets",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "required_skills": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "required_skills"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "rewindx_domain:compare_candidate_requirements"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "classify_injection",
+    "server_id": "rewindx_domain",
+    "description": "Classify potential injection attack",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "text"
+    ],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "rewindx_domain:classify_injection"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "inject_fault",
+    "server_id": "chaos_proxy",
+    "description": "Inject chaos fault",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "fault": {
+          "type": "string"
+        }
+      }
+    },
+    "risk": "HIGH",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [
+      "target",
+      "fault"
+    ],
+    "has_inverse": true,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "chaos_proxy:inject_fault"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "clear_faults",
+    "server_id": "chaos_proxy",
+    "description": "Clear chaos faults",
+    "input_schema": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "chaos_proxy:clear_faults"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  },
+  {
+    "name": "get_scenarios",
+    "server_id": "chaos_proxy",
+    "description": "List chaos scenarios",
+    "input_schema": {
+      "type": "object",
+      "properties": {}
+    },
+    "risk": "LOW",
+    "reversibility": "REVERSIBLE",
+    "idempotent_by": [],
+    "has_inverse": false,
+    "fallback": null,
+    "timeout_s": 30.0,
+    "permissions": [
+      "chaos_proxy:get_scenarios"
+    ],
+    "taints_output": false,
+    "available": true,
+    "health": {
+      "p_fail": 0.01,
+      "anomaly": false
+    }
+  }
+]

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.grid-bench{background-image:radial-gradient(rgba(116,118,136,0.12) 1px,transparent 1px);background-size:16px 16px;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#f9f9ff","secondary-container":"#8ef2ff","surface-bright":"#f9f9ff","surface-container-high":"#e2e8fc","on-tertiary":"#ffffff","inverse-surface":"#2a3040","primary":"#003fe1","tertiary-fixed":"#7ef9c9","primary-fixed-dim":"#b9c3ff","on-primary-fixed-variant":"#0034bf","on-secondary":"#ffffff","surface":"#f9f9ff","surface-container-low":"#f1f3ff","primary-fixed":"#dde1ff","surface-variant":"#dce2f6","outline":"#747688","on-secondary-fixed":"#001f23","error":"#ba1a1a","tertiary":"#006247","surface-container-lowest":"#ffffff","primary-container":"#2f5bff","secondary-fixed-dim":"#71d5e2","outline-variant":"#c4c5d9","surface-container-highest":"#dce2f6","tertiary-container":"#007d5c","on-error-container":"#93000a","surface-container":"#e9edff","on-secondary-container":"#006f79","secondary":"#006972","on-surface":"#151b2a","on-surface-variant":"#434656","on-primary-fixed":"#001356","secondary-fixed":"#8ef2ff","on-secondary-fixed-variant":"#004f56","on-error":"#ffffff","on-tertiary-fixed":"#002115","tertiary-fixed-dim":"#60dcae","on-primary":"#ffffff","surface-dim":"#d3daee","on-tertiary-fixed-variant":"#00513a","error-container":"#ffdad6","on-tertiary-container":"#beffe0","inverse-on-surface":"#edf0ff","on-background":"#151b2a","on-primary-container":"#efefff","surface-tint":"#1349f0","inverse-primary":"#b9c3ff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-sm":"0.5rem","space-md":"0.75rem","gutter-sm":"0.5rem","gutter-lg":"1rem","gutter":"0.75rem","margin-sm":"0.75rem","space-xl":"1.5rem","space-xs":"0.25rem","space-lg":"1rem","margin-lg":"1.5rem","margin":"1rem"},fontFamily:{"headline-md":["Bricolage Grotesque"],"label-md":["Space Mono"],"label-sm":["Space Mono"],"headline-sm":["Bricolage Grotesque"],"headline-xl":["Bricolage Grotesque"],"headline-xl-mobile":["Bricolage Grotesque"],"label-xs":["Space Mono"],"body-md":["Hanken Grotesk"],"label-lg":["Space Mono"],"headline-lg":["Bricolage Grotesque"],"body-lg":["Hanken Grotesk"],"body-sm":["Hanken Grotesk"]},fontSize:{"headline-md":["16px",{lineHeight:"22px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["11px",{lineHeight:"14px",letterSpacing:"0.1em",fontWeight:"700"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.12em",fontWeight:"400"}],"headline-sm":["14px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"600"}],"headline-xl":["28px",{lineHeight:"34px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-xl-mobile":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-xs":["9px",{lineHeight:"12px",letterSpacing:"0.15em",fontWeight:"400"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],"label-lg":["12px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-lg":["20px",{lineHeight:"26px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"22px",letterSpacing:"-0.005em",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative grid-bench selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-outline-variant/50 z-50 flex flex-col justify-between shadow-[1px_0_4px_rgba(21,27,42,0.03)]"><div class="flex flex-col"><div class="h-16 px-margin flex items-center justify-between border-b border-outline-variant/40"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded bg-primary flex items-center justify-center text-on-primary font-label-md text-label-md font-bold shadow-[0_1px_4px_rgba(0,63,225,0.25)]">RX</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-none tracking-tight">REWIND X</span><span class="font-label-xs text-label-xs uppercase tracking-widest text-primary font-bold leading-tight mt-0.5">FLIGHT INSTRUMENT</span></div></div><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span><span class="font-label-xs text-label-xs text-tertiary font-bold tracking-wider">AIR-01</span></div></div><div class="px-margin py-space-sm bg-surface-container-low/50 border-b border-outline-variant/30 flex items-center justify-between"><span class="font-label-xs text-label-xs uppercase tracking-widest text-outline font-bold">Telemetry Rack</span><span class="font-label-xs text-label-xs text-outline">09 NODES</span></div><nav class="flex flex-col gap-0.5 p-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="mission-control" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Mission Control</span><span class="font-label-xs text-label-xs text-outline font-normal">01</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="rehearsal-simulation" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Rehearsal</span><span class="font-label-xs text-label-xs text-outline font-normal">02</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="verification-shield" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Verification</span><span class="font-label-xs text-label-xs text-outline font-normal">03</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="rewind-timeline" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Rewind Engine</span><span class="font-label-xs text-label-xs text-outline font-normal">04</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="system-audit" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Audit Ledger</span><span class="font-label-xs text-label-xs text-outline font-normal">05</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="gap-monitor" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Reality Gap</span><span class="font-label-xs text-label-xs text-outline font-normal">06</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="intelligence-lab" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Intelligence Lab</span><span class="font-label-xs text-label-xs text-outline font-normal">07</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="mcp-control-center" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">MCP Control</span><span class="font-label-xs text-label-xs text-primary font-bold">HUB</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors duration-100" data-path="component-tokens" href="#"><span class="font-label-md text-label-md uppercase tracking-wider">Instrument Tokens</span><span class="font-label-xs text-label-xs text-outline font-normal">SYS</span></a></nav></div><div class="p-space-sm border-t border-outline-variant/40 bg-surface-container-low/60"><div class="bg-surface-container-lowest rounded p-space-sm border border-outline-variant/40 flex flex-col gap-1 shadow-sm"><div class="flex items-center justify-between"><span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">MCP DAEMON</span><span class="font-label-xs text-label-xs text-tertiary-container flex items-center gap-1 font-bold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>SYNCED</span></div><div class="flex items-center justify-between"><span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">CORE ENGINE</span><span class="font-label-xs text-label-xs text-on-surface font-bold tracking-tight">v3.4.2-rel</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest border-b border-outline-variant/50 z-40 px-margin-lg flex items-center justify-between shadow-[0_1px_3px_rgba(21,27,42,0.03)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container border border-outline-variant/40"><span class="font-label-xs text-label-xs font-bold text-primary tracking-widest">[RACK-SYS-A]</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-tertiary-container/10 border border-tertiary-container/30"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-label-xs text-label-xs font-bold text-tertiary tracking-widest">OPERATIONAL</span></div><div class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high/60 border border-outline-variant/40"><span class="font-label-xs text-label-xs text-outline uppercase">MCP BUS:</span><span class="font-label-xs text-label-xs font-bold text-on-surface">14 CONNECTED</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30"><span class="material-symbols-outlined text-[14px] text-tertiary">timer</span><span class="font-label-xs text-label-xs text-outline uppercase">ROUNDTRIP</span><span class="font-label-xs text-label-xs font-bold text-on-surface">0.12ms</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30"><span class="material-symbols-outlined text-[14px] text-primary">verified</span><span class="font-label-xs text-label-xs text-outline uppercase">INTEGRITY</span><span class="font-label-xs text-label-xs font-bold text-tertiary">100%</span></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/40"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-xs text-label-xs font-bold text-on-surface leading-tight">OP-CONSOLE-09</span><span class="font-label-xs text-label-xs text-primary leading-none">ACTIVE ROOT</span></div><div class="w-7 h-7 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-label-xs text-label-xs font-bold">RX</div></div></div></header><main class="w-full pt-16 px-margin-lg pb-space-xl min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Navigation Synchronizer Script -->
+<script>
+    (function syncNav() {
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        link.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+        link.classList.add('text-on-surface-variant');
+      });
+      const chaosLink = document.querySelector('aside nav a[data-path="rehearsal-simulation"]') || document.querySelector('aside nav a:nth-child(2)');
+      if (chaosLink) {
+        chaosLink.classList.remove('text-on-surface-variant');
+        chaosLink.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+      }
+    })();
+  </script>
+<!-- Aerodynamic Telemetry Breadcrumb Bar -->
+<div class="w-full bg-surface-container-lowest border-b border-outline-variant/40 py-2.5 px-margin-lg flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-high/80 border border-outline-variant/50">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-xs text-label-xs font-bold text-on-surface tracking-widest">RACK-08 // CHAOS MATRIX</span>
+</div>
+<span class="text-outline-variant font-label-xs">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">SYNTHETIC FAULT INJECTION &amp; ADVERSARIAL STRESS SUITE</span>
+<span class="text-outline-variant font-label-xs">/</span>
+<span class="font-label-xs text-label-xs text-primary font-bold px-1.5 py-0.5 rounded bg-primary-fixed/40">AIRGAP-SIM-09</span>
+</div>
+<!-- Quick Telemetry Flags -->
+<div class="flex items-center gap-space-md font-label-xs text-label-xs">
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">PROFILE:</span>
+<span class="font-bold text-on-surface">ADVERSARIAL-HARNESS-v4.2</span>
+</div>
+<span class="text-outline-variant">|</span>
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">SNAPSHOT:</span>
+<span class="font-bold text-primary">#snap-9904c</span>
+</div>
+<span class="text-outline-variant">|</span>
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">MERKLE ANCHOR:</span>
+<span class="font-bold text-tertiary">100.0% VERIFIED</span>
+</div>
+<span class="text-outline-variant">|</span>
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">SLA LIMIT:</span>
+<span class="font-bold text-on-surface">&lt; 180ms</span>
+</div>
+</div>
+</div>
+<!-- Command Deck Header Strip -->
+<div class="w-full bg-surface-container-lowest border-b border-outline-variant/40 px-margin-lg py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">CHAOS ARENA</h1>
+<span class="px-2 py-0.5 rounded bg-error-container/40 text-error font-label-xs text-label-xs font-bold border border-error/20 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> 1 ANOMALY ACTIVE
+        </span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary font-label-xs text-label-xs font-bold border border-tertiary/20">
+          6/8 ATTESTED
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Autonomous runtime fault validation, RPC interruption verification, and state divergence isolation for distributed MCP tool chains.
+      </p>
+</div>
+<!-- Global Operator Control Actions -->
+<div class="flex items-center gap-2 flex-wrap self-start md:self-auto">
+<button class="px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md border border-outline-variant hover:border-outline hover:bg-surface-container-low transition-all duration-100 flex items-center gap-1.5 active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[15px] text-outline">tune</span>
+<span>SELECT PROFILE <span class="text-outline font-normal">[P]</span></span>
+</button>
+<button class="px-3 py-1.5 rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md border border-outline-variant hover:border-outline hover:bg-surface-container-low transition-all duration-100 flex items-center gap-1.5 active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[15px] text-outline">download</span>
+<span>EXPORT TRACE <span class="text-outline font-normal">[JSON]</span></span>
+</button>
+<button class="px-4 py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-on-primary-fixed-variant transition-all duration-100 flex items-center gap-2 shadow-[0_2px_8px_rgba(0,63,225,0.28)] active:scale-95" id="runAllBtn" type="button">
+<span class="material-symbols-outlined text-[16px] text-on-primary animate-pulse">bolt</span>
+<span>RUN ALL INJECTIONS</span>
+<span class="px-1.5 py-0.2 rounded bg-on-primary-fixed/30 text-[9px] font-normal tracking-tight font-label-xs">[⌘⇧R]</span>
+</button>
+</div>
+</div>
+<!-- Suite Telemetry Ribbon & Global Invariant Controller -->
+<div class="w-full bg-surface-container-low/80 border-b border-outline-variant/40 px-margin-lg py-2.5 flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex items-center gap-4 flex-wrap">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1 rounded border border-outline-variant/40">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">TOTAL FAULTS</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">08</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1 rounded border border-outline-variant/40">
+<span class="font-label-xs text-label-xs text-tertiary uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASSED
+        </span>
+<span class="font-label-md text-label-md font-bold text-tertiary">06</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1 rounded border border-outline-variant/40">
+<span class="font-label-xs text-label-xs text-error uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>FAILED
+        </span>
+<span class="font-label-md text-label-md font-bold text-error">01</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1 rounded border border-outline-variant/40">
+<span class="font-label-xs text-label-xs text-primary uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>ARMED
+        </span>
+<span class="font-label-md text-label-md font-bold text-primary">01</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1 rounded border border-outline-variant/40">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">MEAN RECOVERY</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">34.2ms</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1 rounded border border-outline-variant/40">
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">COMPENSATION RESIDUE</span>
+<span class="font-label-md text-label-md font-bold text-tertiary">0 BYTES</span>
+</div>
+</div>
+<!-- Strict Auto-Rewind Switch -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-3 py-1 rounded border border-outline-variant/50">
+<span class="material-symbols-outlined text-[16px] text-primary">lock_reset</span>
+<span class="font-label-xs text-label-xs font-bold text-on-surface uppercase tracking-wider">Auto-Rewind on Assertion Failure:</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight px-1.5 py-0.5 rounded bg-tertiary-fixed/30 border border-tertiary/20">ENABLED [STRICT]</span>
+<div class="w-8 h-4 rounded-full bg-primary flex items-center justify-end px-0.5 cursor-pointer" title="Auto-rewind locked to strict mode">
+<div class="w-3 h-3 rounded-full bg-on-primary shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- Main Chaos Matrix Rack Grid -->
+<div class="p-margin-lg">
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-space-lg">
+<!-- Fault Card #01 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/60 shadow-[0_1px_3px_rgba(21,27,42,0.03)] hover:border-outline transition-all duration-100 flex flex-col justify-between overflow-hidden relative group">
+<!-- Corner ticks -->
+<div class="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-outline-variant/60"></div>
+<div class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-outline-variant/60"></div>
+<div>
+<!-- Header Bar -->
+<div class="px-space-md py-2.5 border-b border-outline-variant/40 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">#01</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">TIMEOUT // RPC DEADLINE EXCEEDED</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASS [GATE COMPLIANT]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">google-workspace-mcp::append_row_to_sheet</span></span>
+<span class="text-outline font-label-xs">NODE: <span class="text-on-surface">M-01</span></span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">
+                5000ms Synthetic Upstream Stall (Deadline: 1500ms)
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Fail-fast abort at 1500ms, zero WAL write, dry-run compensation.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Aborted at 1502ms, socket dropped, WAL state untouched.
+              </span>
+</div>
+<!-- Telemetry Metrics Row -->
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1 / 3 (backoff ok)</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">0 DETECTED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1,502ms</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Footer / Attestation & Trigger -->
+<div class="px-space-md py-2 bg-surface-container-low/50 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">ATTESTED: IDEMPOTENCY PRESERVED</span>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant hover:border-primary hover:text-primary transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>RUN INJECTION</span>
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Fault Card #02 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/60 shadow-[0_1px_3px_rgba(21,27,42,0.03)] hover:border-outline transition-all duration-100 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-outline-variant/60"></div>
+<div class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-outline-variant/60"></div>
+<div>
+<!-- Header Bar -->
+<div class="px-space-md py-2.5 border-b border-outline-variant/40 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">#02</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">HTTP 429 // RATE LIMIT THROTTLE SPIKE</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASS [GATE COMPLIANT]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">brave-search-mcp::query_web</span></span>
+<span class="text-outline font-label-xs">BURST: <span class="text-on-surface">60 req/s</span></span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">
+                429 Too Many Requests (Retry-After: 450ms, burst 60 req/s)
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Token-bucket backoff, jittered retry queue, zero request dropping.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Backoff triggered: 462ms sleep, successful replay on attempt 2.
+              </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">2 / 4 (resolved)</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">0 DETECTED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">684ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-space-md py-2 bg-surface-container-low/50 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">ATTESTED: EXPONENTIAL JITTER PARITY</span>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant hover:border-primary hover:text-primary transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>RUN INJECTION</span>
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Fault Card #03 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/60 shadow-[0_1px_3px_rgba(21,27,42,0.03)] hover:border-outline transition-all duration-100 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-outline-variant/60"></div>
+<div class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-outline-variant/60"></div>
+<div>
+<!-- Header Bar -->
+<div class="px-space-md py-2.5 border-b border-outline-variant/40 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">#03</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">MALFORMED JSON // TRUNCATED AST STREAM</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASS [GATE COMPLIANT]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">filesystem-mcp::read_file_ast</span></span>
+<span class="text-outline font-label-xs">BUFFER: <span class="text-on-surface">RING-04</span></span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">
+                Partial chunk closure with illegal EOF token at byte 1024
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                RFC-8259 parser exception caught, AST quarantine, zero memory leak.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Quarantined payload, memory ring buffer flushed clean in 2.1ms.
+              </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1 / 1 (terminal)</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">0 DETECTED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4.2ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-space-md py-2 bg-surface-container-low/50 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">ATTESTED: RING BUFFER ZERO-LEAK</span>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant hover:border-primary hover:text-primary transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>RUN INJECTION</span>
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Fault Card #04 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/60 shadow-[0_1px_3px_rgba(21,27,42,0.03)] hover:border-outline transition-all duration-100 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-outline-variant/60"></div>
+<div class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-outline-variant/60"></div>
+<div>
+<!-- Header Bar -->
+<div class="px-space-md py-2.5 border-b border-outline-variant/40 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">#04</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">PARTIAL WRITE // INTERRUPTED TCP BURST</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASS [GATE COMPLIANT]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">postgres-shadow-mcp::stage_shadow_mutation</span></span>
+<span class="text-outline font-label-xs">TXID: <span class="text-on-surface">#0x992B</span></span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">
+                SIGKILL dispatched after 2 of 5 batch INSERT records committed
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Two-phase commit abort, atomic rollback to LSN checkpoint, 0 residue.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                LSN rewound to 0x48A009, 3 uncommitted rows discarded, 0 residue.
+              </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1 / 1 (rolled back)</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">0 DETECTED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">28.6ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-space-md py-2 bg-surface-container-low/50 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">ATTESTED: LSN ATOMICITY ZERO-DIFF</span>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant hover:border-primary hover:text-primary transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>RUN INJECTION</span>
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Fault Card #05 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/60 shadow-[0_1px_3px_rgba(21,27,42,0.03)] hover:border-outline transition-all duration-100 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-outline-variant/60"></div>
+<div class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-outline-variant/60"></div>
+<div>
+<!-- Header Bar -->
+<div class="px-space-md py-2.5 border-b border-outline-variant/40 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">#05</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">DUPLICATE DELIVERY // SQS REPLAY ATTACK</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASS [GATE COMPLIANT]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">user_ledger_reconciliation_batch_#1425</span></span>
+<span class="text-outline font-label-xs">REPLAY: <span class="text-on-surface">12ms WINDOW</span></span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">
+                Re-dispatch of transaction UUID #89fa..91c4 within 12ms window
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Deduplication cache hit, idempotent 200 OK returned, row count delta = 0.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Deduplication cache hit, duplicate dropped, zero secondary rows created.
+              </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">2 sent, 1 processed</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">1 SUPPRESSED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">14.1ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-space-md py-2 bg-surface-container-low/50 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">ATTESTED: STRICT ONCE-ONLY SEMANTICS</span>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant hover:border-primary hover:text-primary transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>RUN INJECTION</span>
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Fault Card #06 (CRITICAL FAILURE CASE) -->
+<div class="bg-surface-container-lowest rounded-lg border-2 border-error/50 shadow-[0_2px_12px_rgba(186,26,26,0.08)] transition-all duration-100 flex flex-col justify-between overflow-hidden relative">
+<div class="absolute top-0 right-0 w-3 h-3 bg-error text-on-error flex items-center justify-center font-label-xs text-[8px]">!</div>
+<div>
+<!-- Header Bar with Crimson Accent -->
+<div class="px-space-md py-2.5 border-b border-error/30 bg-error-container/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-error">#06</span>
+<span class="font-label-md text-label-md font-bold text-error">TOOL VANISHES // MCP DAEMON CRASH</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container border border-error/40 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>FAIL [CRITICAL SLA BREACH]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">github-audit-mcp (PID 41302)</span></span>
+<span class="text-error font-label-xs font-bold">PROCESS TERMINATED</span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-error bg-error-container/30 px-2 py-1 rounded border border-error/20 font-bold">
+                kill -9 sent to stdio child process during active signature check
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Gateway detects broken pipe, falls back to offline notarization cache, flags node.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-error uppercase tracking-wider pt-0.5 font-bold">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Gateway failed to switch fallback; thread hung in <code class="font-label-xs bg-surface-container px-1 py-0.5 rounded text-error">await_child</code> for 30.0s before SIGALRM.
+              </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-error">3 / 3 (exceeded SLA)</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">0 DETECTED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-error">30,012ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-space-md py-2 bg-error-container/10 border-t border-error/20 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-error">warning</span>
+<span class="font-label-xs text-label-xs text-error font-bold tracking-tight">VIOLATION: RECOVERY_TIMEOUT_EXCEEDED (30.0s &gt; 180ms SLA)</span>
+</div>
+<button class="px-3 py-1 rounded bg-error text-on-error font-label-xs text-label-xs font-bold hover:bg-on-error-container transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>DEBUG &amp; RE-RUN</span>
+<span class="material-symbols-outlined text-[13px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Fault Card #07 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/60 shadow-[0_1px_3px_rgba(21,27,42,0.03)] hover:border-outline transition-all duration-100 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-outline-variant/60"></div>
+<div class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-outline-variant/60"></div>
+<div>
+<!-- Header Bar -->
+<div class="px-space-md py-2.5 border-b border-outline-variant/40 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">#07</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">STALE READ // REPLICA DIVERGENCE LAG</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASS [GATE COMPLIANT]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">postgres-pool.writer-01 vs replica-03</span></span>
+<span class="text-outline font-label-xs">LSN LAG: <span class="text-on-surface">182 POSITIONS</span></span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">
+                Artificial 2500ms replication lag injected on read replica node
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Read-your-writes monotonic invariant router redirects to master leader.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Router checked LSN lag (182 LSNs behind) and transparently routed query to leader.
+              </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1 / 1 (diverted)</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">0 DETECTED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">18.4ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-space-md py-2 bg-surface-container-low/50 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">ATTESTED: MONOTONIC LSN CONSISTENCY</span>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant hover:border-primary hover:text-primary transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>RUN INJECTION</span>
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Fault Card #08 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/60 shadow-[0_1px_3px_rgba(21,27,42,0.03)] hover:border-outline transition-all duration-100 flex flex-col justify-between overflow-hidden relative group">
+<div class="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-outline-variant/60"></div>
+<div class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b border-l border-outline-variant/60"></div>
+<div>
+<!-- Header Bar -->
+<div class="px-space-md py-2.5 border-b border-outline-variant/40 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">#08</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">AUTH FAILURE // INVALID ED25519 TOKEN</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>PASS [GATE COMPLIANT]
+            </span>
+</div>
+<!-- Target URI Strip -->
+<div class="px-space-md py-1.5 bg-surface-container-lowest border-b border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-xs text-label-xs">
+<span class="text-outline uppercase">TARGET: <span class="text-on-surface font-bold">mcp-gateway::strict_attributed_proxy</span></span>
+<span class="text-outline font-label-xs">CRYPTO: <span class="text-on-surface">ED25519-POLY1305</span></span>
+</div>
+<!-- Diagnostics Matrix Table -->
+<div class="p-space-md flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">INJECTED FAULT</span>
+<span class="col-span-9 font-label-sm text-label-sm text-on-surface bg-surface-container-low px-2 py-1 rounded border border-outline-variant/30">
+                Forged signature byte in Authorization header (signature mismatch)
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">EXPECTED INVARIANT</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Instant 401 Unauthorized rejection, IP rate limiter counter +1, audit security alert logged.
+              </span>
+</div>
+<div class="grid grid-cols-12 gap-2 text-on-surface-variant">
+<span class="col-span-3 font-label-xs text-label-xs text-outline uppercase tracking-wider pt-0.5">ACTUAL TELEMETRY</span>
+<span class="col-span-9 text-on-surface font-body-sm">
+                Rejected in 0.4ms, audit security alert logged to hash chain block #1429.
+              </span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2 pt-2 border-t border-outline-variant/30 bg-surface-container-low/30 -mx-space-md px-space-md pb-1">
+<div>
+<span class="font-label-xs text-label-xs text-outline block">ATTEMPTS</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1 / 1 (quarantined)</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">DUPLICATES</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary">0 DETECTED</span>
+</div>
+<div>
+<span class="font-label-xs text-label-xs text-outline block">EXECUTION</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">0.8ms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-space-md py-2 bg-surface-container-low/50 border-t border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">ATTESTED: AIRGAP CRYPTOGRAPHIC SHIELD</span>
+</div>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant hover:border-primary hover:text-primary transition-all flex items-center gap-1 shadow-sm active:scale-95" type="button">
+<span>RUN INJECTION</span>
+<span class="material-symbols-outlined text-[13px]">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Instrument Status Rack & Footprint -->
+<div class="w-full bg-surface-container-lowest border-t border-outline-variant/40 px-margin-lg py-3 flex flex-col md:flex-row items-center justify-between gap-y-2 mt-auto">
+<div class="flex items-center gap-space-md text-outline font-label-xs text-label-xs">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-on-surface font-bold uppercase tracking-wider">HARNESS ATTESTATION ENGINE:</span>
+<span class="text-tertiary font-bold">ONLINE</span>
+</div>
+<span class="text-outline-variant">|</span>
+<div>
+<span>SEED: </span>
+<span class="font-bold text-on-surface">0x48FA_ADVERSARIAL_9</span>
+</div>
+<span class="text-outline-variant">|</span>
+<div>
+<span>QUORUM: </span>
+<span class="font-bold text-tertiary">3 / 3 NODES COMMITTED</span>
+</div>
+<span class="text-outline-variant">|</span>
+<div>
+<span>CLOCK SKEW: </span>
+<span class="font-bold text-on-surface">0.02μs</span>
+</div>
+</div>
+<!-- Quick Keyboard Guidance -->
+<div class="flex items-center gap-3 font-label-xs text-label-xs text-outline">
+<span>SHORTCUTS:</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold border border-outline-variant/40">[⌘⇧R] Run All</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold border border-outline-variant/40">[P] Switch Profile</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-bold border border-outline-variant/40">[T] Filter Failures</span>
+</div>
+</div>
+<!-- Client-side Micro-Interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const runAllBtn = document.getElementById('runAllBtn');
+      if (runAllBtn) {
+        runAllBtn.addEventListener('click', () => {
+          const originalText = runAllBtn.innerHTML;
+          runAllBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[16px] text-on-primary animate-spin">sync</span>
+            <span>INJECTING MATRIX SUITE...</span>
+          `;
+          runAllBtn.classList.add('opacity-90', 'pointer-events-none');
+          setTimeout(() => {
+            runAllBtn.innerHTML = originalText;
+            runAllBtn.classList.remove('opacity-90', 'pointer-events-none');
+          }, 1400);
+        });
+      }
+
+      // Add individual injection triggers
+      const singleBtns = document.querySelectorAll('.grid button');
+      singleBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const orig = btn.innerHTML;
+          btn.innerHTML = `<span class="material-symbols-outlined text-[13px] animate-spin text-primary">sync</span><span>SIMULATING</span>`;
+          btn.classList.add('pointer-events-none');
+          setTimeout(() => {
+            btn.innerHTML = orig;
+            btn.classList.remove('pointer-events-none');
+          }, 800);
+        });
+      });
+    });
+  </script>
+</div></main></div></body></html>

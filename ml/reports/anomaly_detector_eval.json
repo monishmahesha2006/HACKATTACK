@@ -1,0 +1,17 @@
+{
+  "model": "anomaly_detector",
+  "version": "1.0.0",
+  "metrics": {
+    "detection_rate": 0.92,
+    "false_alarm_rate": 0.04
+  },
+  "gates": [
+    {
+      "name": "Detection Rate >= 0.85",
+      "threshold": 0.85,
+      "value": 0.92,
+      "passed": true
+    }
+  ],
+  "evaluated_at": "2026-10-15T09:24:57.507460+00:00"
+}

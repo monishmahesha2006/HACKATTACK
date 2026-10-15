@@ -1,0 +1,57 @@
+[
+  {
+    "id": "web_fixture",
+    "name": "MCP Server: web_fixture",
+    "version": "1.0.0",
+    "transport": "stdio",
+    "source": "LOCAL_DEMO",
+    "status": "CONNECTED",
+    "last_seen": "2026-10-15T09:27:30Z",
+    "tool_count": 2,
+    "latency_ms_ewma": 1.5
+  },
+  {
+    "id": "sheets",
+    "name": "MCP Server: sheets",
+    "version": "1.0.0",
+    "transport": "stdio",
+    "source": "LOCAL_DEMO",
+    "status": "CONNECTED",
+    "last_seen": "2026-10-15T09:27:30Z",
+    "tool_count": 5,
+    "latency_ms_ewma": 0.11
+  },
+  {
+    "id": "drafts",
+    "name": "MCP Server: drafts",
+    "version": "1.0.0",
+    "transport": "stdio",
+    "source": "LOCAL_DEMO",
+    "status": "CONNECTED",
+    "last_seen": "2026-10-15T09:27:30Z",
+    "tool_count": 6,
+    "latency_ms_ewma": 0.26
+  },
+  {
+    "id": "rewindx_domain",
+    "name": "MCP Server: rewindx_domain",
+    "version": "1.0.0",
+    "transport": "stdio",
+    "source": "LOCAL_DEMO",
+    "status": "CONNECTED",
+    "last_seen": "2026-10-15T09:27:30Z",
+    "tool_count": 6,
+    "latency_ms_ewma": 1.5
+  },
+  {
+    "id": "chaos_proxy",
+    "name": "MCP Server: chaos_proxy",
+    "version": "1.0.0",
+    "transport": "stdio",
+    "source": "LOCAL_DEMO",
+    "status": "CONNECTED",
+    "last_seen": "2026-10-15T09:27:30Z",
+    "tool_count": 3,
+    "latency_ms_ewma": 1.5
+  }
+]

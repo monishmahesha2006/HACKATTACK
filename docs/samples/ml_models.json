@@ -1,0 +1,107 @@
+[
+  {
+    "name": "failure_predictor",
+    "version": "1.0.0",
+    "trained_at": "2026-10-15T09:24:57.507460+00:00",
+    "dataset": {
+      "kind": "SYNTHETIC",
+      "size": 1200,
+      "seed": 42,
+      "split": {
+        "train": 800,
+        "val": 200,
+        "test": 200
+      }
+    },
+    "available": true,
+    "limitations": [
+      "Demonstration model trained on synthetic telemetry and mock listings",
+      "Distribution shifted if running in custom non-standard schemas"
+    ],
+    "safe_envelope": "Confidence calibrated for bounded local demo domains"
+  },
+  {
+    "name": "risk_scorer",
+    "version": "1.0.0",
+    "trained_at": "2026-10-15T09:24:57.507460+00:00",
+    "dataset": {
+      "kind": "SYNTHETIC",
+      "size": 1200,
+      "seed": 42,
+      "split": {
+        "train": 800,
+        "val": 200,
+        "test": 200
+      }
+    },
+    "available": true,
+    "limitations": [
+      "Demonstration model trained on synthetic telemetry and mock listings",
+      "Distribution shifted if running in custom non-standard schemas"
+    ],
+    "safe_envelope": "Confidence calibrated for bounded local demo domains"
+  },
+  {
+    "name": "anomaly_detector",
+    "version": "1.0.0",
+    "trained_at": "2026-10-15T09:24:57.507460+00:00",
+    "dataset": {
+      "kind": "SYNTHETIC",
+      "size": 1200,
+      "seed": 42,
+      "split": {
+        "train": 800,
+        "val": 200,
+        "test": 200
+      }
+    },
+    "available": true,
+    "limitations": [
+      "Demonstration model trained on synthetic telemetry and mock listings",
+      "Distribution shifted if running in custom non-standard schemas"
+    ],
+    "safe_envelope": "Confidence calibrated for bounded local demo domains"
+  },
+  {
+    "name": "internship_ranker",
+    "version": "1.0.0",
+    "trained_at": "2026-10-15T09:24:57.507460+00:00",
+    "dataset": {
+      "kind": "SYNTHETIC",
+      "size": 1200,
+      "seed": 42,
+      "split": {
+        "train": 800,
+        "val": 200,
+        "test": 200
+      }
+    },
+    "available": true,
+    "limitations": [
+      "Demonstration model trained on synthetic telemetry and mock listings",
+      "Distribution shifted if running in custom non-standard schemas"
+    ],
+    "safe_envelope": "Confidence calibrated for bounded local demo domains"
+  },
+  {
+    "name": "injection_classifier",
+    "version": "1.0.0",
+    "trained_at": "2026-10-15T09:24:57.507460+00:00",
+    "dataset": {
+      "kind": "SYNTHETIC",
+      "size": 1200,
+      "seed": 42,
+      "split": {
+        "train": 800,
+        "val": 200,
+        "test": 200
+      }
+    },
+    "available": true,
+    "limitations": [
+      "Demonstration model trained on synthetic telemetry and mock listings",
+      "Distribution shifted if running in custom non-standard schemas"
+    ],
+    "safe_envelope": "Confidence calibrated for bounded local demo domains"
+  }
+]

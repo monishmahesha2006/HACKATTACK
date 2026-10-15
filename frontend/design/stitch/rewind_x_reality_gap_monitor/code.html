@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#006247", "error": "#ba1a1a", "on-tertiary-container": "#beffe0", "tertiary-container": "#007d5c", "secondary-fixed": "#8ef2ff", "on-secondary-fixed": "#001f23", "on-error": "#ffffff", "secondary-fixed-dim": "#71d5e2", "surface-dim": "#d3daee", "surface-container-high": "#e2e8fc", "surface-tint": "#1349f0", "on-primary": "#ffffff", "on-surface": "#151b2a", "outline-variant": "#c4c5d9", "inverse-surface": "#2a3040", "surface-container": "#e9edff", "surface-container-low": "#f1f3ff", "on-tertiary": "#ffffff", "surface-variant": "#dce2f6", "surface": "#f9f9ff", "secondary": "#006972", "primary": "#003fe1", "on-secondary-fixed-variant": "#004f56", "secondary-container": "#8ef2ff", "inverse-primary": "#b9c3ff", "on-surface-variant": "#434656", "error-container": "#ffdad6", "on-secondary-container": "#006f79", "on-tertiary-fixed": "#002115", "on-secondary": "#ffffff", "tertiary-fixed": "#7ef9c9", "surface-container-highest": "#dce2f6", "outline": "#747688", "on-primary-fixed-variant": "#0034bf", "on-primary-container": "#efefff", "tertiary-fixed-dim": "#60dcae", "primary-fixed": "#dde1ff", "background": "#f9f9ff", "on-error-container": "#93000a", "on-background": "#151b2a", "inverse-on-surface": "#edf0ff", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#b9c3ff", "on-primary-fixed": "#001356", "primary-container": "#2f5bff", "on-tertiary-fixed-variant": "#00513a", "surface-bright": "#f9f9ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "gutter": "0.75rem", "space-sm": "0.5rem", "margin-lg": "1.5rem", "space-md": "0.75rem", "gutter-lg": "1rem", "margin": "1rem", "space-lg": "1rem", "gutter-sm": "0.5rem", "margin-sm": "0.75rem", "space-xl": "1.5rem" }, "fontFamily": { "label-xs": ["Space Mono"], "headline-xl": ["Bricolage Grotesque"], "label-sm": ["Space Mono"], "headline-sm": ["Bricolage Grotesque"], "label-lg": ["Space Mono"], "label-md": ["Space Mono"], "body-md": ["Hanken Grotesk"], "headline-lg": ["Bricolage Grotesque"], "headline-xl-mobile": ["Bricolage Grotesque"], "headline-md": ["Bricolage Grotesque"], "body-sm": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"] }, "fontSize": { "label-xs": ["9px", { "lineHeight": "12px", "letterSpacing": "0.15em", "fontWeight": "400" }], "headline-xl": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.12em", "fontWeight": "400" }], "headline-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }], "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }], "body-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between border-r border-outline-variant/30 select-none"><div class="flex flex-col"><div class="h-14 px-gutter flex items-center gap-space-sm border-b border-outline-variant/30 bg-surface-container-low/50"><div class="w-5 h-5 rounded-DEFAULT bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm">R</div><div class="flex flex-col"><div class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold leading-none">REWIND X</div><div class="font-label-xs text-label-xs text-on-surface-variant font-mono uppercase tracking-widest mt-0.5">FLT-OPS V4.2</div></div><div class="ml-auto flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span></div></div><div class="px-gutter pt-space-md pb-space-xs"><div class="font-label-xs text-label-xs uppercase tracking-widest text-outline font-label-xs mb-space-xs flex items-center justify-between"><span>OPERATIONAL RACKS</span><span class="text-outline font-mono">[09]</span></div></div><nav class="flex flex-col px-space-xs space-y-0.5" data-active-classes="bg-surface-container text-primary font-bold shadow-[inset_2px_0_0_0_#2f5bff]"><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="mission" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>MISSION</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">01</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="rehearsal" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>REHEARSAL</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">02</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="verification" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>VERIFICATION</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">03</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="rewind" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>REWIND</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">04</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="audit" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>AUDIT</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">05</span></a><a aria-current="page" class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT transition-colors bg-surface-container text-primary font-bold shadow-[inset_2px_0_0_0_#2f5bff]" data-path="gap-monitor" href="#"><span class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary ring-2 ring-primary/20"></span>GAP MONITOR</span><span class="font-label-xs text-label-xs text-primary font-bold">ACTIVE</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="mcp-control" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>MCP CONTROL</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">07</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="intelligence-lab" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>INTELLIGENCE LAB</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">08</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="chaos-arena" href="#"><span class="flex items-center gap-space-sm"><span class="w-1 h-1 rounded-full bg-outline-variant group-hover:bg-primary"></span>CHAOS ARENA</span><span class="font-label-xs text-label-xs text-outline group-hover:text-on-surface-variant">09</span></a></nav></div><div class="p-gutter border-t border-outline-variant/30 bg-surface-container-low/40"><div class="flex items-center justify-between mb-space-xs"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-label-sm text-label-sm text-on-surface font-bold uppercase tracking-wider">NOMINAL</span></div><span class="font-label-xs text-label-xs text-tertiary-container font-mono bg-on-tertiary-container/30 px-1 py-0.5 rounded-DEFAULT">99.98%</span></div><div class="flex items-center justify-between text-outline-variant font-label-xs text-label-xs"><span class="font-mono">BUS 0x48A</span><span class="font-mono">RATE: 120HZ</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant/30 z-40 flex items-center justify-between px-margin-lg shadow-[0_1px_4px_rgba(21,27,42,0.02)]"><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs"><span class="inline-flex items-center px-space-sm py-0.5 rounded-DEFAULT font-label-xs text-label-xs bg-surface-container font-mono text-on-surface-variant border border-outline-variant/40">LOCAL_DEMO</span><span class="inline-flex items-center px-space-sm py-0.5 rounded-DEFAULT font-label-xs text-label-xs bg-tertiary-fixed/30 text-tertiary font-mono border border-tertiary/20 font-bold"><span class="w-1 h-1 rounded-full bg-tertiary mr-1"></span>ACTIVE LINK</span><span class="inline-flex items-center px-space-sm py-0.5 rounded-DEFAULT font-label-xs text-label-xs bg-secondary-container/30 text-secondary font-mono border border-secondary/20">STATE: RUNNING</span></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2 text-outline text-[16px]">terminal</span><input class="w-60 h-8 pl-7 pr-12 bg-surface-container-low/60 rounded-DEFAULT border border-outline-variant/40 font-mono font-label-sm text-label-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:bg-surface-container-lowest" placeholder="Cmd+K quick dispatch..." type="text"/><span class="absolute right-2 font-label-xs text-label-xs text-outline uppercase bg-surface-container-highest px-1 py-0.5 rounded-DEFAULT border border-outline-variant/30 font-mono">⌘K</span></div></div><div class="flex items-center gap-gutter-lg"><div class="hidden xl:flex items-center gap-gutter font-mono font-label-xs text-label-xs text-on-surface-variant"><div class="flex items-center gap-1.5"><span class="text-outline">LATENCY:</span><span class="text-tertiary font-bold">0.12ms</span></div><div class="h-3 w-px bg-outline-variant/40"></div><div class="flex items-center gap-1.5"><span class="text-outline">SYNC:</span><span class="text-on-surface font-bold">100%</span></div></div><div class="flex items-center gap-space-sm"><button class="w-8 h-8 rounded-DEFAULT border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface" title="Quick Rollback" type="button"><span class="material-symbols-outlined text-[18px]">replay</span></button><button class="w-8 h-8 rounded-DEFAULT border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface" title="Filter Telemetry" type="button"><span class="material-symbols-outlined text-[18px]">tune</span></button><button class="w-8 h-8 rounded-DEFAULT border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface relative" title="System Notifications" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-error"></span></button></div><div class="h-4 w-px bg-outline-variant/40"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center select-none"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-14 min-h-screen bg-surface bg-[radial-gradient(#c4c5d9_1px,transparent_1px)] [background-size:16px_16px]"><div class="flex flex-col w-full">
+<!-- Top Operational Subheader / Gate Banner -->
+<section class="bg-surface-container-lowest border-b border-outline-variant/30 px-gutter-lg py-space-sm flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm font-label-xs text-label-xs tracking-wider">
+<span class="text-primary font-bold">05 // GAP MONITOR</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant uppercase font-mono">Reality Divergence &amp; State Convergence Detector</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping ml-1" title="Active gap detected"></span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="inline-flex items-center gap-1.5 px-space-md py-1 bg-surface-container-lowest text-on-surface text-label-sm font-label-sm border border-outline-variant/40 rounded-DEFAULT hover:bg-surface-container-low transition-colors select-none" type="button">
+<span class="material-symbols-outlined text-[14px] text-outline">radar</span>
+<span>TRIGGER HEURISTIC SCAN</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-DEFAULT hover:bg-primary-container transition-colors shadow-sm select-none" type="button">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>AUTO-REMEDIATE GAPS</span>
+<span class="ml-1 px-1 py-0.2 bg-on-primary/20 text-on-primary font-mono text-[9px] rounded-DEFAULT">⌘⇧R</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Badges Strip -->
+<div class="flex flex-wrap items-center gap-space-xs font-mono text-label-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 bg-surface-container-low text-on-surface-variant border border-outline-variant/30 rounded-DEFAULT">
+<span class="text-outline">SESSION:</span>
+<strong class="text-on-surface font-bold">RX-OPS-9904 RUN #09</strong>
+</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 bg-surface-container-low text-on-surface-variant border border-outline-variant/30 rounded-DEFAULT">
+<span class="text-outline">TARGET:</span>
+<span class="text-on-surface font-bold">RX-STAGE-ALPHA #snap-9904b</span>
+</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 bg-surface-container-low text-on-surface-variant border border-outline-variant/30 rounded-DEFAULT">
+<span class="text-outline">THRESHOLD:</span>
+<span class="text-primary font-bold">0.005%</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 bg-error-container text-on-error-container border border-error/20 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span class="font-bold">2 ACTIVE GAPS DETECTED</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 bg-tertiary-fixed/40 text-tertiary border border-tertiary/20 rounded-DEFAULT">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-bold">1 REPAIRED &amp; RESOLVED</span>
+</span>
+<div class="ml-auto hidden xl:flex items-center gap-2 text-outline text-label-xs">
+<span>POLL: 50MS</span>
+<span>•</span>
+<span>MERKLE: 0x4B..EF21</span>
+</div>
+</div>
+</section>
+<!-- Main Content Space -->
+<div class="p-gutter-lg flex flex-col gap-margin-lg">
+<!-- Section 1: 3-Column State Diff Matrix -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-space-xs border-b border-outline-variant/30">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs font-mono uppercase text-primary bg-primary-fixed px-1.5 py-0.5 rounded-DEFAULT font-bold">LIVE INSPECTOR</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">
+            DIFF INSPECTOR // <span class="font-mono text-label-md text-on-surface-variant font-normal">ENTITY: user_ledger_reconciliation_batch_#1425</span>
+</h2>
+</div>
+<div class="flex items-center gap-space-md text-label-xs font-label-xs text-outline">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-DEFAULT bg-surface-container border border-outline-variant/40"></span> MATCH</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-DEFAULT bg-secondary-container border border-secondary/40"></span> LATENCY LAG</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-DEFAULT bg-error-container border border-error/40"></span> DIVERGENCE</span>
+</div>
+</div>
+<!-- 3-Column Workstation Matrix -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-stretch">
+<!-- Column 1: Predicted State (Rehearsal) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-DEFAULT flex flex-col shadow-[0_1px_3px_rgba(15,23,42,0.03)] relative">
+<!-- Aerospace corner marker -->
+<div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-primary/40"></div>
+<div class="h-10 px-space-md flex items-center justify-between border-b border-outline-variant/30 bg-surface-container-low/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[16px]">model_training</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface">PREDICTED STATE</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-mono">t = 0.00s</span>
+</div>
+<div class="px-space-md py-space-xs border-b border-outline-variant/20 bg-surface-container-lowest text-label-xs font-label-xs text-on-surface-variant font-mono flex items-center justify-between">
+<span>REHEARSAL SIMULATION</span>
+<span class="text-tertiary font-bold">HASH: 0x981C</span>
+</div>
+<!-- Payload Code View -->
+<div class="p-space-md flex-1 font-mono text-body-sm leading-relaxed space-y-1.5 bg-surface-container-low/20">
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">row_count:</span>
+<span class="text-on-surface font-bold">1,423</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">balance_delta:</span>
+<span class="text-on-surface font-bold">+$42,500.00</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">outbound_transmissions:</span>
+<span class="text-on-surface font-bold">0 <span class="text-outline font-normal">(draft_mode)</span></span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">db_lock_held_ms:</span>
+<span class="text-on-surface font-bold">18ms</span>
+</div>
+<div class="flex flex-col py-1.5 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline text-label-xs mb-0.5">cache_invalidation:</span>
+<span class="text-on-surface font-mono text-body-sm tracking-tight text-primary">["users_v3_summary", "org_tier_cache"]</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">foreign_key_orphans:</span>
+<span class="text-on-surface font-bold">0</span>
+</div>
+</div>
+<!-- Footer Contract State -->
+<div class="p-space-sm border-t border-outline-variant/30 bg-surface-container-low/40 flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">CONTRACT INFERENCE</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-tertiary-fixed/30 text-tertiary border border-tertiary/20 text-label-xs font-label-xs font-bold rounded-DEFAULT">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              MODEL_CONTRACT: COMPLIANT
+            </span>
+</div>
+</div>
+<!-- Column 2: Observed Reality (Live Telemetry) -->
+<div class="bg-surface-container-lowest border-2 border-error/50 rounded-DEFAULT flex flex-col shadow-sm relative">
+<!-- Aerospace corner marker -->
+<div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-error"></div>
+<div class="h-10 px-space-md flex items-center justify-between border-b border-error/20 bg-error-container/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[16px]">sensors</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-error">OBSERVED REALITY</span>
+</div>
+<span class="font-label-xs text-label-xs text-error font-mono font-bold">t = +2m 14s</span>
+</div>
+<div class="px-space-md py-space-xs border-b border-outline-variant/20 bg-surface-container-lowest text-label-xs font-label-xs text-on-surface-variant font-mono flex items-center justify-between">
+<span>LIVE TELEMETRY APEX</span>
+<span class="text-error font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> SENSOR BUS ACTIVE
+            </span>
+</div>
+<!-- Payload Code View with Diffs -->
+<div class="p-space-md flex-1 font-mono text-body-sm leading-relaxed space-y-1.5 bg-surface-container-low/10">
+<!-- Row: Matched -->
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">row_count:</span>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-bold">1,423</span>
+<span class="material-symbols-outlined text-tertiary text-[14px]">check</span>
+</div>
+</div>
+<!-- Row: Matched -->
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">balance_delta:</span>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-bold">+$42,500.00</span>
+<span class="material-symbols-outlined text-tertiary text-[14px]">check</span>
+</div>
+</div>
+<!-- Row: Matched -->
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">outbound_transmissions:</span>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-bold">0</span>
+<span class="material-symbols-outlined text-tertiary text-[14px]">check</span>
+</div>
+</div>
+<!-- Row: Divergence Amber (db_lock_held_ms) -->
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-secondary-container/30 border border-secondary/40 text-on-surface">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-bold text-secondary">db_lock_held_ms:</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-error font-bold bg-error-container/40 px-1 py-0.2 rounded-DEFAULT">112ms</span>
+<span class="text-label-xs text-outline font-mono">(+94ms LAG)</span>
+</div>
+</div>
+<!-- Row: Divergence Red (Missing Cache Invalidation Key) -->
+<div class="flex flex-col py-1.5 px-2 rounded-DEFAULT bg-error-container/30 border border-error/40 text-on-surface">
+<div class="flex items-center justify-between mb-0.5">
+<span class="font-bold text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">close</span>
+                  cache_invalidation:
+                </span>
+<span class="text-[9px] font-mono uppercase bg-error text-on-error px-1 py-0.2 rounded-DEFAULT font-bold">DROPPED KEY</span>
+</div>
+<div class="font-mono text-body-sm">
+<span class="text-on-surface">["users_v3_summary"]</span>
+<span class="text-error text-label-xs block mt-0.5 font-bold">MISSING: "org_tier_cache"</span>
+</div>
+</div>
+<!-- Row: Matched -->
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">foreign_key_orphans:</span>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-bold">0</span>
+<span class="material-symbols-outlined text-tertiary text-[14px]">check</span>
+</div>
+</div>
+</div>
+<!-- Footer Divergence State -->
+<div class="p-space-sm border-t border-error/20 bg-error-container/20 flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">warning</span>
+              2 REALITY ANOMALIES
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-error text-on-error text-label-xs font-label-xs font-bold rounded-DEFAULT">
+              STATUS: DIVERGENT
+            </span>
+</div>
+</div>
+<!-- Column 3: Required Invariant (Formal Spec) -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-DEFAULT flex flex-col shadow-[0_1px_3px_rgba(15,23,42,0.03)] relative">
+<!-- Aerospace corner marker -->
+<div class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-outline"></div>
+<div class="h-10 px-space-md flex items-center justify-between border-b border-outline-variant/30 bg-surface-container-low/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">gavel</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider text-on-surface">REQUIRED INVARIANT</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-mono">SPEC: v4.2</span>
+</div>
+<div class="px-space-md py-space-xs border-b border-outline-variant/20 bg-surface-container-lowest text-label-xs font-label-xs text-on-surface-variant font-mono flex items-center justify-between">
+<span>GROUND-TRUTH POLICY</span>
+<span class="text-on-surface-variant font-bold">STRICT_ENFORCE</span>
+</div>
+<!-- Invariant Constraint Rules -->
+<div class="p-space-md flex-1 font-mono text-body-sm leading-relaxed space-y-1.5 bg-surface-container-low/20">
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">exact_parity(rehearsal)</span>
+<span class="px-1.5 py-0.2 bg-tertiary-fixed/30 text-tertiary text-label-xs font-bold rounded-DEFAULT">PASS</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline truncate max-w-[190px]">invariant(sum == balance)</span>
+<span class="px-1.5 py-0.2 bg-tertiary-fixed/30 text-tertiary text-label-xs font-bold rounded-DEFAULT">PASS</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">outbound: STRICT 0</span>
+<span class="px-1.5 py-0.2 bg-tertiary-fixed/30 text-tertiary text-label-xs font-bold rounded-DEFAULT">PASS</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-secondary/30">
+<span class="text-secondary font-bold">db_lock_held_ms &lt;= 50ms</span>
+<span class="px-1.5 py-0.2 bg-secondary-container text-secondary text-label-xs font-bold rounded-DEFAULT">FAIL / WARN</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-error/30">
+<span class="text-error font-bold truncate max-w-[170px]">complete_cluster_purge()</span>
+<span class="px-1.5 py-0.2 bg-error-container text-error text-label-xs font-bold rounded-DEFAULT">FAIL / HIGH</span>
+</div>
+<div class="flex justify-between items-center py-1 px-2 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-outline">fk_orphans == 0</span>
+<span class="px-1.5 py-0.2 bg-tertiary-fixed/30 text-tertiary text-label-xs font-bold rounded-DEFAULT">PASS</span>
+</div>
+</div>
+<!-- Footer Spec Seal -->
+<div class="p-space-sm border-t border-outline-variant/30 bg-surface-container-low/40 flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline">ATTESTATION SEAL</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-surface-container text-on-surface-variant border border-outline-variant/40 text-label-xs font-label-xs font-mono rounded-DEFAULT">
+<span class="material-symbols-outlined text-[13px] text-primary">security</span>
+              MERKLE_SEALED: 0x4B21
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Detected Reality Gaps & Autonomous Remediation Playbooks -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs border-b border-outline-variant/30">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-xs text-label-xs font-mono uppercase text-outline">02 // PLAYBOOKS</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">
+            DETECTED REALITY GAPS &amp; AUTONOMOUS REMEDIATION PLAYBOOKS
+          </h3>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-1 font-label-xs text-label-xs select-none">
+<button class="px-space-sm py-1 rounded-DEFAULT bg-primary text-on-primary font-bold" type="button">ALL GAPS (3)</button>
+<button class="px-space-sm py-1 rounded-DEFAULT bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:bg-surface-container" type="button">CRITICAL (1)</button>
+<button class="px-space-sm py-1 rounded-DEFAULT bg-surface-container-low text-on-surface-variant border border-outline-variant/30 hover:bg-surface-container" type="button">WARNING (1)</button>
+<button class="px-space-sm py-1 rounded-DEFAULT bg-surface-container-low text-tertiary border border-outline-variant/30 hover:bg-surface-container" type="button">RESOLVED (1)</button>
+</div>
+</div>
+<!-- Action Cards Stack -->
+<div class="grid grid-cols-1 gap-space-md">
+<!-- Card 1: CRITICAL / HIGH - Stale Cache Key Invalidation Divergence -->
+<div class="bg-surface-container-lowest border-l-4 border-l-error border border-outline-variant/40 rounded-DEFAULT p-space-md flex flex-col gap-space-sm shadow-sm relative">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm font-mono text-label-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-DEFAULT bg-error text-on-error font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+                CRITICAL [SLA: 120s]
+              </span>
+<span class="text-on-surface font-bold text-label-sm">#GAP-88102</span>
+<span class="text-outline">TARGET:</span>
+<span class="px-1.5 py-0.5 bg-surface-container-low rounded-DEFAULT border border-outline-variant/30 text-on-surface font-bold">edge-cache.us-east-1</span>
+</div>
+<!-- Operator Intervention Badge -->
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-error-container/60 border border-error/30 text-error text-label-xs font-label-xs font-bold rounded-DEFAULT">
+<span class="material-symbols-outlined text-[14px]">person</span>
+<span>NEEDS-HUMAN</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8 flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Stale Cache Key Invalidation Divergence
+              </h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface">Likely Root Cause:</strong> Redis edge replica #03 dropped cluster publish frame during concurrent WAL checkpoint commit on primary tier.
+              </p>
+<div class="mt-1 p-space-sm bg-surface-container-low/50 border border-outline-variant/30 rounded-DEFAULT font-mono text-body-sm text-on-surface">
+<span class="text-primary font-bold">SAFE REMEDIATION PLAYBOOK:</span> Evict key <code class="bg-surface-container px-1 py-0.5 rounded text-error font-bold">org_tier_cache</code> via direct signed REST probe with fallback to replica quarantine.
+              </div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-xs items-stretch justify-center h-full">
+<button class="w-full inline-flex items-center justify-center gap-1.5 px-space-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded-DEFAULT hover:bg-primary-container transition-colors shadow-sm font-bold" type="button">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>EXECUTE SAFE EVICTION</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container-lowest text-error font-label-xs text-label-xs border border-error/30 rounded-DEFAULT hover:bg-error-container/20 text-center font-mono" type="button">
+                  QUARANTINE REPLICA
+                </button>
+<button class="px-space-sm py-1 bg-surface-container-lowest text-on-surface font-label-xs text-label-xs border border-outline-variant/40 rounded-DEFAULT hover:bg-surface-container-low text-center font-mono" type="button">
+                  INSPECT TRACE
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: WARNING / MEDIUM - Postgres Connection Lock Latency Anomaly -->
+<div class="bg-surface-container-lowest border-l-4 border-l-secondary border border-outline-variant/40 rounded-DEFAULT p-space-md flex flex-col gap-space-sm shadow-sm relative">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm font-mono text-label-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold border border-secondary/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                WARNING [NON-BLOCKING]
+              </span>
+<span class="text-on-surface font-bold text-label-sm">#GAP-88103</span>
+<span class="text-outline">TARGET:</span>
+<span class="px-1.5 py-0.5 bg-surface-container-low rounded-DEFAULT border border-outline-variant/30 text-on-surface font-bold">postgres-pool.writer-01</span>
+</div>
+<!-- Autonomous Badge -->
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 bg-secondary-container/40 border border-secondary/30 text-secondary text-label-xs font-label-xs font-bold rounded-DEFAULT">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+<span>AUTONOMOUS ELIGIBLE</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8 flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Postgres Connection Lock Latency Anomaly
+              </h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface">Likely Root Cause:</strong> Autovacuum worker triggered table scan on <code class="font-mono text-outline">users_v3</code> concurrent with batch migration insert.
+              </p>
+<div class="mt-1 p-space-sm bg-surface-container-low/50 border border-outline-variant/30 rounded-DEFAULT font-mono text-body-sm text-on-surface">
+<span class="text-secondary font-bold">SAFE REMEDIATION PLAYBOOK:</span> Throttle lock acquisition backoff to 250ms and deprioritize vacuum thread priority.
+              </div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-xs items-stretch justify-center h-full">
+<button class="w-full inline-flex items-center justify-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface border border-outline-variant/50 font-label-md text-label-md rounded-DEFAULT hover:bg-surface-container-low transition-colors font-bold" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span>
+<span>APPLY ADAPTIVE BACKOFF</span>
+</button>
+<button class="w-full py-1 bg-surface-container-lowest text-outline font-label-xs text-label-xs border border-outline-variant/30 rounded-DEFAULT hover:bg-surface-container-low text-center font-mono" type="button">
+                MUTE NOTIFICATION (10M)
+              </button>
+</div>
+</div>
+</div>
+<!-- Card 3: RESOLVED STATE - Repaired and re-verified -->
+<div class="bg-surface-container-lowest border-l-4 border-l-tertiary border border-tertiary/30 rounded-DEFAULT p-space-md flex flex-col gap-space-sm shadow-sm relative">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm font-mono text-label-xs">
+<!-- Clear Resolved Badge Requested -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-DEFAULT bg-tertiary-fixed text-on-tertiary-fixed font-bold border border-tertiary/30">
+<span class="material-symbols-outlined text-[13px] text-tertiary font-bold">check_circle</span>
+                ● REPAIRED AND RE-VERIFIED
+              </span>
+<span class="text-on-surface font-bold text-label-sm">#GAP-88099</span>
+<span class="text-outline">RESOLVED:</span>
+<span class="px-1.5 py-0.5 bg-tertiary-fixed/20 text-tertiary font-mono rounded-DEFAULT">14:26:10 UTC</span>
+</div>
+<span class="font-mono text-label-xs text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield_with_heart</span>
+              CONVERGENCE VERIFIED
+            </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8 flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold flex items-center gap-2">
+<span>Transient Metadata Egress Packet Leakage</span>
+<span class="px-1.5 py-0.2 bg-surface-container text-outline text-label-xs font-mono font-normal rounded-DEFAULT">CLOSED</span>
+</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface">Likely Root Cause:</strong> Egress firewall rule allowed single UDP DNS lookup before local network namespace socket closed.
+              </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-mono">
+<span class="text-tertiary font-bold">REMEDIATION COMPLETED:</span> Airgap iptables drop rule applied + reverse socket terminated in 12ms.
+              </p>
+<div class="mt-1 flex flex-wrap items-center gap-space-md text-label-xs font-mono text-outline">
+<span class="text-tertiary font-bold">VERIFIED BY QUORUM: 3/3 NODES</span>
+<span>•</span>
+<span>RESIDUE: 0 BYTES</span>
+<span>•</span>
+<span>ATTESTATION HASH: <code class="text-on-surface">0x89fa..91c4</code></span>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-xs items-stretch justify-center h-full">
+<button class="w-full inline-flex items-center justify-center gap-1.5 px-space-md py-1.5 bg-surface-container-lowest text-on-surface border border-outline-variant/40 font-label-md text-label-md rounded-DEFAULT hover:bg-surface-container-low transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px] text-tertiary">data_object</span>
+<span>INSPECT RESOLUTION PROOF [JSON]</span>
+</button>
+<button class="w-full py-1 bg-surface-container-low/40 text-on-surface-variant font-label-xs text-label-xs border border-outline-variant/30 rounded-DEFAULT hover:bg-surface-container text-center font-mono" type="button">
+                AUDIT CERTIFICATE
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Live Convergence Telemetry & Instrumentation Bench -->
+<section class="bg-surface-container-lowest border border-outline-variant/40 rounded-DEFAULT p-space-md shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-md text-label-xs font-mono">
+<div class="flex items-center gap-gutter">
+<div class="flex items-center gap-2">
+<span class="text-outline uppercase">CONVERGENCE INDEX:</span>
+<span class="text-primary font-headline-sm text-headline-sm font-bold leading-none">99.2%</span>
+<span class="text-tertiary text-label-xs font-bold">[NOMINAL]</span>
+</div>
+<div class="h-5 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-2">
+<span class="text-outline">WATCHDOGS:</span>
+<span class="text-on-surface font-bold">18/18 SENSORS ONLINE</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="flex items-center gap-2 text-outline">
+<span>OPERATOR:</span>
+<span class="text-on-surface font-bold">#rx-9942a</span>
+</div>
+<div class="h-5 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-2 text-outline">
+<span>SYS_TIME:</span>
+<span class="text-on-surface font-bold" id="utc-clock">14:32:04 UTC</span>
+</div>
+<div class="h-5 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="text-outline">SHORTCUTS:</span>
+<span class="bg-surface-container px-1 py-0.5 rounded text-[10px] border border-outline-variant/30 font-bold">[⌘⇧R] Remediate</span>
+<span class="bg-surface-container px-1 py-0.5 rounded text-[10px] border border-outline-variant/30">[Tab] Next Gap</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for UTC Clock
+  function updateUtcClock() {
+    const el = document.getElementById('utc-clock');
+    if (el) {
+      const now = new Date();
+      el.textContent = now.toTimeString().split(' ')[0] + ' UTC';
+    }
+  }
+  setInterval(updateUtcClock, 1000);
+</script></main></div></body></html>

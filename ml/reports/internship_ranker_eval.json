@@ -1,0 +1,17 @@
+{
+  "model": "internship_ranker",
+  "version": "1.0.0",
+  "metrics": {
+    "ndcg_at_3": 0.915,
+    "kendall_tau": 0.88
+  },
+  "gates": [
+    {
+      "name": "NDCG@3 >= 0.85",
+      "threshold": 0.85,
+      "value": 0.915,
+      "passed": true
+    }
+  ],
+  "evaluated_at": "2026-10-15T09:24:57.507460+00:00"
+}

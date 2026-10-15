@@ -1,0 +1,56 @@
+{
+  "missions_total": 13,
+  "missions_by_status": {
+    "AWAITING_APPROVAL": 1,
+    "COMPLETED": 1,
+    "CREATED": 9,
+    "RUNNING": 2
+  },
+  "verified_steps": 20,
+  "recovery_attempts": 0,
+  "recoveries_succeeded": 0,
+  "gaps_detected": 0,
+  "approvals_pending": 1,
+  "mcp_counts": {
+    "servers": 5,
+    "total_tools": 21
+  },
+  "tool_health": {
+    "overall_p_fail": 0.0,
+    "total_invocations": 0,
+    "total_errors": 0
+  },
+  "recent_missions": [
+    {
+      "id": "msn_4bdcb099",
+      "goal": "Find exactly 3 suitable 3rd-year CS/AIML internship opportunities, save them with source links, draft grounded emails, gate send_email.",
+      "status": "COMPLETED",
+      "created_at": "2026-10-15T09:27:17.703771+00:00"
+    },
+    {
+      "id": "msn_078ae5c2",
+      "goal": "Analyze orbital debris patterns and generate avoidance maneuver recommendations",
+      "status": "AWAITING_APPROVAL",
+      "created_at": "2026-10-15T09:25:21.671959+00:00"
+    },
+    {
+      "id": "msn_e84d0a03",
+      "goal": "Find three internship opportunities for a third-year CS/AIML student, rank them, and save to sheets.",
+      "status": "CREATED",
+      "created_at": "2026-10-15T09:24:24.103614+00:00"
+    },
+    {
+      "id": "msn_efa1313d",
+      "goal": "Find three internship opportunities for a third-year CS/AIML student, rank them, and save to sheets.",
+      "status": "CREATED",
+      "created_at": "2026-10-15T09:22:10.469228+00:00"
+    },
+    {
+      "id": "msn_5c077dcf",
+      "goal": "Analyze orbital debris patterns and generate avoidance maneuver recommendations",
+      "status": "RUNNING",
+      "created_at": "2026-10-15T09:10:19.022819+00:00"
+    }
+  ],
+  "recent_security_events": []
+}

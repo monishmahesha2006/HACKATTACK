@@ -1,0 +1,34 @@
+{
+  "model": "injection_classifier",
+  "version": "1.0.0",
+  "metrics": {
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Benign",
+      "Injection"
+    ],
+    "matrix": [
+      [
+        120,
+        0
+      ],
+      [
+        0,
+        120
+      ]
+    ]
+  },
+  "gates": [
+    {
+      "name": "F1 >= 0.90",
+      "threshold": 0.9,
+      "value": 1.0,
+      "passed": true
+    }
+  ],
+  "evaluated_at": "2026-10-15T09:24:57.507460+00:00"
+}

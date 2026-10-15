@@ -1,0 +1,17 @@
+{
+  "model": "risk_scorer",
+  "version": "1.0.0",
+  "metrics": {
+    "policy_override_integrity": 1.0,
+    "coverage": 1.0
+  },
+  "gates": [
+    {
+      "name": "Policy Override Integrity == 1.0",
+      "threshold": 1.0,
+      "value": 1.0,
+      "passed": true
+    }
+  ],
+  "evaluated_at": "2026-10-15T09:24:57.507460+00:00"
+}

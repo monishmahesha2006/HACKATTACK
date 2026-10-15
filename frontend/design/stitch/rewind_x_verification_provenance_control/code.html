@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } .instrument-grid-bg { background-image: radial-gradient(#151b2a 0.75px, transparent 0.75px); background-size: 16px 16px; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#f9f9ff", "tertiary": "#006247", "on-tertiary-container": "#beffe0", "secondary-fixed": "#8ef2ff", "tertiary-fixed-dim": "#60dcae", "on-tertiary": "#ffffff", "secondary-container": "#8ef2ff", "error-container": "#ffdad6", "inverse-surface": "#2a3040", "error": "#ba1a1a", "on-background": "#151b2a", "surface-variant": "#dce2f6", "on-primary-fixed": "#001356", "on-secondary-container": "#006f79", "outline": "#747688", "on-primary-container": "#efefff", "on-secondary-fixed-variant": "#004f56", "on-error-container": "#93000a", "background": "#f9f9ff", "on-primary-fixed-variant": "#0034bf", "inverse-primary": "#b9c3ff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "inverse-on-surface": "#edf0ff", "on-surface": "#151b2a", "secondary": "#006972", "on-tertiary-fixed-variant": "#00513a", "surface-container-low": "#f1f3ff", "surface-container-high": "#e2e8fc", "surface-dim": "#d3daee", "surface-container-highest": "#dce2f6", "on-surface-variant": "#434656", "surface-container-lowest": "#ffffff", "surface-tint": "#1349f0", "outline-variant": "#c4c5d9", "on-error": "#ffffff", "tertiary-fixed": "#7ef9c9", "primary-container": "#2f5bff", "on-tertiary-fixed": "#002115", "on-secondary-fixed": "#001f23", "secondary-fixed-dim": "#71d5e2", "surface-container": "#e9edff", "primary-fixed-dim": "#b9c3ff", "primary": "#003fe1", "primary-fixed": "#dde1ff", "tertiary-container": "#007d5c", "surface": "#f9f9ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1rem", "space-xs": "0.25rem", "space-xl": "1.5rem", "margin-sm": "0.75rem", "margin-lg": "1.5rem", "margin": "1rem", "gutter": "0.75rem", "gutter-lg": "1rem", "space-sm": "0.5rem", "space-md": "0.75rem", "gutter-sm": "0.5rem" }, "fontFamily": { "headline-md": [ "Bricolage Grotesque" ], "headline-xl-mobile": [ "Bricolage Grotesque" ], "label-md": [ "Space Mono" ], "body-sm": [ "Hanken Grotesk" ], "label-sm": [ "Space Mono" ], "label-lg": [ "Space Mono" ], "headline-xl": [ "Bricolage Grotesque" ], "body-md": [ "Hanken Grotesk" ], "label-xs": [ "Space Mono" ], "headline-lg": [ "Bricolage Grotesque" ], "body-lg": [ "Hanken Grotesk" ], "headline-sm": [ "Bricolage Grotesque" ] }, "fontSize": { "headline-md": [ "16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-xl-mobile": [ "22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-md": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-sm": [ "10px", { "lineHeight": "12px", "letterSpacing": "0.12em", "fontWeight": "400" } ], "label-lg": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" } ], "headline-xl": [ "28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-xs": [ "9px", { "lineHeight": "12px", "letterSpacing": "0.15em", "fontWeight": "400" } ], "headline-lg": [ "20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "headline-sm": [ "14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface instrument-grid-bg antialiased selection:bg-secondary-container selection:text-on-secondary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-14 px-margin-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><div class="w-5 h-5 rounded-DEFAULT bg-primary-container flex items-center justify-center text-on-primary font-label-md text-label-md">RX</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-none">REWIND X</span><span class="font-label-xs text-label-xs text-outline uppercase tracking-widest mt-0.5">FLT-OPS v4.2</span></div></div><span class="font-label-xs text-label-xs text-outline font-normal">[+]</span></div><div class="px-margin-sm py-space-xs"><div class="px-space-md py-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Operational Racks</div></div><nav class="flex flex-col gap-space-xs px-margin-sm" data-active-classes="bg-surface-container-low text-primary font-semibold before:absolute before:left-0 before:top-1.5 before:bottom-1.5 before:w-1 before:bg-primary-container after:absolute after:right-2 after:top-1/2 after:-translate-y-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-secondary-fixed"><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="mission" href="#"><span class="material-symbols-outlined text-lg leading-none">rocket_launch</span><span>Mission</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="rehearsal" href="#"><span class="material-symbols-outlined text-lg leading-none">sync_saved_locally</span><span>Rehearsal</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="verification" href="#"><span class="material-symbols-outlined text-lg leading-none">verified_user</span><span>Verification</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="rewind" href="#"><span class="material-symbols-outlined text-lg leading-none">history</span><span>Rewind</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="audit" href="#"><span class="material-symbols-outlined text-lg leading-none">receipt_long</span><span>Audit</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-space-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="gap-monitor" href="#"><span class="material-symbols-outlined text-lg leading-none">monitoring</span><span>Gap Monitor</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="mcp-control" href="#"><span class="material-symbols-outlined text-lg leading-none">hub</span><span>MCP Control</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="intelligence-lab" href="#"><span class="material-symbols-outlined text-lg leading-none">neurology</span><span>Intelligence Lab</span></a><a class="relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="chaos-arena" href="#"><span class="material-symbols-outlined text-lg leading-none">bolt</span><span>Chaos Arena</span></a></nav></div><div class="p-margin-sm bg-surface-container-lowest"><div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-xs text-label-xs uppercase text-outline">TELEMETRY FEED</span><span class="font-label-xs text-label-xs text-tertiary font-bold">NOMINAL</span></div><div class="flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant"><span class="font-label-xs text-label-xs">BUS: 0x48A</span><span class="font-label-xs text-label-xs text-on-surface font-semibold">102.4 kb/s</span></div><div class="w-full bg-surface-variant h-1 rounded-DEFAULT overflow-hidden"><div class="bg-primary-container h-full w-4/5"></div></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-margin-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="px-space-sm py-0.5 rounded-DEFAULT bg-surface-container text-primary-container font-label-xs text-label-xs uppercase tracking-wider font-bold">LOCAL_DEMO</div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-0.5 rounded-DEFAULT"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-label-xs text-label-xs uppercase text-on-surface-variant font-medium">ACTIVE LINK</span></div><div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-0.5 rounded-DEFAULT"><span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary"></span><span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">STATE: RUNNING</span></div><div class="h-4 w-px bg-surface-variant mx-space-xs"></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2 text-base text-outline pointer-events-none">search</span><input class="bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-7 pr-12 py-1 rounded-DEFAULT focus:outline-none focus:bg-surface-container-lowest transition-all w-64" placeholder="Cmd+K quick dispatch..." type="text"/><span class="absolute right-2 font-label-xs text-label-xs bg-surface-variant text-on-surface-variant px-1 rounded-DEFAULT">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-md bg-surface-container-low px-space-md py-1 rounded-DEFAULT"><div class="flex items-center gap-space-xs"><span class="font-label-xs text-label-xs text-outline uppercase">LATENCY:</span><span class="font-label-xs text-label-xs text-on-surface font-bold">0.12ms</span></div><div class="h-3 w-px bg-surface-variant"></div><div class="flex items-center gap-space-xs"><span class="font-label-xs text-label-xs text-outline uppercase">SYNC:</span><span class="font-label-xs text-label-xs text-tertiary font-bold">100%</span></div></div><div class="flex items-center gap-space-sm"><button class="w-8 h-8 rounded-DEFAULT bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-lg leading-none">tune</span></button><button class="w-8 h-8 rounded-DEFAULT bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-lg leading-none">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W0oVSLhqQUn2JI2dM6Rei4wdenxjac7HChchlK1Gr_alRmwpmaGEoeGHhtwz4Cxh4vmKmlNHPdy2rxTcaOqfX22jG8JTSAxxsZMXbVIeD0waFxWIDUy1YdN40BOtbbfNCoy08xrhd8--pIIJVRk6VfUwzOlGl6DW5oSXxk87QdKSwwygTMZAPUnaDV4T6e-p-GUpOxVwh1tp1MYfDFmUfX9mWPIsZDhv6mQiyJ9QV2Ux0rhHJeJkNqTV3n"/></div></div></header><main class="relative pt-14 w-full px-gutter min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Active Navigation State Synchronizer Script -->
+<script>
+    (function syncNav() {
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach((link) => {
+        if (link.getAttribute('data-path') === 'verification') {
+          link.className =
+            'relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-primary font-semibold before:absolute before:left-0 before:top-1.5 before:bottom-1.5 before:w-1 before:bg-primary-container after:absolute after:right-2 after:top-1/2 after:-translate-y-1/2 after:w-1.5 after:h-1.5 after:rounded-full after:bg-secondary-fixed font-body-sm text-body-sm';
+        } else {
+          link.className =
+            'relative flex items-center gap-space-md px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm';
+        }
+      });
+    })();
+  </script>
+<!-- 1. TOP OPERATIONAL SUBHEADER -->
+<div class="w-full bg-surface-container-lowest p-space-md mb-gutter shadow-sm rounded-lg flex flex-col xl:flex-row xl:items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-xs font-label-xs text-label-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-bold text-primary tracking-wider">03 // GATE: POST-EXECUTION VERIFICATION &amp; PROVENANCE</span>
+</div>
+<div class="h-3 w-px bg-surface-variant hidden sm:block"></div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="text-outline uppercase">TARGET:</span>
+<span class="font-bold text-on-surface bg-surface-container-low px-1 py-0.5 rounded-DEFAULT">RX-STAGE-ALPHA #snap-9904b</span>
+</div>
+<div class="h-3 w-px bg-surface-variant hidden sm:block"></div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="text-outline uppercase">ROOT:</span>
+<span class="font-label-xs text-label-xs text-on-surface">MERKLE_ROOT 0x9f8c..2b11</span>
+</div>
+<div class="h-3 w-px bg-surface-variant hidden md:block"></div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="text-outline uppercase">SEAL:</span>
+<span class="text-tertiary font-bold">SHA256:7f90e21a</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-md font-label-xs text-label-xs pt-space-xs xl:pt-0 border-t xl:border-t-0 border-surface-variant">
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">SESSION:</span>
+<span class="text-on-surface font-bold">RX-OPS-9904 RUN #09</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">LATENCY:</span>
+<span class="text-primary font-bold">0.12ms</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded-DEFAULT">
+<span class="text-outline uppercase">ASSERTIONS:</span>
+<span class="text-tertiary font-bold">12/13 PASSED</span>
+</div>
+</div>
+</div>
+<!-- 2. TOP VERDICT BANNER & VARIANTS REFERENCE STRIP -->
+<div class="flex flex-col gap-gutter mb-gutter">
+<!-- Primary Verdict Banner -->
+<div class="w-full bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-space-lg">
+<!-- Prominent aerospace status stamp -->
+<div class="flex flex-col items-center justify-center px-6 py-3.5 bg-surface-container-low rounded-DEFAULT text-center min-w-[170px]">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-headline-lg text-headline-lg text-tertiary font-bold tracking-widest leading-none">VERIFIED</span>
+</div>
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-widest bg-on-tertiary-container/30 px-1.5 py-0.5 rounded-DEFAULT">CONFIDENCE: 99.4%</span>
+</div>
+<div class="flex flex-col gap-1 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">IMMUTABLE POST-EXECUTION ATTESTATION</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.2 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold">STRICT_MODE</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            All critical post-execution assertions validated against immutable state snapshot <span class="font-label-xs text-on-surface font-semibold bg-surface-container-high px-1 py-0.5 rounded-DEFAULT">#snap-9904b</span> and production catalog. Zero irreversible mutations detected outside authorized transaction boundary.
+          </p>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT shadow-sm transition-all active:scale-[0.98]" id="btn-reverify">
+<span class="material-symbols-outlined text-base">refresh</span>
+<span>RE-VERIFY HEURISTICS</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT shadow-sm transition-all active:scale-[0.98]" id="btn-export">
+<span class="material-symbols-outlined text-base">verified</span>
+<span>EXPORT CERTIFICATE [PDF/JSON]</span>
+</button>
+</div>
+</div>
+<!-- Status Variants Explorer Bar -->
+<div class="w-full bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-xs overflow-x-auto">
+<div class="px-space-sm py-1 font-label-xs text-label-xs text-outline uppercase font-bold tracking-wider shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">palette</span>
+<span>VERDICT STATES //</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-space-xs flex-1">
+<!-- Verified -->
+<div class="flex items-center gap-2 bg-surface-container-low px-space-sm py-1.5 rounded-DEFAULT">
+<span class="w-2 h-2 rounded-full bg-tertiary shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-tertiary font-bold tracking-tight">VERIFIED</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">Deterministic cryptographic proof</span>
+</div>
+</div>
+<!-- Partially Verified -->
+<div class="flex items-center gap-2 bg-surface-container-low px-space-sm py-1.5 rounded-DEFAULT">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-secondary font-bold tracking-tight">PARTIALLY_VERIFIED</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">Heuristic consensus (1 pending)</span>
+</div>
+</div>
+<!-- Unverified -->
+<div class="flex items-center gap-2 bg-surface-container-low px-space-sm py-1.5 rounded-DEFAULT">
+<span class="w-2 h-2 rounded-full bg-outline shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline font-bold tracking-tight">UNVERIFIED</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">Telemetry unconfirmed</span>
+</div>
+</div>
+<!-- Failed -->
+<div class="flex items-center gap-2 bg-surface-container-low px-space-sm py-1.5 rounded-DEFAULT">
+<span class="w-2 h-2 rounded-full bg-error shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-error font-bold tracking-tight">FAILED</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">State mutation assertion mismatch</span>
+</div>
+</div>
+<!-- Blocked -->
+<div class="flex items-center gap-2 bg-surface-container-low px-space-sm py-1.5 rounded-DEFAULT">
+<span class="w-2 h-2 rounded-full bg-on-secondary-fixed-variant shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-on-secondary-fixed-variant font-bold tracking-tight">BLOCKED</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">Quarantine trigger active</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. MAIN TWO-COLUMN SPLIT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT COLUMN: ACCEPTANCE TESTS CHECKLIST (~45% / col-span-5) -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-lg shadow-sm flex flex-col overflow-hidden">
+<!-- Panel Header -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">01 // ACCEPTANCE CRITERIA MATRIX</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-highest text-on-surface font-semibold">SUITE v4</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Deterministic regression tests vs shadow clone</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded-DEFAULT shadow-xs">
+<span class="font-label-xs text-label-xs text-tertiary font-bold">12 PASSED</span>
+<span class="font-label-xs text-label-xs text-outline">/</span>
+<span class="font-label-xs text-label-xs text-error font-bold">1 WARN</span>
+</div>
+</div>
+<!-- Filter Sub-bar -->
+<div class="px-space-md py-space-xs bg-surface-container-lowest flex items-center justify-between border-b border-surface-variant">
+<div class="flex items-center gap-1" id="filter-buttons">
+<button class="filter-btn active px-2 py-1 rounded-DEFAULT bg-surface-container text-primary font-label-xs text-label-xs font-bold" data-filter="all">ALL (13)</button>
+<button class="filter-btn px-2 py-1 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high font-label-xs text-label-xs" data-filter="pass">PASSED (12)</button>
+<button class="filter-btn px-2 py-1 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high font-label-xs text-label-xs" data-filter="fail">FAILED (1)</button>
+<button class="filter-btn px-2 py-1 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high font-label-xs text-label-xs" data-filter="strict">STRICT (4)</button>
+</div>
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-tight">TOTAL LATENCY: 198ms</span>
+</div>
+<!-- Checklist List -->
+<div class="divide-y divide-surface-variant max-h-[580px] overflow-y-auto" id="checklist-container">
+<!-- Item 1: Schema Integrity -->
+<div class="checklist-item p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-3" data-status="pass" data-strict="true">
+<span class="w-5 h-5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Schema integrity: users_v3 DDL matches checksum</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold shrink-0">4ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5 truncate">MIGRATION HASH: #882a990 · STRICT COMPLIANCE</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-surface-container-high text-on-surface-variant rounded-DEFAULT">DATABASE_CATALOG</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">100% PARITY</span>
+</div>
+</div>
+</div>
+<!-- Item 2: Row Count Parity -->
+<div class="checklist-item p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-3" data-status="pass" data-strict="false">
+<span class="w-5 h-5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Row count parity: 1,423 expected == 1,423 actual</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold shrink-0">12ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5 truncate">+3 ledger delta verified against range A1420:F1423</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-surface-container-high text-on-surface-variant rounded-DEFAULT">G-SHEETS_API</span>
+<span class="font-label-xs text-label-xs text-primary font-bold">MUTATION_VERIFIED</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Draft Isolation -->
+<div class="checklist-item p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-3" data-status="pass" data-strict="true">
+<span class="w-5 h-5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Draft isolation: Zero outbound SMTP packets</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold shrink-0">1ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5 truncate">Zero egress on port 587 / 465 detected during execution</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-surface-container-high text-on-surface-variant rounded-DEFAULT">AIRGAP_FIREWALL</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">ISOLATED</span>
+</div>
+</div>
+</div>
+<!-- Item 4: Secret Scrubbing -->
+<div class="checklist-item p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-3" data-status="pass" data-strict="true">
+<span class="w-5 h-5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Secret scrubbing: Credentials replaced by hashes</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold shrink-0">2ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5 truncate">Replaced 4 client secrets with ak_live_•••••• token hashes</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-surface-container-high text-on-surface-variant rounded-DEFAULT">DLP_FILTER</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">ZERO_LEAK</span>
+</div>
+</div>
+</div>
+<!-- Item 5: Idempotency Test -->
+<div class="checklist-item p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-3" data-status="pass" data-strict="false">
+<span class="w-5 h-5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Idempotency test: Re-exec produces exact identity</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold shrink-0">48ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5 truncate">Secondary dry-run matched AST root with zero diff</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-surface-container-high text-on-surface-variant rounded-DEFAULT">VIRTUAL_SANDBOX</span>
+<span class="font-label-xs text-label-xs text-primary font-bold">IDEMPOTENT</span>
+</div>
+</div>
+</div>
+<!-- Item 6: Cache Warm-up (FAIL / NON-BLOCKING) -->
+<div class="checklist-item p-space-md bg-error-container/20 hover:bg-error-container/30 transition-colors flex items-start gap-3" data-status="fail" data-strict="false">
+<span class="w-5 h-5 rounded-DEFAULT bg-error-container text-error flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✕</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Cache warm-up: Redis cluster hit ratio &gt;= 95%</span>
+<span class="font-label-xs text-label-xs text-error font-bold shrink-0">110ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-error mt-0.5">ACTUAL: 91.4% (Threshold: 95.0%) · SOFT_TOLERANCE_WARNING</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-error-container text-on-error-container rounded-DEFAULT font-bold">EDGE_CACHE</span>
+<span class="font-label-xs text-label-xs text-error font-bold">NON-BLOCKING</span>
+</div>
+</div>
+</div>
+<!-- Item 7: Audit Log Tamper Seal -->
+<div class="checklist-item p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-3" data-status="pass" data-strict="true">
+<span class="w-5 h-5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Audit log tamper seal: HMAC signature recorded</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold shrink-0">3ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5 truncate">Wrote HMAC-SHA512 block to immutable append-only WAL</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-surface-container-high text-on-surface-variant rounded-DEFAULT">SEC_LEDGER</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">SIGNED</span>
+</div>
+</div>
+</div>
+<!-- Item 8: Foreign Key Constraints -->
+<div class="checklist-item p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-3" data-status="pass" data-strict="false">
+<span class="w-5 h-5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Foreign key constraints: Zero orphan references</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold shrink-0">18ms</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline mt-0.5 truncate">Zero dangling records found across billing_records &amp; accounts</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="font-label-xs text-label-xs uppercase px-1 py-0.2 bg-surface-container-high text-on-surface-variant rounded-DEFAULT">DB_RELATIONS</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">INTEGRAL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Test Controls -->
+<div class="p-space-md bg-surface-container-low border-t border-surface-variant flex items-center justify-between gap-space-sm">
+<button class="px-space-md py-1.5 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-sm text-error">replay</span>
+<span>RERUN FAILED TESTS</span>
+</button>
+<button class="px-space-md py-1.5 rounded-DEFAULT bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>INSPECT AST TRACE</span>
+</button>
+</div>
+</div>
+<!-- Quick Telemetry Diagnostic Sparkcard -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs text-outline uppercase font-bold tracking-wider">GATE ASSERTION QUORUM // SHADOW ENGINE</span>
+<span class="font-label-xs text-label-xs text-tertiary font-bold">QUORUM 3/3</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-low p-2 rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">STAGING CLONE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">100% MATCH</span>
+<span class="font-label-xs text-label-xs text-tertiary">0 regressions</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">HEURISTIC EVAL</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">0.994 P-VAL</span>
+<span class="font-label-xs text-label-xs text-tertiary">High certitude</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-DEFAULT flex flex-col">
+<span class="font-label-xs text-label-xs text-outline">RESTORABILITY</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">&lt; 180ms</span>
+<span class="font-label-xs text-label-xs text-primary font-bold">ARMED READY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: CLAIMS LEDGER & PROVENANCE PANEL (~55% / col-span-7) -->
+<div class="lg:col-span-7 flex flex-col gap-gutter">
+<!-- Upper Section: 02 // CLAIMS LEDGER -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm flex flex-col overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">02 // CLAIMS LEDGER</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-semibold">5 EXTRACTED</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Claims extracted from model plan vs verified ground truth</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-mono">AST_NODE_ID #904-B</span>
+</div>
+<!-- Claims Table -->
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-variant font-label-xs text-label-xs text-on-surface-variant uppercase">
+<th class="py-2 px-space-md font-bold">CLAIM ID</th>
+<th class="py-2 px-space-md font-bold">ASSERTION / STATEMENT</th>
+<th class="py-2 px-space-md font-bold">STATUS</th>
+<th class="py-2 px-space-md font-bold">PROOF ENGINE</th>
+<th class="py-2 px-space-md font-bold text-right">SOURCE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-body-sm text-body-sm" id="claims-table-body">
+<!-- Row 1: Selected active -->
+<tr class="claim-row bg-surface-container-high/60 cursor-pointer transition-colors relative" data-claim="CLM-01">
+<td class="py-2.5 px-space-md font-label-xs text-label-xs font-bold text-primary">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>#CLM-01</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md text-on-surface font-medium max-w-xs truncate">
+                  Inserted 3 ledger rows for invoice #9921, rebate #4402, balance #1423
+                </td>
+<td class="py-2.5 px-space-md">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    VERIFIED
+                  </span>
+</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-on-surface-variant whitespace-nowrap">Merkle Tree WAL</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-outline text-right font-mono truncate max-w-[120px]">sheets.googleapis.com</td>
+</tr>
+<!-- Row 2 -->
+<tr class="claim-row hover:bg-surface-container-low cursor-pointer transition-colors" data-claim="CLM-02">
+<td class="py-2.5 px-space-md font-label-xs text-label-xs font-bold text-on-surface">#CLM-02</td>
+<td class="py-2.5 px-space-md text-on-surface font-medium max-w-xs truncate">
+                  Created draft reconciliation notices without sending outbound email
+                </td>
+<td class="py-2.5 px-space-md">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-on-tertiary-container/30 text-tertiary font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    VERIFIED
+                  </span>
+</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-on-surface-variant whitespace-nowrap">Network Socket Probe</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-outline text-right font-mono truncate max-w-[120px]">mail.google.com/drafts</td>
+</tr>
+<!-- Row 3 -->
+<tr class="claim-row hover:bg-surface-container-low cursor-pointer transition-colors" data-claim="CLM-03">
+<td class="py-2.5 px-space-md font-label-xs text-label-xs font-bold text-on-surface">#CLM-03</td>
+<td class="py-2.5 px-space-md text-on-surface font-medium max-w-xs truncate">
+                  Vendor rebate amount matches historical billing contract tier 2
+                </td>
+<td class="py-2.5 px-space-md">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-secondary-container text-on-secondary-container font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    INFERRED
+                  </span>
+</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-on-surface-variant whitespace-nowrap">Heuristic LLM-Judge</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-outline text-right font-mono truncate max-w-[120px]">contract_v2.pdf</td>
+</tr>
+<!-- Row 4 -->
+<tr class="claim-row hover:bg-surface-container-low cursor-pointer transition-colors" data-claim="CLM-04">
+<td class="py-2.5 px-space-md font-label-xs text-label-xs font-bold text-on-surface">#CLM-04</td>
+<td class="py-2.5 px-space-md text-on-surface font-medium max-w-xs truncate">
+                  Customer email domain matches verified whitelist in CRM directory
+                </td>
+<td class="py-2.5 px-space-md">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-surface-container-highest text-outline font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                    UNVERIFIED
+                  </span>
+</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-on-surface-variant whitespace-nowrap">DNS SPF Lookup</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-outline text-right font-mono truncate max-w-[120px]">dns://external</td>
+</tr>
+<!-- Row 5 -->
+<tr class="claim-row hover:bg-surface-container-low cursor-pointer transition-colors" data-claim="CLM-05">
+<td class="py-2.5 px-space-md font-label-xs text-label-xs font-bold text-on-surface">#CLM-05</td>
+<td class="py-2.5 px-space-md text-on-surface font-medium max-w-xs truncate">
+                  Cache invalidation dispatched to all 6 edge regions simultaneously
+                </td>
+<td class="py-2.5 px-space-md">
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded-DEFAULT bg-error-container text-error font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                    FAILED
+                  </span>
+</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-on-surface-variant whitespace-nowrap">Edge Probe Timeout</td>
+<td class="py-2.5 px-space-md font-label-xs text-label-xs text-outline text-right font-mono truncate max-w-[120px]">cdn-edge.internal</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Lower Section: 03 // PROVENANCE & GROUND-TRUTH EVIDENCE -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm flex flex-col overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">03 // PROVENANCE &amp; GROUND-TRUTH EVIDENCE</span>
+<span class="font-label-xs text-label-xs px-1.5 py-0.5 rounded-DEFAULT bg-surface-container-high text-on-surface-variant font-mono">ACTIVE: #CLM-01</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Cryptographic citation and grounded evidence snippet inspection</span>
+</div>
+<span class="material-symbols-outlined text-outline text-lg">policy</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Source URL Metadata Card -->
+<div class="bg-surface-container-low p-space-sm rounded-DEFAULT flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-base text-primary shrink-0">link</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline uppercase">PROVENANCE SOURCE MCP URI:</span>
+<span class="font-label-xs text-label-xs font-mono text-on-surface truncate">mcp://integrations.rewind.internal/v2/google-sheets/ops_q3_reconciliation.sheet?range=A1420:F1423</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-2 py-1 bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant font-label-xs text-label-xs uppercase tracking-wider rounded-DEFAULT flex items-center gap-1 shadow-xs transition-colors" id="btn-copy-url">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span id="copy-text">COPY URL</span>
+</button>
+<a class="px-2 py-1 bg-surface-container-lowest hover:bg-surface-container text-primary font-label-xs text-label-xs uppercase tracking-wider rounded-DEFAULT flex items-center gap-1 shadow-xs transition-colors" href="#">
+<span>EXTERNAL INSPECT</span>
+<span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+<!-- Monospace Evidence Snippet Panel -->
+<div class="bg-on-surface text-inverse-on-surface p-space-md rounded-DEFAULT font-label-xs text-label-xs font-mono flex flex-col gap-1.5 relative overflow-hidden select-text">
+<div class="flex items-center justify-between pb-1 border-b border-surface-variant/20 text-inverse-on-surface/60">
+<span>[PROVENANCE EXTRACT // G-SHEETS AUDIT TRAIL 14:10:02.812Z]</span>
+<span>MERKLE BLOCK: #89104</span>
+</div>
+<div class="text-tertiary-fixed font-bold">SHA256: 3a9f0e812b772e01a88bb3e9c704f022718e0018d99c4aa029147f8c92a144e0</div>
+<div class="mt-1 font-mono text-inverse-on-surface/90 space-y-0.5">
+<div class="hover:bg-inverse-surface px-1 -mx-1 rounded-DEFAULT"><span class="text-tertiary-fixed font-bold">&gt;&gt; RECORD #1421:</span> { "inv_id": "INV-9921_REC_ACCRUAL", "amount": 12450.00, "status": "POSTED", "ts": "14:10:01" } <span class="text-tertiary-fixed font-bold">[MATCH 100%]</span></div>
+<div class="hover:bg-inverse-surface px-1 -mx-1 rounded-DEFAULT"><span class="text-tertiary-fixed font-bold">&gt;&gt; RECORD #1422:</span> { "inv_id": "CR-4402_VENDOR_REBATE",  "amount": -1120.00, "status": "POSTED", "ts": "14:10:01" } <span class="text-tertiary-fixed font-bold">[MATCH 100%]</span></div>
+<div class="hover:bg-inverse-surface px-1 -mx-1 rounded-DEFAULT"><span class="text-tertiary-fixed font-bold">&gt;&gt; RECORD #1423:</span> { "inv_id": "SETTLE_BAL_CLOSE",      "amount":     0.00, "status": "POSTED", "ts": "14:10:02" } <span class="text-tertiary-fixed font-bold">[MATCH 100%]</span></div>
+</div>
+<div class="pt-2 mt-1 border-t border-surface-variant/20 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+<span class="text-tertiary-fixed font-bold tracking-wide">STATUS: EXACT_GROUND_TRUTH_MATCH</span>
+</div>
+<span class="text-inverse-on-surface/50 font-normal">Deterministic cryptographic equality confirmed</span>
+</div>
+</div>
+<!-- Grounding Metrics Triple Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs font-label-xs text-label-xs">
+<div class="bg-surface-container-low px-space-md py-2 rounded-DEFAULT flex flex-col">
+<span class="text-outline uppercase">CITATION RELIABILITY</span>
+<span class="text-tertiary font-bold font-headline-sm text-headline-sm mt-0.5">99.8%</span>
+<span class="text-on-surface-variant text-[10px]">Zero drift across 3 runs</span>
+</div>
+<div class="bg-surface-container-low px-space-md py-2 rounded-DEFAULT flex flex-col">
+<span class="text-outline uppercase">TAMPER RISK</span>
+<span class="text-on-surface font-bold font-headline-sm text-headline-sm mt-0.5">0.00%</span>
+<span class="text-on-surface-variant text-[10px]">Immutable signed ledger</span>
+</div>
+<div class="bg-surface-container-low px-space-md py-2 rounded-DEFAULT flex flex-col">
+<span class="text-outline uppercase">VALIDATOR NODE</span>
+<span class="text-primary font-bold font-headline-sm text-headline-sm mt-0.5 truncate">east-02</span>
+<span class="text-on-surface-variant text-[10px]">rx-validator-east-02.flt</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. FOOTER TELEMETRY STATUS BAR -->
+<div class="w-full mt-gutter bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm font-label-xs text-label-xs">
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="text-outline uppercase">ENGINE:</span>
+<span class="text-on-surface font-bold">V4.2-AEROSPACE-STRICT</span>
+</div>
+<div class="h-3 w-px bg-surface-variant hidden sm:block"></div>
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">ASSERTION QUORUM:</span>
+<span class="text-tertiary font-bold">3/3 NODES</span>
+</div>
+<div class="h-3 w-px bg-surface-variant hidden md:block"></div>
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">CERTIFICATE HASH:</span>
+<span class="text-on-surface font-mono font-bold">0x9f8c..2b11</span>
+</div>
+<div class="h-3 w-px bg-surface-variant hidden sm:block"></div>
+<div class="flex items-center gap-1">
+<span class="text-outline uppercase">CALIBRATION:</span>
+<span class="text-tertiary font-bold">100% NOMINAL</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-auto bg-surface-container-low px-2 py-1 rounded-DEFAULT border-l-2 border-primary-container">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="text-outline uppercase">AUTONOMOUS REWIND:</span>
+<span class="text-primary font-bold">ARMED [RESTORE IN &lt;180ms]</span>
+</div>
+</div>
+<!-- Interactive Logic for Filters, Row Selection, and Actions -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Filter Checklist
+      const filterBtns = document.querySelectorAll('#filter-buttons .filter-btn');
+      const checklistItems = document.querySelectorAll('#checklist-container .checklist-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-surface-container', 'text-primary', 'font-bold');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.remove('text-on-surface-variant');
+          btn.classList.add('bg-surface-container', 'text-primary', 'font-bold');
+
+          const filter = btn.getAttribute('data-filter');
+
+          checklistItems.forEach(item => {
+            const status = item.getAttribute('data-status');
+            const isStrict = item.getAttribute('data-strict') === 'true';
+
+            if (filter === 'all') {
+              item.style.display = 'flex';
+            } else if (filter === 'pass' && status === 'pass') {
+              item.style.display = 'flex';
+            } else if (filter === 'fail' && status === 'fail') {
+              item.style.display = 'flex';
+            } else if (filter === 'strict' && isStrict) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 2. Select Claim Rows
+      const claimRows = document.querySelectorAll('#claims-table-body .claim-row');
+      claimRows.forEach(row => {
+        row.addEventListener('click', () => {
+          claimRows.forEach(r => {
+            r.classList.remove('bg-surface-container-high/60');
+            const idCell = r.querySelector('td:first-child');
+            if (idCell) idCell.classList.remove('text-primary');
+          });
+          row.classList.add('bg-surface-container-high/60');
+          const activeCell = row.querySelector('td:first-child');
+          if (activeCell) activeCell.classList.add('text-primary');
+        });
+      });
+
+      // 3. Copy URI Action
+      const copyBtn = document.getElementById('btn-copy-url');
+      const copyText = document.getElementById('copy-text');
+      if (copyBtn && copyText) {
+        copyBtn.addEventListener('click', () => {
+          const uri = 'mcp://integrations.rewind.internal/v2/google-sheets/ops_q3_reconciliation.sheet?range=A1420:F1423';
+          navigator.clipboard.writeText(uri).then(() => {
+            copyText.textContent = 'COPIED!';
+            setTimeout(() => {
+              copyText.textContent = 'COPY URL';
+            }, 1800);
+          });
+        });
+      }
+
+      // 4. Action buttons feedback
+      const reVerifyBtn = document.getElementById('btn-reverify');
+      if (reVerifyBtn) {
+        reVerifyBtn.addEventListener('click', () => {
+          const original = reVerifyBtn.innerHTML;
+          reVerifyBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">progress_activity</span><span>CHECKING...</span>';
+          setTimeout(() => {
+            reVerifyBtn.innerHTML = original;
+          }, 900);
+        });
+      }
+    });
+  </script>
+</div></main></div></body></html>
